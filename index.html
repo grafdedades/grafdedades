@@ -12,6 +12,11 @@
     <body>
     <div id="container"></div>
     <script src="sigma.min.js"></script>
+    <style>
+      html { height:100%;}
+      body {height: 100%;}
+      #sigma-container { width:100%; height:100%; background-color:#E1E1E1}
+    </style>
     <script src="sigma.parsers.json.min.js"></script>
     <script>
       sigma.parsers.json('data.json', {
@@ -20,6 +25,7 @@
           defaultNodeColor: '#ec5148'
         }
       });
+
     </script>
     </body>
     </html>
