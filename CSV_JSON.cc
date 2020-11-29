@@ -25,9 +25,9 @@ public:
 
   string get_colour() const;
 
-  // int get_year() const;
+  int get_year() const;
 
-  // char get_gender() const;
+  char get_gender() const;
 
   map<string, int> get_links() const;
 
