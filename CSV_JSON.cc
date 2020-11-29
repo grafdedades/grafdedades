@@ -243,7 +243,7 @@ void GenerateJSON(const People& people, const vector<Link>& failed_links){
   for (int i = 1; i < people.size(); ++i){
     person = people[i].get_links();
     for (auto link : person){
-      f << "{";
+      f << (counter == 0 ? "{" : ",{");
       f << "\"id\":" << "\"e"+to_string(counter)+"\"" << ',';
       f << "\"source\":" << "\"n" << people[i].get_id() << "\"" << ',';
       f << "\"target\":" << "\""+link.first+"\"" << ',';
@@ -255,7 +255,7 @@ void GenerateJSON(const People& people, const vector<Link>& failed_links){
   }
 
   for (Link link : failed_links){
-    f << "{";
+    f << (counter == 0 ? "{" : ",{");
     f << "\"id\":" << "\"e"+to_string(counter)+"\"" << ',';
     f << "\"source\":" << "\"n" << link.s << "\"" << ',';
     f << "\"target\":" << "\"n" << link.t << "\"" << ',';
