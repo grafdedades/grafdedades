@@ -220,9 +220,9 @@ void GenerateJSON(const People& people, const vector<Link>& failed_links){
     f << "\"id\":" << "\"n" + to_string(people[i].get_id()) + "\"" << ',';
     f << "\"label\":" << "\"" + people[i].get_name() + "\"" << ',';
     f << "\"x\":" << people[i].get_x() << ',';
-    f << "\"y\":" << people[i].get_y() << ',';
+    f << "\"y\":" << people[i].get_y() /* << ','*/;
 
-    f << "\"color\":" << "\"" << people[i].get_colour() << "\"";
+    // f << "\"color\":" << "\"" << people[i].get_colour() << "\"";
     f << (i + 1 == people.size() ? "}" : "},");
   }
 
@@ -233,9 +233,9 @@ void GenerateJSON(const People& people, const vector<Link>& failed_links){
     f << (counter == 0 ? "{" : ",{");
     f << "\"id\":" << "\"e" + to_string(counter) + "\"" << ',';
     f << "\"source\":" << "\"n" << people[0].get_id() << "\"" << ',';
-    f << "\"target\":" << "\"" + link.first + "\"" << ',';
-    f << "\"width\":" << link.second << ',';
-    f << "\"edgeColor\":\"#000\"";
+    f << "\"target\":" << "\"" + link.first + "\"" /* << ',' */;
+    // f << "\"width\":" << link.second << ',';
+    // f << "\"edgeColor\":\"#000\"";
     f << "}";
     ++counter;
   }
@@ -246,9 +246,9 @@ void GenerateJSON(const People& people, const vector<Link>& failed_links){
       f << (counter == 0 ? "{" : ",{");
       f << "\"id\":" << "\"e"+to_string(counter)+"\"" << ',';
       f << "\"source\":" << "\"n" << people[i].get_id() << "\"" << ',';
-      f << "\"target\":" << "\""+link.first+"\"" << ',';
-      f << "\"width\":" << link.second << ',';
-      f << "\"edgeColor\":\"#000\"";
+      f << "\"target\":" << "\""+link.first+"\"" /* << ',' */;
+      // f << "\"width\":" << link.second << ',';
+      // f << "\"edgeColor\":\"#000\"";
       f << "}";
       ++counter;
     }
@@ -258,9 +258,9 @@ void GenerateJSON(const People& people, const vector<Link>& failed_links){
     f << (counter == 0 ? "{" : ",{");
     f << "\"id\":" << "\"e"+to_string(counter)+"\"" << ',';
     f << "\"source\":" << "\"n" << link.s << "\"" << ',';
-    f << "\"target\":" << "\"n" << link.t << "\"" << ',';
-    f << "\"width\":" << link.w << ',';
-    f << "\"edgeColor\":\"#000\"";
+    f << "\"target\":" << "\"n" << link.t << "\"" /* << ',' */;
+    // f << "\"width\":" << link.w << ',';
+    // f << "\"edgeColor\":\"#000\"";
     f << "}";
     ++counter;
   }
