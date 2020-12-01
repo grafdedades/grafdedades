@@ -223,7 +223,7 @@ void GenerateJSON(const People& people, const vector<Link>& failed_links){
     f << "\"y\":" << people[i].get_y() /* << ','*/;
 
     // f << "\"color\":" << "\"" << people[i].get_colour() << "\"";
-    f << (i + 1 == people.size() ? "}" : "},");
+    f << (i + 1 == people.size() ? "}]" : "},");
   }
 
   f << ",\"edges\":[";
