@@ -1,0 +1,49 @@
+source;target;weight;place;month;year ;repeated;relationship;comments
+Clara Rovira;Dani Gómez;1;Colonias;Jan;2020;FALSE;Novio;Mitico sofa
+Andrea Garcia;Alex Carrillo;1;Parque;;2018;FALSE;;Potada postliada
+Clara Rovira;Joan Vaquer;5;Mallorca;Jul;2020;TRUE;;Insomnio del espi
+José Pérez;Jordi Puig;1;Marina;Nov;2018;FALSE;;
+Mireia Boneta;Arnau Turch;1;Colonias;Jan;2019;FALSE;Novio;
+Marina Rosell;Arnau Espinalt;3;Colonias;Jan;2019;TRUE;;La despensa
+Marina García;Arnau Espinalt;1;Colonias;Jan;2019;FALSE;;La del replay
+Sandra Millet;Arnau Espinalt;1;Piso Espi;Jan;2021;TRUE;;La del muro
+Liz Segon;Marina Rosell;1;Colonias;Jan;2019;FALSE;;
+Marina Rosell;Jordi Puig;1;;;;;;
+Clara Rovira;Tomàs Gadea;1;Mirador;Jul;2020;TRUE;;
+Carla Miquel;Tomàs Gadea;1;Sutton;Nov;2019;TRUE;;
+Marina Lopez;Pau Matas;5;Mercè 19';Set;2019;TRUE;;Los casaos
+Carla Miquel;Marc Garcia;5;Costa;Feb;2020;TRUE;;El don limpio
+Sandra Millet;Marc Garcia;5;Mas Campmol;Aug;2020;TRUE;;
+Ona Clarà;Pol Rifé;1;Mas Campmol;Aug;2020;FALSE;;La chapas
+Sofia Diaz;Pol Rifé;5;Piso Iaia Pau;Jul;2020;FALSE;;
+Sandra Millet;Pol Costa;1;Colonias;Jan;2020;FALSE;;La del cuarto oscuro
+Diwa Vila;Richi Tarré;5;Mas Can Mol;Aug;2020;TRUE;;La ducha del cojo
+Carla Miquel;Richi Tarré;1;Sutton;Nov;2019;FALSE;;La del chupito
+Marc de Gràcia;Diwa Vila;1;Colonias;Jan;2020;FALSE;;La del atletismo
+Aina Perez;Pol Rosinés;1;Sutton;Nov;2019;FALSE;;
+Sofia Diaz;Jordi Puig;5;Novadades 19';Oct;2019;FALSE;;
+Lena;Raul;1;;;;;;
+Marina Rosell;Pau Lozano;10;;;;TRUE;;La del twitter
+Eva Brigitte;Dani Gómez;1;Piso Espi;Jan;2021;TRUE;;Cortinas + sofa 2.0
+Víctor Novelle;Helena Ferran;5;;;;TRUE;;La espatula
+Aina Perez;Pau Tarragó ;1;Colonias;Jan;2020;TRUE;;Bailecito seductor
+Sofia Diaz;Roger Creus;5;Colonias;Jan;2020;FALSE;;
+Sofia Diaz;Tomàs Gadea;1;Colonias;Jan;2020;TRUE;;
+Alex Ferrando;Jordi Puig;1;Colonias;Jan;2019;FALSE;;
+Cris Aguilera;Chus ;5;;;2018;TRUE;;
+Alejandro Campayo;Angela Rodriguez;1;Colonias;Jan;2020;FALSE;;
+Roser Cantenys;David Bergés ;5;Colonias;;2019;TRUE;Novio;
+Pol Rifé;Raquel Ventós;5;Colonias;Jan;2020;TRUE;;La del coche 
+Arnau Saumell;Raquel Ventós;1;Colonias;Jan;2020;FALSE;;La del atletismo 2.0
+Pau Marquez;Mireia Boneta;3;Colonias;Jan;2020;TRUE;Novio;
+Oriol Ricart;Marina García;5;Casa Marina;;2019;TRUE;;
+Marina Rosell;Alex Carrillo;1;Colonias;Jan;2019;FALSE;;
+Pau Marquez;Danae Canillas;5;;;;TRUE;;
+Liz Segon;Nil Crespo;1;Colonias;Jan;2019;FALSE;Novia;
+Pau Tarragó;Raquel Ventós;1;Sutton;Nov;2019;FALSE;;
+Marc Vernet;Marina Rosell;1;;;;;;
+Marc Vernet;Jordi Puig;1;;;;;;
+Alejandro Campayo;Sofia Diaz ;1;Casa Abuela Sofi;Oct;2019;FALSE;;
+Andreu Huguet;Sofia Diaz ;1;;;;FALSE;;
+Clara Rovira;Omar Ferrer;5;Casa Omar;Jul;2020;TRUE;;
+Maria Ribot;Arnau Espinalt;1;;;;FALSE;;
