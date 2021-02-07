@@ -74,7 +74,7 @@ function createForceNetwork(nodes, edges) {
   var search = d3.select("body").append("input")
     .attr("id","search_bar")
 
-  var search_button = d3.select("body").append("input")
+  var search_button = d3.select("body").append("button")
     .attr("type","button")
     .attr("id","search_button")
     .text("Search")
@@ -110,13 +110,8 @@ function createForceNetwork(nodes, edges) {
   .on("mouseout", nodeOut)
   .call(force.drag());
 
-  d3.select("search_button").selectAll("g.node")
-  .data(nodes)
-  .enter()
-  .append("g")
-  .attr("class", "node")
-  .on("click", SearchNode)
-  .call(force.drag());
+  d3.select("button")
+  .on("click", SearchNode);
 
 
   nodeEnter.append("circle")
@@ -204,9 +199,21 @@ function createForceNetwork(nodes, edges) {
 
   }
 
-  function nodeOver(d) {
-    force.stop();
-    nodeF(d);
+  function SearchNode() {
+    var name = document.getElementById("search_bar").value
+    //Buscar nodo
+
+    var node = null
+    nodes.forEach(function (n) {
+      console.log(n.label)
+      if(n.label == name){
+          node = n
+      }
+    })
+    console.log(node.label)
+    if(!node == null){
+        nodeF(node);
+    }
   }
 
   function updateNetwork() {
