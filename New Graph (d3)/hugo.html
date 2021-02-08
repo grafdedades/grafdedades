@@ -5,6 +5,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 </head>
 <style>
+BODY{ font-family: verdana; }
   svg {
     height: 1000px;
     width: 1000px;
@@ -21,7 +22,7 @@
     text-align: left;
     height: 115px;
     padding: 2px;
-    font: 20px sans-serif;
+    font: 18px verdana;
     background: white;
     pointer-events: none;
 }
@@ -39,6 +40,7 @@
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
+  font-family: verdana;
 }
 
 .button1 {
@@ -106,6 +108,7 @@ input.input1 {
   background-repeat: no-repeat;
   border: 2px solid #42A5F5;
   margin: 4px 2px;
+  font-family: verdana;
 
 }
 
@@ -148,7 +151,7 @@ function createForceNetwork(nodes, edges) {
   var force = d3.layout.force().nodes(nodes).links(edges)
   .size([1000,1000])
   .charge(-200)
-  .linkDistance(60)
+  .linkDistance(80)
   .on("tick", updateNetwork);
 
   var div = d3.select("body").append("div")
@@ -227,14 +230,14 @@ function createForceNetwork(nodes, edges) {
    .style("stroke-width", "1px")
    .style("stroke-opacity", 0.75)
    .style("stroke", "white")
-   .style("font-size", "14px")
+   .style("font-size", "10px")
    .text(function (d) {return d.label})
    .style("pointer-events", "none")
 
    nodeEnter.append("text")
    .style("text-anchor", "middle")
    .attr("y", 20)
-   .style("font-size", "14px")
+   .style("font-size", "10px")
     .style("opacity", "1")
    .text(function (d) {return d.label})
    .style("pointer-events", "none")
