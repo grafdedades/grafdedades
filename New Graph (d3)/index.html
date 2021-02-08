@@ -23,6 +23,7 @@ BODY{ font-family: verdana; }
     text-align: left;
     height: 115px;
     padding: 2px;
+    opacity: 0;
     font: 18px verdana;
     background: white;
     pointer-events: none;
@@ -83,6 +84,34 @@ BODY{ font-family: verdana; }
   color: white;
 }
 
+.button4 {
+  background-color: white;
+  top: 350;
+  right: 40;
+  color: black;
+  border: 2px solid #42A5F5;
+}
+
+.button4:hover {
+  background-color: #42A5F5;
+  color: white;
+}
+
+
+.button5 {
+  background-color: white;
+  top: 400;
+  right: 40;
+  color: black;
+  border: 2px solid #42A5F5;
+}
+
+.button5:hover {
+  background-color: #42A5F5;
+  color: white;
+}
+
+
 .button_s {
   background-color: white;
   top: 10;
@@ -115,7 +144,14 @@ input.input1 {
 
 </style>
 <body>
-
+  <div class="tooltip" id="div1"></div>
+  <button class="button button1" id="but1">2017</button>
+  <button class="button button2" id="but2">2018</button>
+  <button class="button button3" id="but3">2019</button>
+  <button class="button button4" id="but4">2020</button>
+  <button class="button button5" id="but5">2021</button>
+  <input class="input1" id="search_bar" placeholder="¿Qué pecador buscas?"></input>
+  <button class="button button_s" id="search_button">Search</button>
   <svg id = "svg">
   </svg>
 
@@ -149,7 +185,12 @@ function createNetwork(json) {
 function createForceNetwork(nodes, edges) {
 
 //create a network from an edgelist
-  var colors = {"2019" : "#42A5F5", "2018" : "#66BB6A" , "2017" : "#E57373"}
+  var colors = {"2019" : "#42A5F5", "2018" : "#66BB6A" , "2017" : "#E57373"};
+
+  var names = []
+  nodes.forEach(function (node) {
+    names.push(node.label)
+  });
 
   var force = d3.layout.force().nodes(nodes).links(edges)
   .size([1000,1000])
@@ -157,42 +198,13 @@ function createForceNetwork(nodes, edges) {
   .linkDistance(80)
   .on("tick", updateNetwork);
 
-  var div = d3.select("body").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
-
-  var but1 = d3.select("body").append("button")
-      .attr("class", "button button1")
-      .html("2017")
-      .style("opacity", 1);
-
-  var but2 = d3.select("body").append("button")
-      .attr("class", "button button2")
-      .html("2018")
-      .style("opacity", 1);
-
-  var but3 = d3.select("body").append("button")
-      .attr("class", "button button3")
-      .html("2019")
-      .style("opacity", 1);
-
-  var search = d3.select("body").append("input")
-    .attr("id","search_bar")
-    .attr("class", "input1")
-    .attr("placeholder", "¿Qué pecador buscas?")
-
-  var search_button = d3.select("body").append("button")
-    .attr("type","button")
-    .attr("class", "button button_s")
-    .attr("id","search_button")
-    .text("Search")
 
   d3.select("svg").selectAll("line")
   .data(edges)
   .enter()
   .append("line")
   .on("click", function(e) {
-            div.transition()
+            d3.select("#div1").transition()
                 .duration(200)
                 .style("opacity", .9);
               var edge_info = "<p><b><u>" + e.source.label + " & " + e.target.label + "</u></b><br/>";
@@ -205,13 +217,8 @@ function createForceNetwork(nodes, edges) {
               if (e.comments !== "") edge_info += "<b>Comments: </b>" + e.comments;
               edge_info += "</p>"
 
-              div.html(edge_info)
+              d3.select("#div1").html(edge_info)
             })
-  /*.on("mouseout", function(d) {
-            div.transition()
-                .duration(500)
-                .style("opacity", 0);
-        })*/
   .style("stroke-width", function (d) {return d.weight})
   .style("stroke", "#000000");
 
@@ -223,11 +230,22 @@ function createForceNetwork(nodes, edges) {
   .on("click", nodeClick)
   .on("dblclick", nodeDoubleClick)
   .on("mouseover", nodeOver)
-  .on("mouseout", nodeOut)
+  .on("mouseout", reset)
   .call(force.drag());
 
   d3.select("#search_button")
   .on("click", SearchNode);
+
+  d3.select("#but1")
+    .on("click", y2017);
+  d3.select("#but2")
+    .on("click", y2018);
+  d3.select("#but3")
+    .on("click", y2019);
+  d3.select("#but4")
+    .on("click", y2020);
+  d3.select("#but5")
+    .on("click", y2021);
 
   nodeEnter.append("circle")
   .attr("r", 10)
@@ -272,7 +290,46 @@ function createForceNetwork(nodes, edges) {
       }
     }
 
-  function nodeOut() {
+    function y2017(){
+      YearFilter(2017)
+    }
+    function y2018(){
+      YearFilter(2018)
+    }
+    function y2019(){
+      YearFilter(2019)
+    }
+    function y2020(){
+      YearFilter(2020)
+    }
+    function y2021(){
+      YearFilter(2021)
+    }
+
+
+    function YearFilter(year){
+        var egoIDs = [];
+        var filteredEdges = edges.filter(function (p) {return p.year == year});
+        filteredEdges.forEach(function (p) {
+          egoIDs.push(p.target.id);
+          egoIDs.push(p.source.id);
+        });
+
+        reset()
+
+        d3.selectAll("line").filter(function (p) {return filteredEdges.indexOf(p) == -1})
+        .style("opacity", "0.3")
+        .style("stroke-width", "1")
+
+        d3.selectAll("text").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
+        .style("opacity", "0")
+
+        d3.selectAll("circle").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
+        .style("fill", "#66CCCC")
+        .style("opacity", "0.3");
+      }
+
+  function reset() {
     force.start();
     d3.selectAll("circle")
     .style('fill', function(d) {
