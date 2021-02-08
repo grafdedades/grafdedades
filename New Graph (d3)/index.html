@@ -49,7 +49,7 @@ BODY{ font-family: verdana; }
 .button1 {
   background-color: white;
   top: 200;
-  right: 40;
+  right: 80;
   color: black;
   border: 2px solid #42A5F5;
 }
@@ -62,7 +62,7 @@ BODY{ font-family: verdana; }
 .button2 {
   background-color: white;
   top: 250;
-  right: 40;
+  right: 80;
   color: black;
   border: 2px solid #42A5F5;
 }
@@ -75,7 +75,7 @@ BODY{ font-family: verdana; }
 .button3 {
   background-color: white;
   top: 300;
-  right: 40;
+  right: 80;
   color: black;
   border: 2px solid #42A5F5;
 }
@@ -88,7 +88,7 @@ BODY{ font-family: verdana; }
 .button4 {
   background-color: white;
   top: 350;
-  right: 40;
+  right: 80;
   color: black;
   border: 2px solid #42A5F5;
 }
@@ -102,7 +102,7 @@ BODY{ font-family: verdana; }
 .button5 {
   background-color: white;
   top: 400;
-  right: 40;
+  right: 80;
   color: black;
   border: 2px solid #42A5F5;
 }
@@ -178,11 +178,26 @@ input.input1 {
 </style>
 <body>
   <div class="tooltip" id="div1"></div>
-  <button class="button button1" id="but1">2017</button>
-  <button class="button button2" id="but2">2018</button>
-  <button class="button button3" id="but3">2019</button>
-  <button class="button button4" id="but4">2020</button>
-  <button class="button button5" id="but5">2021</button>
+  <div class="button button1">
+    <input type = "checkbox" id="but1" name = "2017"></input>
+    <label for="2017">2017</label>
+  </div>
+  <div class="button button2">
+    <input type = "checkbox" id="but2" name = "2018"></input>
+    <label for="2018">2018</label>
+  </div>
+  <div class="button button3">
+    <input type = "checkbox" id="but3" name = "2019"></input>
+    <label for="2019">2019</label>
+  </div>
+  <div class="button button4">
+    <input type = "checkbox" id="but4" name = "2020"></input>
+    <label for="2020">2020</label>
+  </div>
+  <div class="button button5">
+    <input type = "checkbox" id="but5" name = "2021"></input>
+    <label for="2021">2021</label>
+  </div>
   <div class="autocomplete" style="width:300px;">
   <input class="input1" id="search_bar" placeholder="¿Qué pecador buscas?"></input>
   </div>
