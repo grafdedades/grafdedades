@@ -1,6 +1,7 @@
 {
   "edges": [
     {
+      "id": 0,
       "source": "Clara Rovira",
       "target": "Dani Gómez",
       "weight": 1,
@@ -12,6 +13,7 @@
       "comments": "Mitico sofa"
     },
     {
+      "id": 1,
       "source": "Andrea Garcia",
       "target": "Alex Carrillo",
       "weight": 1,
@@ -23,6 +25,7 @@
       "comments": "Potada postliada"
     },
     {
+      "id": 2,
       "source": "Clara Rovira",
       "target": "Joan Vaquer",
       "weight": 5,
@@ -34,6 +37,7 @@
       "comments": "Insomnio del espi"
     },
     {
+      "id": 3,
       "source": "José Pérez",
       "target": "Jordi Puig",
       "weight": 1,
@@ -45,6 +49,7 @@
       "comments": ""
     },
     {
+      "id": 4,
       "source": "Mireia Boneta",
       "target": "Arnau Turch",
       "weight": 1,
@@ -56,6 +61,7 @@
       "comments": ""
     },
     {
+      "id": 5,
       "source": "Marina Rosell",
       "target": "Arnau Espinalt",
       "weight": 3,
@@ -67,6 +73,7 @@
       "comments": "La despensa"
     },
     {
+      "id": 6,
       "source": "Marina García",
       "target": "Arnau Espinalt",
       "weight": 1,
@@ -78,6 +85,7 @@
       "comments": "La del replay"
     },
     {
+      "id": 7,
       "source": "Sandra Millet",
       "target": "Arnau Espinalt",
       "weight": 1,
@@ -89,6 +97,7 @@
       "comments": "La del muro"
     },
     {
+      "id": 8,
       "source": "Liz Segon",
       "target": "Marina Rosell",
       "weight": 1,
@@ -100,6 +109,7 @@
       "comments": ""
     },
     {
+      "id": 9,
       "source": "Marina Rosell",
       "target": "Jordi Puig",
       "weight": 1,
@@ -111,6 +121,7 @@
       "comments": ""
     },
     {
+      "id": 10,
       "source": "Clara Rovira",
       "target": "Tomàs Gadea",
       "weight": 1,
@@ -122,6 +133,7 @@
       "comments": ""
     },
     {
+      "id": 11,
       "source": "Carla Miquel",
       "target": "Tomàs Gadea",
       "weight": 1,
@@ -133,6 +145,7 @@
       "comments": ""
     },
     {
+      "id": 12,
       "source": "Marina Lopez",
       "target": "Pau Matas",
       "weight": 5,
@@ -144,6 +157,7 @@
       "comments": "Los casaos"
     },
     {
+      "id": 13,
       "source": "Carla Miquel",
       "target": "Marc Garcia",
       "weight": 5,
@@ -155,6 +169,7 @@
       "comments": "El don limpio"
     },
     {
+      "id": 14,
       "source": "Sandra Millet",
       "target": "Marc Garcia",
       "weight": 5,
@@ -166,6 +181,7 @@
       "comments": ""
     },
     {
+      "id": 15,
       "source": "Ona Clarà",
       "target": "Pol Rifé",
       "weight": 1,
@@ -177,6 +193,7 @@
       "comments": "La chapas"
     },
     {
+      "id": 16,
       "source": "Sofia Diaz",
       "target": "Pol Rifé",
       "weight": 5,
@@ -188,6 +205,7 @@
       "comments": ""
     },
     {
+      "id": 17,
       "source": "Sandra Millet",
       "target": "Pol Costa",
       "weight": 1,
@@ -199,6 +217,7 @@
       "comments": "La del cuarto oscuro"
     },
     {
+      "id": 18,
       "source": "Diwa Vila",
       "target": "Richi Tarré",
       "weight": 5,
@@ -210,6 +229,7 @@
       "comments": "La ducha del cojo"
     },
     {
+      "id": 19,
       "source": "Carla Miquel",
       "target": "Richi Tarré",
       "weight": 1,
@@ -221,6 +241,7 @@
       "comments": "La del chupito"
     },
     {
+      "id": 20,
       "source": "Marc de Gràcia",
       "target": "Diwa Vila",
       "weight": 1,
@@ -232,6 +253,7 @@
       "comments": "La del atletismo"
     },
     {
+      "id": 21,
       "source": "Aina Perez",
       "target": "Pol Rosinés",
       "weight": 1,
@@ -243,6 +265,7 @@
       "comments": ""
     },
     {
+      "id": 22,
       "source": "Sofia Diaz",
       "target": "Jordi Puig",
       "weight": 5,
@@ -254,8 +277,9 @@
       "comments": ""
     },
     {
+      "id": 23,
       "source": "Lena",
-      "target": "Raul",
+      "target": "Raul Higueras",
       "weight": 1,
       "place": "",
       "month": "",
@@ -265,6 +289,7 @@
       "comments": ""
     },
     {
+      "id": 24,
       "source": "Marina Rosell",
       "target": "Pau Lozano",
       "weight": 10,
@@ -276,6 +301,7 @@
       "comments": "La del twitter"
     },
     {
+      "id": 25,
       "source": "Eva Brigitte",
       "target": "Dani Gómez",
       "weight": 1,
@@ -287,6 +313,7 @@
       "comments": "Cortinas + sofa 2.0"
     },
     {
+      "id": 26,
       "source": "Víctor Novelle",
       "target": "Helena Ferran",
       "weight": 5,
@@ -298,6 +325,7 @@
       "comments": "La espatula"
     },
     {
+      "id": 27,
       "source": "Aina Perez",
       "target": "Pau Tarragó",
       "weight": 1,
@@ -309,6 +337,7 @@
       "comments": "Bailecito seductor"
     },
     {
+      "id": 28,
       "source": "Sofia Diaz",
       "target": "Roger Creus",
       "weight": 5,
@@ -320,6 +349,7 @@
       "comments": ""
     },
     {
+      "id": 29,
       "source": "Sofia Diaz",
       "target": "Tomàs Gadea",
       "weight": 1,
@@ -331,6 +361,7 @@
       "comments": ""
     },
     {
+      "id": 30,
       "source": "Alex Ferrando",
       "target": "Jordi Puig",
       "weight": 1,
@@ -342,8 +373,9 @@
       "comments": ""
     },
     {
+      "id": 31,
       "source": "Cris Aguilera",
-      "target": "Chus",
+      "target": "Chus Antoñanzas",
       "weight": 5,
       "place": "",
       "month": "",
@@ -353,6 +385,7 @@
       "comments": ""
     },
     {
+      "id": 32,
       "source": "Alejandro Campayo",
       "target": "Angela Rodriguez",
       "weight": 1,
@@ -364,6 +397,7 @@
       "comments": ""
     },
     {
+      "id": 33,
       "source": "Roser Cantenys",
       "target": "David Bergés",
       "weight": 5,
@@ -375,6 +409,7 @@
       "comments": ""
     },
     {
+      "id": 34,
       "source": "Pol Rifé",
       "target": "Raquel Ventós",
       "weight": 5,
@@ -386,6 +421,7 @@
       "comments": "La del coche"
     },
     {
+      "id": 35,
       "source": "Arnau Saumell",
       "target": "Raquel Ventós",
       "weight": 1,
@@ -397,6 +433,7 @@
       "comments": "La del atletismo 2.0"
     },
     {
+      "id": 36,
       "source": "Pau Marquez",
       "target": "Mireia Boneta",
       "weight": 3,
@@ -408,6 +445,7 @@
       "comments": ""
     },
     {
+      "id": 37,
       "source": "Oriol Ricart",
       "target": "Marina García",
       "weight": 5,
@@ -419,6 +457,7 @@
       "comments": ""
     },
     {
+      "id": 38,
       "source": "Marina Rosell",
       "target": "Alex Carrillo",
       "weight": 1,
@@ -430,6 +469,7 @@
       "comments": ""
     },
     {
+      "id": 39,
       "source": "Pau Marquez",
       "target": "Danae Canillas",
       "weight": 5,
@@ -441,6 +481,7 @@
       "comments": ""
     },
     {
+      "id": 40,
       "source": "Liz Segon",
       "target": "Nil Crespo",
       "weight": 1,
@@ -452,6 +493,7 @@
       "comments": ""
     },
     {
+      "id": 41,
       "source": "Pau Tarragó",
       "target": "Raquel Ventós",
       "weight": 1,
@@ -463,6 +505,7 @@
       "comments": ""
     },
     {
+      "id": 42,
       "source": "Marc Vernet",
       "target": "Marina Rosell",
       "weight": 1,
@@ -474,6 +517,7 @@
       "comments": ""
     },
     {
+      "id": 43,
       "source": "Marc Vernet",
       "target": "Jordi Puig",
       "weight": 1,
@@ -485,6 +529,7 @@
       "comments": ""
     },
     {
+      "id": 44,
       "source": "Alejandro Campayo",
       "target": "Sofia Diaz",
       "weight": 1,
@@ -496,6 +541,7 @@
       "comments": ""
     },
     {
+      "id": 45,
       "source": "Andreu Huguet",
       "target": "Sofia Diaz",
       "weight": 1,
@@ -507,6 +553,7 @@
       "comments": ""
     },
     {
+      "id": 46,
       "source": "Clara Rovira",
       "target": "Omar Ferrer",
       "weight": 5,
@@ -518,6 +565,7 @@
       "comments": ""
     },
     {
+      "id": 47,
       "source": "Maria Ribot",
       "target": "Arnau Espinalt",
       "weight": 1,
@@ -529,7 +577,7 @@
       "comments": ""
     }
   ],
-    "nodes": [
+  "nodes": [
     {
       "id": 0,
       "label": "Dani Gómez",
@@ -756,14 +804,6 @@
     },
     {
       "id": 28,
-      "label": "Sofia Diaz",
-      "year": 2019,
-      "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
-    },
-    {
-      "id": 29,
       "label": "Omar Ferrer",
       "year": 2018,
       "gender": "M",
@@ -771,7 +811,7 @@
       "edges": 0
     },
     {
-      "id": 30,
+      "id": 29,
       "label": "Clara Rovira",
       "year": 2018,
       "gender": "F",
@@ -779,7 +819,7 @@
       "edges": 0
     },
     {
-      "id": 31,
+      "id": 30,
       "label": "Andrea Garcia",
       "year": 2018,
       "gender": "F",
@@ -787,7 +827,7 @@
       "edges": 0
     },
     {
-      "id": 32,
+      "id": 31,
       "label": "José Pérez",
       "year": 2018,
       "gender": "M",
@@ -795,7 +835,7 @@
       "edges": 0
     },
     {
-      "id": 33,
+      "id": 32,
       "label": "Sandra Millet",
       "year": 2019,
       "gender": "F",
@@ -803,7 +843,7 @@
       "edges": 0
     },
     {
-      "id": 34,
+      "id": 33,
       "label": "Liz Segon",
       "year": 2018,
       "gender": "F",
@@ -811,7 +851,7 @@
       "edges": 0
     },
     {
-      "id": 35,
+      "id": 34,
       "label": "Marina Lopez",
       "year": 2019,
       "gender": "F",
@@ -819,7 +859,7 @@
       "edges": 0
     },
     {
-      "id": 36,
+      "id": 35,
       "label": "Carla Miquel",
       "year": 2019,
       "gender": "F",
@@ -827,7 +867,7 @@
       "edges": 0
     },
     {
-      "id": 37,
+      "id": 36,
       "label": "Ona Clarà",
       "year": 2019,
       "gender": "F",
@@ -835,7 +875,7 @@
       "edges": 0
     },
     {
-      "id": 38,
+      "id": 37,
       "label": "Sofia Diaz",
       "year": 2019,
       "gender": "F",
@@ -843,7 +883,7 @@
       "edges": 0
     },
     {
-      "id": 39,
+      "id": 38,
       "label": "Marc de Gràcia",
       "year": 2018,
       "gender": "M",
@@ -851,7 +891,7 @@
       "edges": 0
     },
     {
-      "id": 40,
+      "id": 39,
       "label": "Aina Perez",
       "year": 2019,
       "gender": "F",
@@ -859,7 +899,7 @@
       "edges": 0
     },
     {
-      "id": 41,
+      "id": 40,
       "label": "Lena",
       "year": 2018,
       "gender": "F",
@@ -867,7 +907,7 @@
       "edges": 0
     },
     {
-      "id": 42,
+      "id": 41,
       "label": "Eva Brigitte",
       "year": 2019,
       "gender": "F",
@@ -875,7 +915,7 @@
       "edges": 0
     },
     {
-      "id": 43,
+      "id": 42,
       "label": "Víctor Novelle",
       "year": 2018,
       "gender": "M",
@@ -883,7 +923,7 @@
       "edges": 0
     },
     {
-      "id": 44,
+      "id": 43,
       "label": "Alex Ferrando",
       "year": 2018,
       "gender": "M",
@@ -891,7 +931,7 @@
       "edges": 0
     },
     {
-      "id": 45,
+      "id": 44,
       "label": "Cris Aguilera",
       "year": 2017,
       "gender": "F",
@@ -899,7 +939,7 @@
       "edges": 0
     },
     {
-      "id": 46,
+      "id": 45,
       "label": "Alejandro Campayo",
       "year": 2019,
       "gender": "M",
@@ -907,7 +947,7 @@
       "edges": 0
     },
     {
-      "id": 47,
+      "id": 46,
       "label": "Roser Cantenys",
       "year": 2017,
       "gender": "F",
@@ -915,7 +955,7 @@
       "edges": 0
     },
     {
-      "id": 48,
+      "id": 47,
       "label": "Arnau Saumell",
       "year": 2018,
       "gender": "M",
@@ -923,7 +963,7 @@
       "edges": 0
     },
     {
-      "id": 49,
+      "id": 48,
       "label": "Pau Marquez",
       "year": 2017,
       "gender": "M",
@@ -931,7 +971,7 @@
       "edges": 0
     },
     {
-      "id": 50,
+      "id": 49,
       "label": "Oriol Ricart",
       "year": 2017,
       "gender": "M",
@@ -939,7 +979,7 @@
       "edges": 0
     },
     {
-      "id": 51,
+      "id": 50,
       "label": "Marc Vernet",
       "year": 2018,
       "gender": "M",
@@ -947,11 +987,19 @@
       "edges": 0
     },
     {
-      "id": 52,
+      "id": 51,
       "label": "Andreu Huguet",
       "year": 2017,
       "gender": "M",
       "cfis": "TRUE",
+      "edges": 0
+    },
+    {
+      "id": 52,
+      "label": "Maria Ribot",
+      "year": 2018,
+      "gender": "F",
+      "cfis": "FALSE",
       "edges": 0
     }
   ]

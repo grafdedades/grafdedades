@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Hugo</title>
+  <title>Pau</title>
   <meta charset="utf-8" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 </head>
@@ -35,30 +35,30 @@
   <footer>
 <script>
 
-d3.json("data/data.json", function(error,data) {createNetwork(data)})
+d3.json("./data/data.json", function(error,data) {createNetwork(data)})
 
-function createNetwork(json) {
+function createNetwork(data) {
   // Map of node info throw its label
   var nodeHash = {};
   // Lists of nodes and edges (only important info for the network construction)
   var nodes = [];
   var edges = [];
 
-  json.nodes.forEach(function (node) {
-    nodeHash[node.label] = {id: node.id, label: node.label};
-    nodes.push(nodeHash[node.label]);
+  data.nodes.forEach(function (node) {
+    nodeHash[node.label] = node.id;
+    nodes.push(node);
   });
 
-  json.edges.forEach(function (edge) {
-    edges.push({source: nodeHash[edge.source], target: nodeHash[edge.target], weight: edge.weight});
-    ++json.nodes[nodeHash[edge.source]].edges;
-    ++json.nodes[nodeHash[edge.target]].edges;
+  data.edges.forEach(function (edge) {
+    edges.push({id: edge.id, source: nodeHash[edge.source], target: nodeHash[edge.target], weight: edge.weight});
+    ++nodes[nodeHash[edge.source]].edges;
+    ++nodes[nodeHash[edge.target]].edges;
   });
-  createForceNetwork(nodes, edges);
+  createForceNetwork(nodes, edges, data, nodeHash);
 
 }
 
-function createForceNetwork(nodes, edges) {
+function createForceNetwork(nodes, edges, data, nodeHash) {
 
 //create a network from an edgelist
   var colors = {"2019" : "#42A5F5", "2018" : "#66BB6A" , "2017" : "#E57373"}
@@ -82,12 +82,16 @@ function createForceNetwork(nodes, edges) {
                 .duration(200)
                 .style("opacity", .9);
 
-            var edge_info;
-            if (d.place != "") edge_info += "<b>Place: </b>" + d.place + "<br/>";
-            if (d.year != "" || d.month != ""){
-              edge_info += "<b>Date: </b>" + d.month + (d.month === "" ? "" : " ") + d.year "<br/>";
+            var e = data.edges[d.id];
+            var edge_info = "<p><b><u>" + e.source + " & " + e.target + "</u></b><br/>";
+            if (e.place !== "") {
+              edge_info += "<b>Place: </b>" + e.place + "<br/>";
             }
-            if (d.comments != "") edge_info += "<b>Comments: </b>" + d.comments;
+            if (e.year !== "" || e.month != ""){
+              edge_info += "<b>Date: </b>" + e.month + (e.month === "" ? "" : " ") + e.year + "<br/>";
+            }
+            if (e.comments !== "") edge_info += "<b>Comments: </b>" + e.comments;
+            edge_info += "</p>"
 
             div.html(edge_info)
                 .style("left", (d3.event.pageX) + "px")
