@@ -23,6 +23,7 @@ BODY{ font-family: verdana; }
     text-align: left;
     height: 115px;
     padding: 2px;
+    opacity: 0;
     font: 18px verdana;
     background: white;
     pointer-events: none;
@@ -143,7 +144,14 @@ input.input1 {
 
 </style>
 <body>
-
+  <div class="tooltip" id="div1"></div>
+  <button class="button button1" id="but1">2017</button>
+  <button class="button button2" id="but2">2018</button>
+  <button class="button button3" id="but3">2019</button>
+  <button class="button button4" id="but4">2020</button>
+  <button class="button button5" id="but5">2021</button>
+  <input class="input1" id="search_bar" placeholder="¿Qué pecador buscas?"></input>
+  <button class="button button_s" id="search_button">Search</button>
   <svg id = "svg">
   </svg>
 
@@ -190,57 +198,13 @@ function createForceNetwork(nodes, edges) {
   .linkDistance(80)
   .on("tick", updateNetwork);
 
-  var div = d3.select("body").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
-
-  var but1 = d3.select("body").append("button")
-      .attr("class", "button button1")
-      .attr("id", "but1")
-      .html("2017")
-      .style("opacity", 1);
-
-  var but2 = d3.select("body").append("button")
-      .attr("class", "button button2")
-      .attr("id", "but2")
-      .html("2018")
-      .style("opacity", 1);
-
-  var but3 = d3.select("body").append("button")
-      .attr("class", "button button3")
-      .attr("id", "but3")
-      .html("2019")
-      .style("opacity", 1);
-
-  var but4 = d3.select("body").append("button")
-      .attr("class", "button button4")
-      .attr("id", "but4")
-      .html("2020")
-      .style("opacity", 1);
-
-  var but5 = d3.select("body").append("button")
-      .attr("class", "button button5")
-      .attr("id", "but5")
-      .html("2021")
-      .style("opacity", 1);
-
-  var search = d3.select("body").append("input")
-    .attr("id","search_bar")
-    .attr("class", "input1")
-    .attr("placeholder", "¿Qué pecador buscas?");
-
-  var search_button = d3.select("body").append("button")
-    .attr("type","button")
-    .attr("class", "button button_s")
-    .attr("id","search_button")
-    .text("Search");
 
   d3.select("svg").selectAll("line")
   .data(edges)
   .enter()
   .append("line")
   .on("click", function(e) {
-            div.transition()
+            d3.select("#div1").transition()
                 .duration(200)
                 .style("opacity", .9);
               var edge_info = "<p><b><u>" + e.source.label + " & " + e.target.label + "</u></b><br/>";
@@ -253,7 +217,7 @@ function createForceNetwork(nodes, edges) {
               if (e.comments !== "") edge_info += "<b>Comments: </b>" + e.comments;
               edge_info += "</p>"
 
-              div.html(edge_info)
+              d3.select("#div1").html(edge_info)
             })
   .style("stroke-width", function (d) {return d.weight})
   .style("stroke", "#000000");
