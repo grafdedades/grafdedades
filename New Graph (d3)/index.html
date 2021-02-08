@@ -2,7 +2,8 @@
 <head>
   <title>Graph de dades</title>
   <meta charset="utf-8" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script src="js/autocomplete.js"></script>
 </head>
 <style>
 
@@ -53,7 +54,7 @@ BODY{ font-family: verdana; }
   border: 2px solid #42A5F5;
 }
 
-.button1:hover {
+.button1:visited {
   background-color: #42A5F5;
   color: white;
 }
@@ -66,7 +67,7 @@ BODY{ font-family: verdana; }
   border: 2px solid #42A5F5;
 }
 
-.button2:hover {
+.button2:visited {
   background-color: #42A5F5;
   color: white;
 }
@@ -79,7 +80,7 @@ BODY{ font-family: verdana; }
   border: 2px solid #42A5F5;
 }
 
-.button3:hover {
+.button3:visited {
   background-color: #42A5F5;
   color: white;
 }
@@ -92,7 +93,7 @@ BODY{ font-family: verdana; }
   border: 2px solid #42A5F5;
 }
 
-.button4:hover {
+.button4:visited{
   background-color: #42A5F5;
   color: white;
 }
@@ -106,7 +107,7 @@ BODY{ font-family: verdana; }
   border: 2px solid #42A5F5;
 }
 
-.button5:hover {
+.button5:visited {
   background-color: #42A5F5;
   color: white;
 }
@@ -142,6 +143,38 @@ input.input1 {
 
 }
 
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+.autocomplete-items {
+  position: fixed;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  padding: 10px 530px;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 60;
+  left: -75;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
 </style>
 <body>
   <div class="tooltip" id="div1"></div>
@@ -150,7 +183,9 @@ input.input1 {
   <button class="button button3" id="but3">2019</button>
   <button class="button button4" id="but4">2020</button>
   <button class="button button5" id="but5">2021</button>
+  <div class="autocomplete" style="width:300px;">
   <input class="input1" id="search_bar" placeholder="¿Qué pecador buscas?"></input>
+  </div>
   <button class="button button_s" id="search_button">Search</button>
   <svg id = "svg">
   </svg>
@@ -290,44 +325,61 @@ function createForceNetwork(nodes, edges) {
       }
     }
 
-    function y2017(){
-      YearFilter(2017)
-    }
-    function y2018(){
-      YearFilter(2018)
-    }
-    function y2019(){
-      YearFilter(2019)
-    }
-    function y2020(){
-      YearFilter(2020)
-    }
-    function y2021(){
-      YearFilter(2021)
-    }
+    var YearSet = new Set();
+
+        function y2017(){
+          YearFilter(2017,YearSet)
+        }
+        function y2018(){
+          YearFilter(2018,YearSet)
+        }
+        function y2019(){
+          YearFilter(2019,YearSet)
+        }
+        function y2020(){
+          YearFilter(2020,YearSet)
+        }
+        function y2021(){
+          YearFilter(2021,YearSet)
+        }
+
+        function YearFilter(year,YearSet){
+            reset()
+            //Actualizar el conjunto de años
+            if(YearSet.has(year)){
+                YearSet.delete(year)
+            }
+            else{
+                YearSet.add(year)
+            }
+            console.log(YearSet,YearSet.size)
+
+            if(YearSet.size == 0){
+                filteredEdges = edges
+            }
+            else{
+                var egoIDs = [];
+                var filteredEdges = edges.filter(function (p) {return YearSet.has(p.year)});
+                filteredEdges.forEach(function (p) {
+                   egoIDs.push(p.target.id);
+                   egoIDs.push(p.source.id);
+                });
+
+                d3.selectAll("line").filter(function (p) {return filteredEdges.indexOf(p) == -1})
+                .style("opacity", "0.3")
+                .style("stroke-width", "1")
+
+                d3.selectAll("text").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
+                .style("opacity", "0")
+
+                d3.selectAll("circle").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
+                .style("fill", "#66CCCC")
+                .style("opacity", "0.3");
+            }
+        }
 
 
-    function YearFilter(year){
-        var egoIDs = [];
-        var filteredEdges = edges.filter(function (p) {return p.year == year});
-        filteredEdges.forEach(function (p) {
-          egoIDs.push(p.target.id);
-          egoIDs.push(p.source.id);
-        });
 
-        reset()
-
-        d3.selectAll("line").filter(function (p) {return filteredEdges.indexOf(p) == -1})
-        .style("opacity", "0.3")
-        .style("stroke-width", "1")
-
-        d3.selectAll("text").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
-        .style("opacity", "0")
-
-        d3.selectAll("circle").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
-        .style("fill", "#66CCCC")
-        .style("opacity", "0.3");
-      }
 
   function reset() {
     force.start();
@@ -397,6 +449,8 @@ function createForceNetwork(nodes, edges) {
       .attr("transform", function (d) {return "translate(" + d.x + "," + d.y + ")"});
 
   }
+  console.log(names)
+  autocomplete(document.getElementById("search_bar"), names);
 }
 
 </script>
