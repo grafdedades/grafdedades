@@ -35,7 +35,7 @@
   <footer>
 <script>
 
-d3.json("data/data.json", function(error,data) {createNetwork(data)})
+d3.json("data/data_old.json", function(error,data) {createNetwork(data)})
 
 function createNetwork(json) {
   // Map of node info throw its label
@@ -172,6 +172,25 @@ function createForceNetwork(nodes, edges) {
     nodeF(d);
   }
 
+  function SearchNode() {
+    force.start();
+    var name = document.getElementById("search_bar").value
+    //Buscar nodo
+
+    var node = null
+    nodes.forEach(function (n) {
+      //console.log(n.label)
+      if(n.label == name){
+          node = n
+      }
+    })
+    //console.log(name,node)
+    if(node != null){
+        console.log(node.label)
+        nodeF(node)
+    }
+  }
+
   function nodeF(d) {
     var egoIDs = [];
     var filteredEdges = edges.filter(function (p) {return p.source == d || p.target == d});
@@ -197,23 +216,6 @@ function createForceNetwork(nodes, edges) {
     .style("fill", "#66CCCC")
     .style("opacity", "0.3");
 
-  }
-
-  function SearchNode() {
-    var name = document.getElementById("search_bar").value
-    //Buscar nodo
-
-    var node = null
-    nodes.forEach(function (n) {
-      console.log(n.label)
-      if(n.label == name){
-          node = n
-      }
-    })
-    console.log(node.label)
-    if(!node == null){
-        nodeF(node);
-    }
   }
 
   function updateNetwork() {
