@@ -5,6 +5,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 </head>
 <style>
+
 BODY{ font-family: verdana; }
   svg {
     height: 1000px;
@@ -132,12 +133,14 @@ function createNetwork(json) {
   var edges = [];
 
   json.nodes.forEach(function (node) {
-    nodeHash[node.label] = {id: node.id, label: node.label, year: node.year};
-    nodes.push(nodeHash[node.label]);
+    nodeHash[node.label] = node.id;
+    nodes.push({id: node.id, label: node.label, year: node.year, edges: node.edges, gender: node.gender, cfis: node.cfis});
   });
 
   json.edges.forEach(function (edge) {
-    edges.push({source: nodeHash[edge.source], target: nodeHash[edge.target], weight: edge.weight, place: edge.place, date: edge.date, comments: edge.comments});
+    edges.push({source: nodeHash[edge.source], target: nodeHash[edge.target], weight: edge.weight, place: edge.place, month: edge.month, year: edge.year, repeated: edge.repeated, relationship: edge.relationship, comments: edge.comments});
+    ++nodes[nodeHash[edge.source]].edges;
+    ++nodes[nodeHash[edge.target]].edges;
   });
   createForceNetwork(nodes, edges);
 
@@ -188,11 +191,21 @@ function createForceNetwork(nodes, edges) {
   .data(edges)
   .enter()
   .append("line")
-  .on("click", function(d) {
+  .on("click", function(e) {
             div.transition()
                 .duration(200)
                 .style("opacity", .9);
-            div.html("<b>Edge: </b>" + d.source.label + " & "+ d.target.label + "<br/>" + "<b>Place: </b>" + d.place + "<br/>" + "<b>Date: </b>" + d.date + "<br/>" + "<b>Comments: </b>" + d.comments + "<br/>" + "<b>Weight: </b>" + d.weight)
+              var edge_info = "<p><b><u>" + e.source.label + " & " + e.target.label + "</u></b><br/>";
+              if (e.place !== "") {
+                edge_info += "<b>Place: </b>" + e.place + "<br/>";
+              }
+              if (e.year !== "" || e.month != ""){
+                edge_info += "<b>Date: </b>" + e.month + (e.month === "" ? "" : " ") + e.year + "<br/>";
+              }
+              if (e.comments !== "") edge_info += "<b>Comments: </b>" + e.comments;
+              edge_info += "</p>"
+
+              div.html(edge_info)
             })
   /*.on("mouseout", function(d) {
             div.transition()
