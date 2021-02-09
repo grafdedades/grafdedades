@@ -1,4 +1,4 @@
-BODY{ font-family: verdana; }
+BODY{ font-family: 'Roboto Mono', monospace;  }
   svg {
     height: 1000px;
     width: 1000px;
@@ -36,6 +36,7 @@ div.tooltip2 {
   pointer-events: none;
 }
 
+
 .button {
   position: fixed;
   background-color: #42A5F5;
@@ -52,70 +53,18 @@ div.tooltip2 {
   font-family: verdana;
 }
 
-.button1 {
+div.year {
+  position: fixed;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding: 10px 32px;
   background-color: white;
   top: 200;
   right: 80;
   color: black;
   border: 2px solid #42A5F5;
-}
-
-.button1:visited {
-  background-color: #42A5F5;
-  color: white;
-}
-
-.button2 {
-  background-color: white;
-  top: 250;
-  right: 80;
-  color: black;
-  border: 2px solid #42A5F5;
-}
-
-.button2:visited {
-  background-color: #42A5F5;
-  color: white;
-}
-
-.button3 {
-  background-color: white;
-  top: 300;
-  right: 80;
-  color: black;
-  border: 2px solid #42A5F5;
-}
-
-.button3:visited {
-  background-color: #42A5F5;
-  color: white;
-}
-
-.button4 {
-  background-color: white;
-  top: 350;
-  right: 80;
-  color: black;
-  border: 2px solid #42A5F5;
-}
-
-.button4:visited{
-  background-color: #42A5F5;
-  color: white;
-}
-
-
-.button5 {
-  background-color: white;
-  top: 400;
-  right: 80;
-  color: black;
-  border: 2px solid #42A5F5;
-}
-
-.button5:visited {
-  background-color: #42A5F5;
-  color: white;
 }
 
 
@@ -179,4 +128,62 @@ input.input1 {
   /*when navigating through the items using the arrow keys:*/
   background-color: DodgerBlue !important;
   color: #ffffff;
+  width: 350px;
 }
+
+.my-legend .legend-title {
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 100%;
+  top: 30;
+  right: 110;
+  position: fixed;
+  }
+.my-legend .legend-scale ul {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  float: left;
+  list-style: none;
+  top: 60;
+  right: 150;
+  position: fixed;
+
+
+  }
+.my-legend .legend-scale ul li {
+  font-size: 80%;
+  list-style: none;
+  margin-left: 0;
+  line-height: 18px;
+  margin-bottom: 2px;
+
+
+  }
+.my-legend ul.legend-labels li span {
+  display: block;
+  float: left;
+  height: 16px;
+  width: 30px;
+  margin-right: 5px;
+  margin-left: 0;
+  border: 1px solid #000000;
+
+  }
+
+.my-legend .legend-source {
+  font-size: 70%;
+  color: #999;
+  clear: both;
+
+  }
+.my-legend  {
+  color: #000000;
+  border: 2px solid #42A5F5;
+  top: 10;
+  right: 80;
+  position:fixed;
+  height: 150px;
+  width: 200px;
+  }

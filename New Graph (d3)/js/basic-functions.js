@@ -6,18 +6,13 @@ var colors = {"2017" : "#E57373", "2018" : "#66BB6A", "2019" : "#42A5F5",
 // Map of node info throw its label
 var nodeHash = {};
 
-
-
 var YearSet = new Set();
 
 // Lists of nodes and edges (only important info for the network construction)
 var nodes = [];
 var edges = [];
 
-var names = [];
-nodes.forEach(function (node) {
-  names.push(node.label)
-});
+
 
 var max_degree = [];
 
@@ -96,6 +91,12 @@ function recuadro(e) {
   d3.select("#div2").style("opacity", 0);
 };
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> c1ad5500e6ae1376c2707e69694f7abb859044c3
 function nodeinfo(e){
     d3.select("#div2").transition()
         .duration(200)
