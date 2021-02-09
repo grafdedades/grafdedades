@@ -21,30 +21,60 @@ nodes.forEach(function (node) {
 
 var max_degree = [];
 
-function increaseDegree(edge){
-  var source = nodes[nodeHash[edge.source]];
-  var target = nodes[nodeHash[edge.target]];
-  ++nodes[source.id].edges;
-  ++nodes[target.id].edges;
+function newEdge(edge){
+  var source   = nodes[nodeHash[edge.source]];
+  var target   = nodes[nodeHash[edge.target]];
 
+  increaseDegree(source, target);
+  addPoints([source, target], edge.weight);
+}
+
+function addPoints(newNodes, points){
+  newNodes.forEach(function(n){
+    if ('points' in nodes[n.id]){
+      nodes[n.id].points += points;
+      nodes[n.id].average = nodes[n.id].points / nodes[n.id].degree;
+    } else {
+      nodes[n.id]['points']  = points;
+      nodes[n.id]['average'] = nodes[n.id].points;
+    }
+  });
+}
+
+function increaseDegree(source, target){
+
+  var newNodes = [source, target];
+
+  newNodes.forEach(function(n){
+    if ('degree' in nodes[n.id]){
+      ++nodes[n.id].degree;
+    } else {
+      nodes[n.id]['degree'] = 1;
+    }
+  });
+
+  checkMaxDegree(source, target);
+};
+
+function checkMaxDegree(source, target){
   if (max_degree.length == 0) {
 
-    if (nodes[source.id].edges > nodes[target.id].edges){
+    if (nodes[source.id].degree > nodes[target.id].degree){
       max_degree = [nodes[source.id]];
-    } else if (++nodes[source.id].edges === nodes[target.id].edges){
+    } else if (++nodes[source.id].degree === nodes[target.id].degree){
       max_degree = [nodes[source.id], nodes[target.id]];
     } else {
       max_degree = [nodes[target.id]];
     }
 
   } else {
-    var newNodesId = [source, target];
-    newNodesId.forEach(function(n){
-      if (n.edges > nodes[max_degree[0].id].edges) max_degree = [n];
-      else if (n.edges === nodes[max_degree[0].id].edges && !max_degree.includes(n)) max_degree.push(n);
+    var newNodes = [source, target];
+    newNodes.forEach(function(n){
+      if (n.degree > nodes[max_degree[0].id].degree) max_degree = [n];
+      else if (n.degree === nodes[max_degree[0].id].degree && !max_degree.includes(n)) max_degree.push(n);
     });
   }
-};
+}
 
 function recuadro(e) {
   d3.select("#div1").transition()
@@ -65,41 +95,6 @@ function recuadro(e) {
   d3.select("#div1").html(edge_info)
   d3.select("#div2").style("opacity", 0);
 };
-
-// Map of node info throw its label
-var nodeHash = {};
-
-// Lists of nodes and edges (only important info for the network construction)
-var nodes = [];
-var edges = [];
-
-var max_degree = [];
-
-function increaseDegree(edge){
-  var source = nodes[nodeHash[edge.source]];
-  var target = nodes[nodeHash[edge.target]];
-  ++nodes[source.id].edges;
-  ++nodes[target.id].edges;
-
-  if (max_degree.length == 0) {
-
-    if (nodes[source.id].edges > nodes[target.id].edges){
-      max_degree = [nodes[source.id]];
-    } else if (++nodes[source.id].edges === nodes[target.id].edges){
-      max_degree = [nodes[source.id], nodes[target.id]];
-    } else {
-      max_degree = [nodes[target.id]];
-    }
-
-  } else {
-    var newNodesId = [source, target];
-    newNodesId.forEach(function(n){
-      if (n.edges > nodes[max_degree[0].id].edges) max_degree = [n];
-      else if (n.edges === nodes[max_degree[0].id].edges && !max_degree.includes(n)) max_degree.push(n);
-    });
-  }
-};
-
 
 function nodeinfo(e){
     d3.select("#div2").transition()
