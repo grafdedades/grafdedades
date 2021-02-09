@@ -4,7 +4,6 @@ function createNetwork(json) {
   // Lists of nodes and edges (only important info for the network construction)
   var nodes = [];
   var edges = [];
-  var max_degree = [];
 
   json.nodes.forEach(function (node) {
     nodeHash[node.label] = node.id;
@@ -13,7 +12,8 @@ function createNetwork(json) {
 
   json.edges.forEach(function (edge) {
     edges.push({source: nodeHash[edge.source], target: nodeHash[edge.target], weight: edge.weight, place: edge.place, month: edge.month, year: edge.year, repeated: edge.repeated, relationship: edge.relationship, comments: edge.comments});
-    increaseDegree(edge, nodes, edges, max_degree);
+    ++nodes[nodeHash[edge.source]].edges;
+    ++nodes[nodeHash[edge.target]].edges;
   });
   createForceNetwork(nodes, edges);
 
