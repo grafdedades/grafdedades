@@ -10,7 +10,7 @@ BODY{ font-family: verdana; }
     position: fixed;
     bottom: 20;
     right: 20;
-    width: 300px;
+    width: 350px;
     border: 3px solid #42A5F5;
     text-align: left;
     height: 115px;
@@ -25,10 +25,10 @@ div.tooltip2 {
   position: fixed;
   bottom: 50;
   left: 50;
-  width: 170px;
+  width: 190px;
   border: 3px solid #42A5F5;
   text-align: left;
-  height: 150px;
+  height: 110px;
   padding: 2px;
   opacity: 0;
   font: 18px verdana;
