@@ -619,10 +619,34 @@
       "weight": 1,
       "place": "Casa Liz",
       "month": "Feb",
-      "year": "2021",
+      "year": 2021,
       "repeated": "FALSE",
       "relationship": "FALSE",
       "comments": "Jaume en la cama"
+    },
+    {
+      "id": 52,
+      "source": "Marina García",
+      "target": "Roger Creus",
+      "weight": "",
+      "place": "",
+      "month": "",
+      "year": "",
+      "repeated": "FALSE",
+      "relationship": "",
+      "comments": ""
+    },
+    {
+      "id": 53,
+      "source": "Toni Jubés",
+      "target": "Mireia Boneta",
+      "weight": "",
+      "place": "",
+      "month": "",
+      "year": "",
+      "repeated": "FALSE",
+      "relationship": "",
+      "comments": ""
     }
   ],
   "nodes": [
@@ -1043,6 +1067,13 @@
       "id": 59,
       "label": "Hugo Jiménez",
       "year": 2018,
+      "gender": "M",
+      "cfis": "FALSE"
+    },
+    {
+      "id": 60,
+      "label": "Toni Jubés",
+      "year": 2017,
       "gender": "M",
       "cfis": "FALSE"
     }
