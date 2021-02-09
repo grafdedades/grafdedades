@@ -52,12 +52,12 @@
     .button1 {
       background-color: white;
       top: 200;
-      right: 40;
+      right: 80;
       color: black;
       border: 2px solid #42A5F5;
     }
 
-    .button1:hover {
+    .button1:visited {
       background-color: #42A5F5;
       color: white;
     }
@@ -65,12 +65,12 @@
     .button2 {
       background-color: white;
       top: 250;
-      right: 40;
+      right: 80;
       color: black;
       border: 2px solid #42A5F5;
     }
 
-    .button2:hover {
+    .button2:visited {
       background-color: #42A5F5;
       color: white;
     }
@@ -78,12 +78,12 @@
     .button3 {
       background-color: white;
       top: 300;
-      right: 40;
+      right: 80;
       color: black;
       border: 2px solid #42A5F5;
     }
 
-    .button3:hover {
+    .button3:visited {
       background-color: #42A5F5;
       color: white;
     }
@@ -91,12 +91,12 @@
     .button4 {
       background-color: white;
       top: 350;
-      right: 40;
+      right: 80;
       color: black;
       border: 2px solid #42A5F5;
     }
 
-    .button4:hover {
+    .button4:visited{
       background-color: #42A5F5;
       color: white;
     }
@@ -105,12 +105,12 @@
     .button5 {
       background-color: white;
       top: 400;
-      right: 40;
+      right: 80;
       color: black;
       border: 2px solid #42A5F5;
     }
 
-    .button5:hover {
+    .button5:visited {
       background-color: #42A5F5;
       color: white;
     }
@@ -146,15 +146,64 @@
 
     }
 
+    .autocomplete {
+      /*the container must be positioned relative:*/
+      position: relative;
+      display: inline-block;
+    }
+    .autocomplete-items {
+      position: fixed;
+      border: 1px solid #d4d4d4;
+      border-bottom: none;
+      border-top: none;
+      padding: 10px 530px;
+      /*position the autocomplete items to be the same width as the container:*/
+      top: 60;
+      left: -75;
+      right: 0;
+    }
+    .autocomplete-items div {
+      padding: 10px;
+      cursor: pointer;
+      background-color: #fff;
+      border-bottom: 1px solid #d4d4d4;
+    }
+    .autocomplete-items div:hover {
+      /*when hovering an item:*/
+      background-color: #e9e9e9;
+    }
+    .autocomplete-active {
+      /*when navigating through the items using the arrow keys:*/
+      background-color: DodgerBlue !important;
+      color: #ffffff;
+    }
+
   </style>
   <body>
     <div class="tooltip" id="div1"></div>
-    <button class="button button1" id="but1">2017</button>
-    <button class="button button2" id="but2">2018</button>
-    <button class="button button3" id="but3">2019</button>
-    <button class="button button4" id="but4">2020</button>
-    <button class="button button5" id="but5">2021</button>
+    <div class="button button1">
+      <input type = "checkbox" id="but1" name = "2017"></input>
+      <label for="2017">2017</label>
+    </div>
+    <div class="button button2">
+      <input type = "checkbox" id="but2" name = "2018"></input>
+      <label for="2018">2018</label>
+    </div>
+    <div class="button button3">
+      <input type = "checkbox" id="but3" name = "2019"></input>
+      <label for="2019">2019</label>
+    </div>
+    <div class="button button4">
+      <input type = "checkbox" id="but4" name = "2020"></input>
+      <label for="2020">2020</label>
+    </div>
+    <div class="button button5">
+      <input type = "checkbox" id="but5" name = "2021"></input>
+      <label for="2021">2021</label>
+    </div>
+    <div class="autocomplete" style="width:300px;">
     <input class="input1" id="search_bar" placeholder="¿Qué pecador buscas?"></input>
+    </div>
     <button class="button button_s" id="search_button">Search</button>
     <svg id = "svg">
     </svg>
