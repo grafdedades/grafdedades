@@ -91,12 +91,6 @@ function recuadro(e) {
   d3.select("#div2").style("opacity", 0);
 };
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> c1ad5500e6ae1376c2707e69694f7abb859044c3
 function nodeinfo(e){
     d3.select("#div2").transition()
         .duration(200)
