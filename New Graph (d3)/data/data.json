@@ -5,11 +5,11 @@
       "source": "Clara Rovira",
       "target": "Dani Gómez",
       "weight": 1,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2020,
       "repeated": "FALSE",
-      "relationship": "Novio",
+      "relationship": "FALSE",
       "comments": "Mitico sofa"
     },
     {
@@ -21,7 +21,7 @@
       "month": "",
       "year": 2018,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "Potada postliada"
     },
     {
@@ -33,7 +33,7 @@
       "month": "Jul",
       "year": 2020,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "Insomnio del espi"
     },
     {
@@ -45,7 +45,7 @@
       "month": "Nov",
       "year": 2018,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -53,11 +53,11 @@
       "source": "Mireia Boneta",
       "target": "Arnau Turch",
       "weight": 1,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2019,
       "repeated": "FALSE",
-      "relationship": "Novio",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -65,11 +65,11 @@
       "source": "Marina Rosell",
       "target": "Arnau Espinalt",
       "weight": 3,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2019,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "La despensa"
     },
     {
@@ -77,11 +77,11 @@
       "source": "Marina García",
       "target": "Arnau Espinalt",
       "weight": 1,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2019,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "La del replay"
     },
     {
@@ -89,11 +89,11 @@
       "source": "Sandra Millet",
       "target": "Arnau Espinalt",
       "weight": 3,
-      "place": "Piso Espi",
+      "place": "Pis Espi",
       "month": "Jan",
       "year": 2021,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "La del muro"
     },
     {
@@ -101,11 +101,11 @@
       "source": "Liz Segon",
       "target": "Marina Rosell",
       "weight": 1,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2019,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -117,7 +117,7 @@
       "month": "",
       "year": "",
       "repeated": "",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -129,7 +129,7 @@
       "month": "Jul",
       "year": 2020,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -141,7 +141,7 @@
       "month": "Nov",
       "year": 2019,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -149,11 +149,11 @@
       "source": "Marina Lopez",
       "target": "Pau Matas",
       "weight": 5,
-      "place": "Mercè 19'",
+      "place": "Mercè",
       "month": "Set",
       "year": 2019,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "TRUE",
       "comments": "Los casaos"
     },
     {
@@ -161,11 +161,11 @@
       "source": "Carla Miquel",
       "target": "Marc Garcia",
       "weight": 5,
-      "place": "Costa",
+      "place": "Costa Breve",
       "month": "Feb",
       "year": 2020,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "El don limpio"
     },
     {
@@ -177,7 +177,7 @@
       "month": "Aug",
       "year": 2020,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -189,7 +189,7 @@
       "month": "Aug",
       "year": 2020,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "La chapas"
     },
     {
@@ -197,11 +197,11 @@
       "source": "Sofia Diaz",
       "target": "Pol Rifé",
       "weight": 5,
-      "place": "Piso Iaia Pau",
+      "place": "Pis Pau",
       "month": "Jul",
       "year": 2020,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -209,11 +209,11 @@
       "source": "Sandra Millet",
       "target": "Pol Costa",
       "weight": 1,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2020,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "La del cuarto oscuro"
     },
     {
@@ -221,11 +221,11 @@
       "source": "Diwa Vila",
       "target": "Richi Tarré",
       "weight": 5,
-      "place": "Mas Can Mol",
+      "place": "Mas Campmol",
       "month": "Aug",
       "year": 2020,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "La ducha del cojo"
     },
     {
@@ -237,7 +237,7 @@
       "month": "Nov",
       "year": 2019,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "La del chupito"
     },
     {
@@ -245,11 +245,11 @@
       "source": "Marc de Gràcia",
       "target": "Diwa Vila",
       "weight": 1,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2020,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "La del atletismo"
     },
     {
@@ -261,7 +261,7 @@
       "month": "Nov",
       "year": 2019,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -269,11 +269,11 @@
       "source": "Sofia Diaz",
       "target": "Jordi Puig",
       "weight": 5,
-      "place": "Novadades 19'",
+      "place": "Novatajes",
       "month": "Oct",
       "year": 2019,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -285,7 +285,7 @@
       "month": "",
       "year": "",
       "repeated": "",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -305,11 +305,11 @@
       "source": "Eva Brigitte",
       "target": "Dani Gómez",
       "weight": 1,
-      "place": "Piso Espi",
+      "place": "Pis Espi",
       "month": "Jan",
       "year": 2021,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "Cortinas + sofa 2.0"
     },
     {
@@ -321,7 +321,7 @@
       "month": "",
       "year": "",
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "TRUE",
       "comments": "La espatula"
     },
     {
@@ -329,11 +329,11 @@
       "source": "Aina Perez",
       "target": "Pau Tarragó",
       "weight": 1,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2020,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "Bailecito seductor"
     },
     {
@@ -341,11 +341,11 @@
       "source": "Sofia Diaz",
       "target": "Roger Creus",
       "weight": 5,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2020,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -353,11 +353,11 @@
       "source": "Sofia Diaz",
       "target": "Tomàs Gadea",
       "weight": 1,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2020,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -365,11 +365,11 @@
       "source": "Alex Ferrando",
       "target": "Jordi Puig",
       "weight": 1,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2019,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -381,7 +381,7 @@
       "month": "",
       "year": 2018,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "TRUE",
       "comments": ""
     },
     {
@@ -389,11 +389,11 @@
       "source": "Alejandro Campayo",
       "target": "Angela Rodriguez",
       "weight": 1,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2020,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -401,11 +401,11 @@
       "source": "Roser Cantenys",
       "target": "David Bergés",
       "weight": 5,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "",
       "year": 2019,
       "repeated": "TRUE",
-      "relationship": "Novio",
+      "relationship": "TRUE",
       "comments": ""
     },
     {
@@ -413,11 +413,11 @@
       "source": "Pol Rifé",
       "target": "Raquel Ventós",
       "weight": 5,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2020,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "La del coche"
     },
     {
@@ -425,11 +425,11 @@
       "source": "Arnau Saumell",
       "target": "Raquel Ventós",
       "weight": 1,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2020,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": "La del atletismo 2.0"
     },
     {
@@ -437,11 +437,11 @@
       "source": "Pau Marquez",
       "target": "Mireia Boneta",
       "weight": 3,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2020,
       "repeated": "TRUE",
-      "relationship": "Novio",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -453,7 +453,7 @@
       "month": "",
       "year": 2019,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -461,11 +461,11 @@
       "source": "Marina Rosell",
       "target": "Alex Carrillo",
       "weight": 1,
-      "place": "Colonias",
+      "place": "Colònies",
       "month": "Jan",
       "year": 2019,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -477,19 +477,19 @@
       "month": "",
       "year": "",
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
       "id": 40,
-      "source": "Liz Segon",
-      "target": "Nil Crespo",
+      "source": "Roger Creus",
+      "target": "Zoe Meini",
       "weight": 1,
-      "place": "Colonias",
-      "month": "Jan",
-      "year": 2019,
-      "repeated": "FALSE",
-      "relationship": "Novia",
+      "place": "",
+      "month": "",
+      "year": "",
+      "repeated": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -501,7 +501,7 @@
       "month": "Nov",
       "year": 2019,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -513,7 +513,7 @@
       "month": "",
       "year": "",
       "repeated": "",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -525,7 +525,7 @@
       "month": "",
       "year": "",
       "repeated": "",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -537,7 +537,7 @@
       "month": "Oct",
       "year": 2019,
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -549,7 +549,7 @@
       "month": "",
       "year": "",
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -561,7 +561,7 @@
       "month": "Jul",
       "year": 2020,
       "repeated": "TRUE",
-      "relationship": "",
+      "relationship": "FALSE",
       "comments": ""
     },
     {
@@ -573,7 +573,43 @@
       "month": "",
       "year": "",
       "repeated": "FALSE",
-      "relationship": "",
+      "relationship": "FALSE",
+      "comments": ""
+    },
+    {
+      "id": 48,
+      "source": "Anna Ramón",
+      "target": "Pol Puigdemont",
+      "weight": 5,
+      "place": "Pis Puigdemont",
+      "month": "Dec",
+      "year": 2020,
+      "repeated": "",
+      "relationship": "FALSE",
+      "comments": ""
+    },
+    {
+      "id": 49,
+      "source": "Maria",
+      "target": "Adrià Domínguez",
+      "weight": 5,
+      "place": "",
+      "month": "",
+      "year": "",
+      "repeated": "TRUE",
+      "relationship": "TRUE",
+      "comments": ""
+    },
+    {
+      "id": 50,
+      "source": "Danae Canillas",
+      "target": "Xavier Rubiès",
+      "weight": 1,
+      "place": "",
+      "month": "",
+      "year": "",
+      "repeated": "",
+      "relationship": "FALSE",
       "comments": ""
     }
   ],
@@ -999,6 +1035,54 @@
       "label": "Maria Ribot",
       "year": 2018,
       "gender": "F",
+      "cfis": "FALSE",
+      "edges": 0
+    },
+    {
+      "id": 53,
+      "label": "Pol Puigdemont",
+      "year": 2020,
+      "gender": "M",
+      "cfis": "FALSE",
+      "edges": 0
+    },
+    {
+      "id": 54,
+      "label": "Anna Ramón",
+      "year": 2020,
+      "gender": "F",
+      "cfis": "FALSE",
+      "edges": 0
+    },
+    {
+      "id": 55,
+      "label": "Zoe Meini",
+      "year": 2017,
+      "gender": "F",
+      "cfis": "FALSE",
+      "edges": 0
+    },
+    {
+      "id": 56,
+      "label": "Maria",
+      "year": 2017,
+      "gender": "F",
+      "cfis": "FALSE",
+      "edges": 0
+    },
+    {
+      "id": 57,
+      "label": "Adrià Domínguez",
+      "year": 2017,
+      "gender": "M",
+      "cfis": "FALSE",
+      "edges": 0
+    },
+    {
+      "id": 58,
+      "label": "Xavier Rubiès",
+      "year": 2017,
+      "gender": "M",
       "cfis": "FALSE",
       "edges": 0
     }

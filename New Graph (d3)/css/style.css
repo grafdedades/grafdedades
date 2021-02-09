@@ -1,3 +1,5 @@
+
+
 BODY{ font-family: verdana; }
   svg {
     height: 1000px;
@@ -15,6 +17,7 @@ BODY{ font-family: verdana; }
     text-align: left;
     height: 115px;
     padding: 2px;
+    opacity: 0;
     font: 18px verdana;
     background: white;
     pointer-events: none;
@@ -74,6 +77,34 @@ BODY{ font-family: verdana; }
   background-color: #42A5F5;
   color: white;
 }
+
+.button4 {
+  background-color: white;
+  top: 350;
+  right: 40;
+  color: black;
+  border: 2px solid #42A5F5;
+}
+
+.button4:hover {
+  background-color: #42A5F5;
+  color: white;
+}
+
+
+.button5 {
+  background-color: white;
+  top: 400;
+  right: 40;
+  color: black;
+  border: 2px solid #42A5F5;
+}
+
+.button5:hover {
+  background-color: #42A5F5;
+  color: white;
+}
+
 
 .button_s {
   background-color: white;
