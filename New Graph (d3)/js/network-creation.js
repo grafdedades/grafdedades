@@ -1,9 +1,4 @@
 function createNetwork(json) {
-  // Map of node info throw its label
-  var nodeHash = {};
-  // Lists of nodes and edges (only important info for the network construction)
-  var nodes = [];
-  var edges = [];
 
   json.nodes.forEach(function (node) {
     nodeHash[node.label] = node.id;
@@ -12,8 +7,7 @@ function createNetwork(json) {
 
   json.edges.forEach(function (edge) {
     edges.push({source: nodeHash[edge.source], target: nodeHash[edge.target], weight: edge.weight, place: edge.place, month: edge.month, year: edge.year, repeated: edge.repeated, relationship: edge.relationship, comments: edge.comments});
-    ++nodes[nodeHash[edge.source]].edges;
-    ++nodes[nodeHash[edge.target]].edges;
+    increaseDegree(edge)
   });
   createForceNetwork(nodes, edges);
 
@@ -31,8 +25,6 @@ function createForceNetwork(nodes, edges) {
   .charge(-200)
   .linkDistance(80)
   .on("tick", updateNetwork)
-
-
 
   d3.select("svg").selectAll("line")
   .data(edges)
@@ -73,11 +65,11 @@ function createForceNetwork(nodes, edges) {
   d3.select("#but5")
     .on("click", y2021);
 
-var max = nodes[1];
 
   nodeEnter.append("circle")
+
   .attr("r", function (d) {
-    if (d == max){
+    if (max_degree.includes(d)){
       return 15
     }else{
       return 10
@@ -91,7 +83,7 @@ var max = nodes[1];
 
 
 
-  nodeEnter.filter(function (p) {return p == max}).append('text')
+  nodeEnter.filter(function (p) {return max_degree.includes(p)}).append('text')
     .attr("class", "fa")  // Give it the font-awesome class
     .style("font-size", "18px")
     .style("text-anchor", "middle")
@@ -205,7 +197,7 @@ var max = nodes[1];
     .attr("y", 20)
     .text(function (d) {return d.label})
 
-    nodeEnter.filter(function (p) {return p == max}).select('text')
+    nodeEnter.filter(function (p) {return max_degree.includes(p)}).select('text')
       .attr("class", "fa")  // Give it the font-awesome class
       .style("text-anchor", "middle")
       .attr("y", 6)
