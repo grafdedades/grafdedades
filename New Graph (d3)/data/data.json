@@ -631,480 +631,420 @@
       "label": "Dani Gómez",
       "year": 2018,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 1,
       "label": "Alex Carrillo",
       "year": 2017,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 2,
       "label": "Joan Vaquer",
       "year": 2018,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 3,
       "label": "Arnau Turch",
       "year": 2018,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 4,
       "label": "Arnau Espinalt",
       "year": 2018,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 5,
       "label": "Marina Rosell",
       "year": 2018,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 6,
       "label": "Jordi Puig",
       "year": 2018,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 7,
       "label": "Pau Matas",
       "year": 2019,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 8,
       "label": "Marc Garcia",
       "year": 2019,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 9,
       "label": "Pol Rifé",
       "year": 2019,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 10,
       "label": "Pol Costa",
       "year": 2019,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 11,
       "label": "Richi Tarré",
       "year": 2019,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 12,
       "label": "Diwa Vila",
       "year": 2019,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 13,
       "label": "Pol Rosinés",
       "year": 2019,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 14,
       "label": "Raul Higueras",
       "year": 2018,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 15,
       "label": "Pau Lozano",
       "year": 2018,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 16,
       "label": "Helena Ferran",
       "year": 2018,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 17,
       "label": "Pau Tarragó",
       "year": 2019,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 18,
       "label": "Roger Creus",
       "year": 2017,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 19,
       "label": "Tomás Gadea",
       "year": 2019,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 20,
       "label": "Chus Antoñanzas",
       "year": 2017,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 21,
       "label": "Angela Rodriguez",
       "year": 2019,
       "gender": "F",
-      "cfis": "TRUE",
-      "edges": 0
+      "cfis": "TRUE"
     },
     {
       "id": 22,
       "label": "David Bergés",
       "year": 2017,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 23,
       "label": "Raquel Ventós",
       "year": 2019,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 24,
       "label": "Mireia Boneta",
       "year": 2017,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 25,
       "label": "Marina García",
       "year": 2017,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 26,
       "label": "Danae Canillas",
       "year": 2017,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 27,
       "label": "Nil Crespo",
       "year": 2017,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 28,
       "label": "Omar Ferrer",
       "year": 2018,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 29,
       "label": "Clara Rovira",
       "year": 2018,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 30,
       "label": "Andrea Garcia",
       "year": 2018,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 31,
       "label": "José Pérez",
       "year": 2018,
       "gender": "M",
-      "cfis": "TRUE",
-      "edges": 0
+      "cfis": "TRUE"
     },
     {
       "id": 32,
       "label": "Sandra Millet",
       "year": 2019,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 33,
       "label": "Liz Segon",
       "year": 2018,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 34,
       "label": "Marina Lopez",
       "year": 2019,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 35,
       "label": "Carla Miquel",
       "year": 2019,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 36,
       "label": "Ona Clarà",
       "year": 2019,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 37,
       "label": "Sofia Diaz",
       "year": 2019,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 38,
       "label": "Marc de Gràcia",
       "year": 2018,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 39,
       "label": "Aina Perez",
       "year": 2019,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 40,
       "label": "Lena",
       "year": 2018,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 41,
       "label": "Eva Brigitte",
       "year": 2019,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 42,
       "label": "Víctor Novelle",
       "year": 2018,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 43,
       "label": "Alex Ferrando",
       "year": 2018,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 44,
       "label": "Cris Aguilera",
       "year": 2017,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 45,
       "label": "Alejandro Campayo",
       "year": 2019,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 46,
       "label": "Roser Cantenys",
       "year": 2017,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 47,
       "label": "Arnau Saumell",
       "year": 2018,
       "gender": "M",
-      "cfis": "TRUE",
-      "edges": 0
+      "cfis": "TRUE"
     },
     {
       "id": 48,
       "label": "Pau Marquez",
       "year": 2017,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 49,
       "label": "Oriol Ricart",
       "year": 2017,
       "gender": "M",
-      "cfis": "TRUE",
-      "edges": 0
+      "cfis": "TRUE"
     },
     {
       "id": 50,
       "label": "Marc Vernet",
       "year": 2018,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 51,
       "label": "Andreu Huguet",
       "year": 2017,
       "gender": "M",
-      "cfis": "TRUE",
-      "edges": 0
+      "cfis": "TRUE"
     },
     {
       "id": 52,
       "label": "Maria Perera",
       "year": 2018,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 53,
       "label": "Pol Puigdemont",
       "year": 2020,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 54,
       "label": "Anna Ramón",
       "year": 2020,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 55,
       "label": "Zoe Meini",
       "year": 2017,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 56,
       "label": "Maria Ribalta",
       "year": 2017,
       "gender": "F",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 57,
       "label": "Albert Domínguez",
       "year": 2017,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 58,
       "label": "Xavier Rubiès",
       "year": 2017,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     },
     {
       "id": 59,
       "label": "Hugo Jiménez",
       "year": 2018,
       "gender": "M",
-      "cfis": "FALSE",
-      "edges": 0
+      "cfis": "FALSE"
     }
   ]
 }

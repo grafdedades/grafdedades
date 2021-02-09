@@ -104,7 +104,7 @@ function nodeinfo(e){
         node_info += "<b>Sexe: </b>" + e.gender + "<br/>";
         node_info += "<b>Any: </b>" + e.year + "<br/>";
         node_info += "<b>CFIS: </b>" + e.cfis + "<br/>";
-        node_info += "<b>Arestes: </b>" + e.edges + "<br/>";
+        node_info += "<b>Arestes: </b>" + e.degree + "<br/>";
       d3.select("#div2").html(node_info)
       d3.select("#div1").style("opacity", 0);
 }
