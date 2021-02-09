@@ -6,18 +6,13 @@ var colors = {"2017" : "#E57373", "2018" : "#66BB6A", "2019" : "#42A5F5",
 // Map of node info throw its label
 var nodeHash = {};
 
-
-
 var YearSet = new Set();
 
 // Lists of nodes and edges (only important info for the network construction)
 var nodes = [];
 var edges = [];
 
-var names = [];
-nodes.forEach(function (node) {
-  names.push(node.label)
-});
+
 
 var max_degree = [];
 
@@ -66,39 +61,7 @@ function recuadro(e) {
   d3.select("#div2").style("opacity", 0);
 };
 
-// Map of node info throw its label
-var nodeHash = {};
 
-// Lists of nodes and edges (only important info for the network construction)
-var nodes = [];
-var edges = [];
-
-var max_degree = [];
-
-function increaseDegree(edge){
-  var source = nodes[nodeHash[edge.source]];
-  var target = nodes[nodeHash[edge.target]];
-  ++nodes[source.id].edges;
-  ++nodes[target.id].edges;
-
-  if (max_degree.length == 0) {
-
-    if (nodes[source.id].edges > nodes[target.id].edges){
-      max_degree = [nodes[source.id]];
-    } else if (++nodes[source.id].edges === nodes[target.id].edges){
-      max_degree = [nodes[source.id], nodes[target.id]];
-    } else {
-      max_degree = [nodes[target.id]];
-    }
-
-  } else {
-    var newNodesId = [source, target];
-    newNodesId.forEach(function(n){
-      if (n.edges > nodes[max_degree[0].id].edges) max_degree = [n];
-      else if (n.edges === nodes[max_degree[0].id].edges && !max_degree.includes(n)) max_degree.push(n);
-    });
-  }
-};
 
 
 function nodeinfo(e){

@@ -1,10 +1,6 @@
 // ---------------------------- GLOBAL VERIABLES ----------------------------
 
-var force = d3.layout.force().nodes(nodes).links(edges)
-.size([1000,1000])
-.charge(-200)
-.linkDistance(80)
-.on("tick", updateNetwork);
+var force;
 
 
 // ----------------------------    FUNCTIONS    ----------------------------
@@ -29,6 +25,12 @@ function createNetwork(json) {
 }
 
 function createForceNetwork(nodes, edges) {
+
+  force = d3.layout.force().nodes(nodes).links(edges)
+  .size([1000,1000])
+  .charge(-200)
+  .linkDistance(80)
+  .on("tick", updateNetwork);
 
   d3.select("svg").selectAll("line")
   .data(edges)
@@ -85,8 +87,6 @@ function createForceNetwork(nodes, edges) {
   .style("stroke", "black")
   .style("opacity", "1");
 
-
-
   nodeEnter.filter(function (p) {return max_degree.includes(p)}).append('text')
     .attr("class", "fa")  // Give it the font-awesome class
     .style("font-size", "18px")
@@ -102,84 +102,123 @@ function createForceNetwork(nodes, edges) {
    .style("pointer-events", "none")
 
 
+
   force.start();
-}
 
-// NODE SEARCHER
+  var names = [];
+  nodes.forEach(function (node) {
+    names.push(node.label)
+  });
 
-function SearchNode() {
-    var name = document.getElementById("search_bar").value
-    var node = null
-    nodes.forEach(function (n) {
-      if(n.label == name){
-          node = n
+  function SearchNode() {
+      var name = document.getElementById("search_bar").value
+      var node = null
+      nodes.forEach(function (n) {
+        if(n.label == name){
+            node = n
+        }
+      })
+
+      if(node != null){
+          nodeinfo(node)
+          nodeF(node);
       }
-    })
-
-    if(node != null){
-        nodeinfo(node)
-        nodeF(node);
     }
-  }
+    function reset() {
+      force.start();
 
-autocomplete(document.getElementById("search_bar"), names);
+      d3.selectAll("circle")
+      .style('fill', function(d) {
+        return colors[d.year];
+      })
+      .style("opacity", "1");
 
-// YEAR SELECTION
+      d3.selectAll("line")
+      .style("stroke-width", function (d) {return d.weight})
+      .style("opacity", "1")
+      .style("stroke", function (d) {
+        if(d.relationship == "FALSE"){
+          return "#000000"
+        }else{
+          return "#E74C3C"
+        }
+      });
+      d3.selectAll("text")
+      .style("text-anchor", "middle")
+      .style("opacity", "1")
+      .style("font-size", "10px")
+      .attr("y", 20)
+      .text(function (d) {return d.label})
 
-function y2017(){
-  YearFilter(2017,YearSet)
+      nodeEnter.filter(function (p) {return max_degree.includes(p)}).select('text')
+        .attr("class", "fa")  // Give it the font-awesome class
+        .style("font-size", "18px")
+        .style("text-anchor", "middle")
+        .attr("y", 6)
+        .text("\uf005");
+    }
+    // YEAR SELECTION
+
+    function y2017(){
+      YearFilter(2017,YearSet)
+    }
+
+    function y2018(){
+      YearFilter(2018,YearSet)
+    }
+
+    function y2019(){
+      YearFilter(2019,YearSet)
+    }
+
+    function y2020(){
+      YearFilter(2020,YearSet)
+    }
+
+    function y2021(){
+      YearFilter(2021,YearSet)
+    }
+
+
+
+    function YearFilter(year,YearSet){
+      reset()
+      //Actualizar el conjunto de años
+      if(YearSet.has(year)){
+          YearSet.delete(year)
+      }
+      else{
+          YearSet.add(year)
+      }
+      console.log(YearSet,YearSet.size)
+
+      if(YearSet.size == 0){
+          filteredEdges = edges
+      }
+      else{
+        var egoIDs = [];
+        var filteredEdges = edges.filter(function (p) {return YearSet.has(p.year)});
+        filteredEdges.forEach(function (p) {
+          egoIDs.push(p.target.id);
+          egoIDs.push(p.source.id);
+        });
+
+        d3.selectAll("line").filter(function (p) {return filteredEdges.indexOf(p) == -1})
+        .style("opacity", "0.3")
+        .style("stroke-width", "1")
+
+        d3.selectAll("text").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
+        .style("opacity", "0")
+
+        d3.selectAll("circle").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
+        .style("fill", "#66CCCC")
+        .style("opacity", "0.3");
+      }
+    }
+
+    autocomplete(document.getElementById("search_bar"), names);
 }
 
-function y2018(){
-  YearFilter(2018,YearSet)
-}
-
-function y2019(){
-  YearFilter(2019,YearSet)
-}
-
-function y2020(){
-  YearFilter(2020,YearSet)
-}
-
-function y2021(){
-  YearFilter(2021,YearSet)
-}
-
-function YearFilter(year,YearSet){
-  reset()
-  //Actualizar el conjunto de años
-  if(YearSet.has(year)){
-      YearSet.delete(year)
-  }
-  else{
-      YearSet.add(year)
-  }
-  console.log(YearSet,YearSet.size)
-
-  if(YearSet.size == 0){
-      filteredEdges = edges
-  }
-  else{
-    var egoIDs = [];
-    var filteredEdges = edges.filter(function (p) {return YearSet.has(p.year)});
-    filteredEdges.forEach(function (p) {
-      egoIDs.push(p.target.id);
-      egoIDs.push(p.source.id);
-    });
-
-    d3.selectAll("line").filter(function (p) {return filteredEdges.indexOf(p) == -1})
-    .style("opacity", "0.3")
-    .style("stroke-width", "1")
-
-    d3.selectAll("text").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
-    .style("opacity", "0")
-
-    d3.selectAll("circle").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
-    .style("fill", "#66CCCC")
-    .style("opacity", "0.3");
-  }
-}
 
 // NODE INTERACTION
 
@@ -263,39 +302,4 @@ function updateNetwork() {
   d3.select("svg").selectAll("g.node")
     .attr("transform", function (d) {return "translate(" + d.x + "," + d.y + ")"});
 
-}
-
-function reset() {
-  force.start();
-  d3.selectAll("circle")
-  .style('fill', function(d) {
-    return colors[d.year];
-  })
-  .style("opacity", "1");
-
-  d3.selectAll("line")
-  .style("stroke-width", function (d) {return d.weight})
-  .style("opacity", "1")
-  .style("stroke", function (d) {
-    if(d.relationship == "FALSE"){
-      return "#000000"
-    }else{
-      return "#E74C3C"
-    }
-  });
-
-
-  d3.selectAll("text")
-  .style("text-anchor", "middle")
-  .style("opacity", "1")
-  .style("font-size", "10px")
-  .attr("y", 20)
-  .text(function (d) {return d.label})
-
-  nodeEnter.filter(function (p) {return max_degree.includes(p)}).select('text')
-  .attr("class", "fa")  // Give it the font-awesome class
-  .style("text-anchor", "middle")
-  .attr("y", 6)
-  .style("font-size", "18px")
-  .text("\uf005");
 }

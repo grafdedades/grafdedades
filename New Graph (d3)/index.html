@@ -8,27 +8,29 @@
   <script type="text/javascript" src="/js/network-creation.js"></script>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="tooltip" id="div1"></div>
   <div class="tooltip2" id="div2"></div>
-  <div class="button button1">
+  <div class="year">
     <input type = "checkbox" id="but1" name = "2017"></input>
     <label for="2017">2017</label>
   </div>
-  <div class="button button2">
+  <div class="year" style="top:250;">
     <input type = "checkbox" id="but2" name = "2018"></input>
     <label for="2018">2018</label>
   </div>
-  <div class="button button3">
+  <div class="year" style="top:300;">
     <input type = "checkbox" id="but3" name = "2019"></input>
     <label for="2019">2019</label>
   </div>
-  <div class="button button4">
+  <div class="year" style="top:350;">
     <input type = "checkbox" id="but4" name = "2020"></input>
     <label for="2020">2020</label>
   </div>
-  <div class="button button5">
+  <div class="year" style="top:400;">
     <input type = "checkbox" id="but5" name = "2021"></input>
     <label for="2021">2021</label>
   </div>
@@ -36,6 +38,17 @@
   <input class="input1" id="search_bar" placeholder="Cerca un pecador!"></input>
   </div>
   <button class="button button_s" id="search_button">Busca!</button>
+  <div class='my-legend'>
+  <div class='legend-scale'>
+      <div class='legend-title'>Promoció nodes</div>
+    <ul class='legend-labels'>
+      <li><span style='background:#E57373;'></span>2017</li>
+      <li><span style='background:#66BB6A;'></span>2018</li>
+      <li><span style='background:#42A5F5;'></span>2019</li>
+      <li><span style='background:#FFFF99;'></span>2020</li>
+    </ul>
+  </div>
+  </div>
   <svg id = "svg">
   </svg>
   <script type="text/javascript">
