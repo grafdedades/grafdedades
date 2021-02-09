@@ -18,7 +18,7 @@ id;label;year;gender;cfis;edges
 16;Helena Ferran;2018;F;FALSE;0
 17;Pau Tarragó ;2019;M;FALSE;0
 18;Roger Creus;2017;M;FALSE;0
-19;Tomàs Gadea;2019;M;FALSE;0
+19;Tomás Gadea;2019;M;FALSE;0
 20;Chus Antoñanzas;2017;M;FALSE;0
 21;Angela Rodriguez;2019;F;TRUE;0
 22;David Bergés ;2017;M;FALSE;0
@@ -51,10 +51,11 @@ id;label;year;gender;cfis;edges
 49;Oriol Ricart;2017;M;TRUE;0
 50;Marc Vernet;2018;M;FALSE;0
 51;Andreu Huguet;2017;M;TRUE;0
-52;Maria Ribot;2018;F;FALSE;0
+52;Maria Perera;2018;F;FALSE;0
 53;Pol Puigdemont;2020;M;FALSE;0
 54;Anna Ramón;2020;F;FALSE;0
 55;Zoe Meini;2017;F;FALSE;0
-56;Maria;2017;F;FALSE;0
-57;Adrià Domínguez;2017;M;FALSE;0
+56;Maria Ribalta;2017;F;FALSE;0
+57;Albert Domínguez;2017;M;FALSE;0
 58;Xavier Rubiès;2017;M;FALSE;0
+59;Hugo Jiménez;2018;M;FALSE;0

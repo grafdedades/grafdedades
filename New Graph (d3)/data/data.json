@@ -123,7 +123,7 @@
     {
       "id": 10,
       "source": "Clara Rovira",
-      "target": "Tomàs Gadea",
+      "target": "Tomás Gadea",
       "weight": 1,
       "place": "Mirador",
       "month": "Jul",
@@ -135,7 +135,7 @@
     {
       "id": 11,
       "source": "Carla Miquel",
-      "target": "Tomàs Gadea",
+      "target": "Tomás Gadea",
       "weight": 1,
       "place": "Sutton",
       "month": "Nov",
@@ -351,7 +351,7 @@
     {
       "id": 29,
       "source": "Sofia Diaz",
-      "target": "Tomàs Gadea",
+      "target": "Tomás Gadea",
       "weight": 1,
       "place": "Colònies",
       "month": "Jan",
@@ -566,7 +566,7 @@
     },
     {
       "id": 47,
-      "source": "Maria Ribot",
+      "source": "Maria Perera",
       "target": "Arnau Espinalt",
       "weight": 1,
       "place": "",
@@ -590,8 +590,8 @@
     },
     {
       "id": 49,
-      "source": "Maria",
-      "target": "Adrià Domínguez",
+      "source": "Maria Ribalta",
+      "target": "Albert Domínguez",
       "weight": 5,
       "place": "",
       "month": "",
@@ -611,6 +611,18 @@
       "repeated": "",
       "relationship": "FALSE",
       "comments": ""
+    },
+    {
+      "id": 51,
+      "source": "Hugo Jiménez",
+      "target": "Liz Segon",
+      "weight": 1,
+      "place": "Casa Liz",
+      "month": "Feb",
+      "year": "2021",
+      "repeated": "FALSE",
+      "relationship": "FALSE",
+      "comments": "Jaume en la cama"
     }
   ],
   "nodes": [
@@ -768,7 +780,7 @@
     },
     {
       "id": 19,
-      "label": "Tomàs Gadea",
+      "label": "Tomás Gadea",
       "year": 2019,
       "gender": "M",
       "cfis": "FALSE",
@@ -1032,7 +1044,7 @@
     },
     {
       "id": 52,
-      "label": "Maria Ribot",
+      "label": "Maria Perera",
       "year": 2018,
       "gender": "F",
       "cfis": "FALSE",
@@ -1064,7 +1076,7 @@
     },
     {
       "id": 56,
-      "label": "Maria",
+      "label": "Maria Ribalta",
       "year": 2017,
       "gender": "F",
       "cfis": "FALSE",
@@ -1072,7 +1084,7 @@
     },
     {
       "id": 57,
-      "label": "Adrià Domínguez",
+      "label": "Albert Domínguez",
       "year": 2017,
       "gender": "M",
       "cfis": "FALSE",
@@ -1082,6 +1094,14 @@
       "id": 58,
       "label": "Xavier Rubiès",
       "year": 2017,
+      "gender": "M",
+      "cfis": "FALSE",
+      "edges": 0
+    },
+    {
+      "id": 59,
+      "label": "Hugo Jiménez",
+      "year": 2018,
       "gender": "M",
       "cfis": "FALSE",
       "edges": 0

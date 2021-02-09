@@ -1,9 +1,4 @@
 function createNetwork(json) {
-  // Map of node info throw its label
-  var nodeHash = {};
-  // Lists of nodes and edges (only important info for the network construction)
-  var nodes = [];
-  var edges = [];
 
   json.nodes.forEach(function (node) {
     nodeHash[node.label] = node.id;
@@ -12,8 +7,7 @@ function createNetwork(json) {
 
   json.edges.forEach(function (edge) {
     edges.push({source: nodeHash[edge.source], target: nodeHash[edge.target], weight: edge.weight, place: edge.place, month: edge.month, year: edge.year, repeated: edge.repeated, relationship: edge.relationship, comments: edge.comments});
-    ++nodes[nodeHash[edge.source]].edges;
-    ++nodes[nodeHash[edge.target]].edges;
+    increaseDegree(edge)
   });
   createForceNetwork(nodes, edges);
 
@@ -25,12 +19,6 @@ function createForceNetwork(nodes, edges) {
   var colors = {"2020": "#BB8FCE" , "2019" : "#42A5F5", "2018" : "#66BB6A" , "2017" : "#E57373"};
 
   var names = getNames(nodes);
-  var force = d3.layout.force().nodes(nodes).links(edges)
-  .size([1000,1000])
-  .charge(-200)
-  .linkDistance(80)
-  .on("tick", updateNetwork);
-
 
   d3.select("svg").selectAll("line")
   .data(edges)
@@ -38,7 +26,13 @@ function createForceNetwork(nodes, edges) {
   .append("line")
   .on("click", edgeClick)
   .style("stroke-width", function (d) {return d.weight})
-  .style("stroke", "#000000")
+  .style("stroke", function (d) {
+    if(d.relationship == "FALSE"){
+      return "#000000"
+    }else{
+      return "#E74C3C"
+    }
+  })
 
   var nodeEnter = d3.select("svg").selectAll("g.node")
   .data(nodes)
@@ -65,31 +59,38 @@ function createForceNetwork(nodes, edges) {
   d3.select("#but5")
     .on("click", y2021);
 
+
   nodeEnter.append("circle")
-  .attr("r", 10)
+
+  .attr("r", function (d) {
+    if (max_degree.includes(d)){
+      return 15
+    }else{
+      return 10
+    }
+          })
   .style('fill', function(d) {
     return colors[d.year];
   })
   .style("stroke", "black")
   .style("opacity", "1");
 
+
+
+  nodeEnter.filter(function (p) {return max_degree.includes(p)}).append('text')
+    .attr("class", "fa")  // Give it the font-awesome class
+    .style("font-size", "18px")
+    .style("text-anchor", "middle")
+    .attr("y", 6)
+    .text("\uf005");
+
   nodeEnter.append("text")
    .style("text-anchor", "middle")
    .attr("y", 20)
-   .style("stroke-width", "1px")
-   .style("stroke-opacity", 0.75)
-   .style("stroke", "white")
    .style("font-size", "10px")
    .text(function (d) {return d.label})
    .style("pointer-events", "none")
 
-   nodeEnter.append("text")
-   .style("text-anchor", "middle")
-   .attr("y", 20)
-   .style("font-size", "10px")
-    .style("opacity", "1")
-   .text(function (d) {return d.label})
-   .style("pointer-events", "none")
 
   force.start();
 
@@ -172,15 +173,30 @@ function createForceNetwork(nodes, edges) {
     .style("opacity", "1");
 
     d3.selectAll("line")
-    .style("stroke", "#000000")
     .style("stroke-width", function (d) {return d.weight})
     .style("opacity", "1")
+    .style("stroke", function (d) {
+      if(d.relationship == "FALSE"){
+        return "#000000"
+      }else{
+        return "#E74C3C"
+      }
+    });
+
 
     d3.selectAll("text")
     .style("text-anchor", "middle")
     .style("opacity", "1")
+    .style("font-size", "10px")
     .attr("y", 20)
     .text(function (d) {return d.label})
+
+    nodeEnter.filter(function (p) {return max_degree.includes(p)}).select('text')
+      .attr("class", "fa")  // Give it the font-awesome class
+      .style("text-anchor", "middle")
+      .attr("y", 6)
+      .style("font-size", "18px")
+      .text("\uf005");
   }
 
   function nodeDoubleClick(d) {
@@ -217,7 +233,35 @@ function createForceNetwork(nodes, edges) {
     .style("opacity", "0.3");
 
   }
+  function edgeClick(e) {
+       force.stop();
+       e.fixed = true;
+       recuadro(e);
+       edgeF(e);
+  };
 
+  function edgeF(e) {
+       var egoIDs = [];
+       var filteredEdges = edges.filter(function (p) {return p == e});
+       filteredEdges.forEach(function (p) {
+         if (p == e) {
+           egoIDs.push(p.target.id)
+           egoIDs.push(p.source.id)
+         }
+       });
+
+       d3.selectAll("line").filter(function (p) {return filteredEdges.indexOf(p) == -1})
+       .style("opacity", "0.3")
+       .style("stroke-width", "1")
+
+       d3.selectAll("text").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
+       .style("opacity", "0")
+
+       d3.selectAll("circle").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
+       .style("fill", "#66CCCC")
+       .style("opacity", "0.3");
+
+     }
   function updateNetwork() {
     d3.select("svg").selectAll("line")
     .attr("x1", function (d) {return d.source.x})
