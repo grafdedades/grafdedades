@@ -11,7 +11,7 @@ function getNames(nodes){
   return names;
 };
 
-function edgeClick(e) {
+function recuadro(e) {
   d3.select("#div1").transition()
     .duration(200)
     .style("opacity", .9);
@@ -26,7 +26,32 @@ function edgeClick(e) {
   edge_info += "</p>"
 
   d3.select("#div1").html(edge_info)
+  d3.select("#div2").style("opacity", 0);
 };
+
+function increaseDegree(edge, nodes, max_degree, nodeHash){
+
+  if (max_degree.length === 0) {
+    ++nodes[nodeHash[edge.source]].edges;
+    ++nodes[nodeHash[edge.target]].edges;
+
+    if (nodes[nodeHash[edge.source]].edges > nodes[nodeHash[edge.target]].edges){
+      max_degree = [nodeHash[edge.source]];
+    } else if (++nodes[nodeHash[edge.source]].edges === nodes[nodeHash[edge.target]].edges){
+      max_degree = [nodeHash[edge.source], nodeHash[edge.target]];
+    } else {
+      max_degree = [nodeHash[edge.target]];
+    }
+  } else {
+    var newEdges = [edge.source, edge.target];
+    for (i in newEdges){
+      if (++nodes[nodeHash[newEdges[i]]].edges > nodes[max_degree[0]].edges) max_degree = [nodeHash[edge]];
+      else if (++nodes[nodeHash[newEdges[i]]].edges === nodes[max_degree[0]].edges) max_degree.push(nodeHash[edge]);
+    }
+  }
+};
+
+
 
 function nodeinfo(e){
     d3.select("#div2").transition()
@@ -39,4 +64,5 @@ function nodeinfo(e){
         node_info += "<b>Edges: </b>" + e.edges + "<br/>";
         node_info += "</p>"
       d3.select("#div2").html(node_info)
+      d3.select("#div1").style("opacity", 0);
 }
