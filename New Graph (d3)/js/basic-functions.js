@@ -4,10 +4,11 @@ function colours() {
 };
 
 function getNames(nodes){
-  names = [];
+  var  names = [];
   nodes.forEach(function (node) {
     names.push(node.label)
   });
+  return names;
 };
 
 function edgeClick(e) {
@@ -26,3 +27,16 @@ function edgeClick(e) {
 
   d3.select("#div1").html(edge_info)
 };
+
+function nodeinfo(e){
+    d3.select("#div2").transition()
+        .duration(200)
+        .style("opacity", .9);
+      var node_info = "<p><b><u>" + e.label +"</u></b><br/>";
+        node_info += "<b>Gender: </b>" + e.gender + "<br/>";
+        node_info += "<b>Year: </b>" + e.year + "<br/>";
+        node_info += "<b>Cfis: </b>" + e.cfis + "<br/>";
+        node_info += "<b>Edges: </b>" + e.edges + "<br/>";
+        node_info += "</p>"
+      d3.select("#div2").html(node_info)
+}
