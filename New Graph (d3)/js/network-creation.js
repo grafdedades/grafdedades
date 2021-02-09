@@ -40,7 +40,13 @@ function createForceNetwork(nodes, edges) {
   .append("line")
   .on("click", edgeClick)
   .style("stroke-width", function (d) {return d.weight})
-  .style("stroke", "#000000")
+  .style("stroke", function (d) {
+    if(d.relationship == "FALSE"){
+      return "#000000"
+    }else{
+      return "#E74C3C"
+    }
+  })
 
   var nodeEnter = d3.select("svg").selectAll("g.node")
   .data(nodes)
@@ -181,9 +187,16 @@ var max = nodes[1];
     .style("opacity", "1");
 
     d3.selectAll("line")
-    .style("stroke", "#000000")
     .style("stroke-width", function (d) {return d.weight})
     .style("opacity", "1")
+    .style("stroke", function (d) {
+      if(d.relationship == "FALSE"){
+        return "#000000"
+      }else{
+        return "#E74C3C"
+      }
+    });
+
 
     d3.selectAll("text")
     .style("text-anchor", "middle")
