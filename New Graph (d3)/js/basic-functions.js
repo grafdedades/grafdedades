@@ -22,7 +22,7 @@ function recuadro(e) {
   if (e.year !== "" || e.month != ""){
     edge_info += "<b>Data: </b>" + e.month + (e.month === "" ? "" : " ") + e.year + "<br/>";
   }
-  if (e.comments !== "") edge_info += "<b>Comentaris: </b>" + e.comments;
+  if (e.comments !== "") edge_info += "<b>Comentaris: </b>" + e.comments + "<br/>";
   edge_info += "<b>Pes: </b>" + e.weight + "<br/>";
   edge_info += "<b>Han repetit?: </b>" + e.repeated + "<br/>";
 
