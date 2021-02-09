@@ -9,8 +9,8 @@ id;source;target;weight;place;month;year ;repeated;relationship;comments
 7;Sandra Millet;Arnau Espinalt;3;Pis Espi;Jan;2021;TRUE;FALSE;La del muro
 8;Liz Segon;Marina Rosell;1;Colònies;Jan;2019;FALSE;FALSE;
 9;Marina Rosell;Jordi Puig;1;;;;;FALSE;
-10;Clara Rovira;Tomàs Gadea;1;Mirador;Jul;2020;TRUE;FALSE;
-11;Carla Miquel;Tomàs Gadea;1;Sutton;Nov;2019;TRUE;FALSE;
+10;Clara Rovira;Tomás Gadea;1;Mirador;Jul;2020;TRUE;FALSE;
+11;Carla Miquel;Tomás Gadea;1;Sutton;Nov;2019;TRUE;FALSE;
 12;Marina Lopez;Pau Matas;5;Mercè;Set;2019;TRUE;TRUE;Los casaos
 13;Carla Miquel;Marc Garcia;5;Costa Breve;Feb;2020;TRUE;FALSE;El don limpio
 14;Sandra Millet;Marc Garcia;5;Mas Campmol;Aug;2020;TRUE;FALSE;
@@ -28,7 +28,7 @@ id;source;target;weight;place;month;year ;repeated;relationship;comments
 26;Víctor Novelle;Helena Ferran;5;;;;TRUE;TRUE;La espatula
 27;Aina Perez;Pau Tarragó ;1;Colònies;Jan;2020;TRUE;FALSE;Bailecito seductor
 28;Sofia Diaz;Roger Creus;5;Colònies;Jan;2020;FALSE;FALSE;
-29;Sofia Diaz;Tomàs Gadea;1;Colònies;Jan;2020;TRUE;FALSE;
+29;Sofia Diaz;Tomás Gadea;1;Colònies;Jan;2020;TRUE;FALSE;
 30;Alex Ferrando;Jordi Puig;1;Colònies;Jan;2019;FALSE;FALSE;
 31;Cris Aguilera;Chus Antoñanzas;5;;;2018;TRUE;TRUE;
 32;Alejandro Campayo;Angela Rodriguez;1;Colònies;Jan;2020;FALSE;FALSE;
