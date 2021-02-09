@@ -23,6 +23,7 @@ function recuadro(e) {
     edge_info += "<b>Date: </b>" + e.month + (e.month === "" ? "" : " ") + e.year + "<br/>";
   }
   if (e.comments !== "") edge_info += "<b>Comments: </b>" + e.comments;
+  edge_info += "<b>Pes: </b>" + e.weight + "<br/>";
   edge_info += "</p>"
 
   d3.select("#div1").html(edge_info)
