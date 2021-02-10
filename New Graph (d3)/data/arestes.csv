@@ -21,7 +21,7 @@ id;source;target;weight;place;month;year ;repeated;relationship;comments
 19;Carla Miquel;Richi Tarré;1;Sutton;Nov;2019;FALSE;FALSE;La del chupito
 20;Marc de Gràcia;Diwa Vila;1;Colònies;Jan;2020;FALSE;FALSE;La del atletismo
 21;Aina Perez;Pol Rosinés;1;Sutton;Nov;2019;FALSE;FALSE;
-22;Sofia Diaz;Jordi Puig;5;Novatajes;Oct;2019;FALSE;FALSE;
+22;Sofia Diaz;Jordi Puig;1;Novatajes;Oct;2019;FALSE;FALSE;
 23;Lena;Raul Higueras;1;;;;;FALSE;
 24;Marina Rosell;Pau Lozano;10;;;;TRUE;;La del twitter
 25;Eva Brigitte;Dani Gómez;1;Pis Espi;Jan;2021;TRUE;FALSE;Cortinas + sofa 2.0
@@ -46,7 +46,7 @@ id;source;target;weight;place;month;year ;repeated;relationship;comments
 44;Alejandro Campayo;Sofia Diaz ;1;Casa Abuela Sofi;Oct;2019;FALSE;FALSE;
 45;Andreu Huguet;Sofia Diaz ;1;;;;FALSE;FALSE;
 46;Clara Rovira;Omar Ferrer;5;Casa Omar;Jul;2020;TRUE;FALSE;
-47;Maria Perera;Arnau Espinalt;1;;;;FALSE;FALSE;
+47;Maria Perera;Arnau Espinalt;1;Casa Liz;Feb;2021;FALSE;FALSE;La del juego
 48;Anna Ramón;Pol Puigdemont;5;Pis Puigdemont;Dec;2020;;FALSE;
 49;Maria Ribalta;Albert Domínguez;5;;;;TRUE;TRUE;
 50;Danae Canillas;Xavier Rubiès;1;;;;;FALSE;

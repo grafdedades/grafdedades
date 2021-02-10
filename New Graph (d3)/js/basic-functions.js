@@ -1,16 +1,9 @@
-function colours() {
-  return {"2017" : "#E57373", "2018" : "#66BB6A", "2019" : "#42A5F5",
-          "2020" : "#FFFF99"};
-};
+var colors = {"2017" : "#E57373", "2018" : "#66BB6A", "2019" : "#42A5F5",
+              "2020" : "#FFFF99", "2021" : "#CC9999", "2022" : "#666633",
+              "2023" : "#993300", "2024" : "#999966", "OTHER": "#660000"};
 
-function getNames(nodes){
-  var  names = [];
-  nodes.forEach(function (node) {
-    names.push(node.label)
-  });
-  return names;
-};
 
+// Display edge info
 function recuadro(e) {
   d3.select("#div1").transition()
     .duration(200)
@@ -40,32 +33,66 @@ var edges = [];
 
 var max_degree = [];
 
-function increaseDegree(edge){
-  var source = nodes[nodeHash[edge.source]];
-  var target = nodes[nodeHash[edge.target]];
-  ++nodes[source.id].edges;
-  ++nodes[target.id].edges;
+// Creation edges
+function newEdge(edge){
+  var source   = nodes[nodeHash[edge.source]];
+  var target   = nodes[nodeHash[edge.target]];
 
+  increaseDegree(source, target);
+  addPoints([source, target], edge.weight);
+}
+
+// Calculate metrics of edges
+function addPoints(newNodes, points){
+  newNodes.forEach(function(n){
+    if ('points' in nodes[n.id]){
+      nodes[n.id].points += points;
+      nodes[n.id].average = nodes[n.id].points / nodes[n.id].degree;
+    } else {
+      nodes[n.id]['points']  = points;
+      nodes[n.id]['average'] = nodes[n.id].points;
+    }
+  });
+}
+
+// Calculate degree nodes
+function increaseDegree(source, target){
+
+  var newNodes = [source, target];
+
+  newNodes.forEach(function(n){
+    if ('degree' in nodes[n.id]){
+      ++nodes[n.id].degree;
+    } else {
+      nodes[n.id]['degree'] = 1;
+    }
+  });
+
+  checkMaxDegree(source, target);
+};
+
+// Calculate max_degree
+function checkMaxDegree(source, target){
   if (max_degree.length == 0) {
 
-    if (nodes[source.id].edges > nodes[target.id].edges){
+    if (nodes[source.id].degree > nodes[target.id].degree){
       max_degree = [nodes[source.id]];
-    } else if (++nodes[source.id].edges === nodes[target.id].edges){
+    } else if (++nodes[source.id].degree === nodes[target.id].degree){
       max_degree = [nodes[source.id], nodes[target.id]];
     } else {
       max_degree = [nodes[target.id]];
     }
 
   } else {
-    var newNodesId = [source, target];
-    newNodesId.forEach(function(n){
-      if (n.edges > nodes[max_degree[0].id].edges) max_degree = [n];
-      else if (n.edges === nodes[max_degree[0].id].edges && !max_degree.includes(n)) max_degree.push(n);
+    var newNodes = [source, target];
+    newNodes.forEach(function(n){
+      if (n.degree > nodes[max_degree[0].id].degree) max_degree = [n];
+      else if (n.degree === nodes[max_degree[0].id].degree && !max_degree.includes(n)) max_degree.push(n);
     });
   }
-};
+}
 
-
+// Display info about node
 function nodeinfo(e){
     d3.select("#div2").transition()
         .duration(200)
@@ -74,7 +101,7 @@ function nodeinfo(e){
         node_info += "<b>Sexe: </b>" + e.gender + "<br/>";
         node_info += "<b>Any: </b>" + e.year + "<br/>";
         node_info += "<b>CFIS: </b>" + e.cfis + "<br/>";
-        node_info += "<b>Arestes: </b>" + e.edges + "<br/>";
+        node_info += "<b>Arestes: </b>" + e.degree + "<br/>";
       d3.select("#div2").html(node_info)
       d3.select("#div1").style("opacity", 0);
 }

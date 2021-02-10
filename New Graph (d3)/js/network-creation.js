@@ -1,58 +1,65 @@
+
+
+var  names = [];
+nodes.forEach(function (node) {
+  names.push(node.label)
+});
+
+
+// Creation lists nodes and edges
+
 function createNetwork(json) {
 
   json.nodes.forEach(function (node) {
     nodeHash[node.label] = node.id;
-    nodes.push({id: node.id, label: node.label, year: node.year, edges: node.edges, gender: node.gender, cfis: node.cfis});
+    nodes.push({id: node.id, label: node.label, year: node.year, gender: node.gender, cfis: node.cfis});
   });
 
   json.edges.forEach(function (edge) {
     edges.push({source: nodeHash[edge.source], target: nodeHash[edge.target], weight: edge.weight, place: edge.place, month: edge.month, year: edge.year, repeated: edge.repeated, relationship: edge.relationship, comments: edge.comments});
-    increaseDegree(edge)
+    newEdge(edge);
   });
   createForceNetwork(nodes, edges);
 
 }
 
+//create a network from an edgelist and nodelist and print it in a svg
+
 function createForceNetwork(nodes, edges) {
 
-  //create a network from an edgelist
-  var colors = {"2020": "#BB8FCE" , "2019" : "#42A5F5", "2018" : "#66BB6A" , "2017" : "#E57373"};
-
-  var names = getNames(nodes);
-
   var force = d3.layout.force().nodes(nodes).links(edges)
-  .size([1000,1000])
-  .charge(-200)
-  .linkDistance(80)
-  .on("tick", updateNetwork)
+    .size([1000,1000])
+    .charge(-200)
+    .linkDistance(80)
+    .on("tick", updateNetwork)
 
   d3.select("svg").selectAll("line")
-  .data(edges)
-  .enter()
-  .append("line")
-  .on("click", edgeClick)
-  .style("stroke-width", function (d) {return d.weight})
-  .style("stroke", function (d) {
-    if(d.relationship == "FALSE"){
-      return "#000000"
-    }else{
-      return "#E74C3C"
-    }
-  })
+    .data(edges)
+    .enter()
+    .append("line")
+    .on("click", edgeClick)
+    .style("stroke-width", function (d) {return d.weight})
+    .style("stroke", function (d) {
+      if(d.relationship == "FALSE"){
+        return "#000000"
+      }else{
+        return "#E74C3C"
+      }
+    })
 
   var nodeEnter = d3.select("svg").selectAll("g.node")
-  .data(nodes)
-  .enter()
-  .append("g")
-  .attr("class", "node")
-  .on("click", nodeinfo)
-  .on("dblclick", nodeDoubleClick)
-  .on("mouseover", nodeOver)
-  .on("mouseout", reset)
-  .call(force.drag());
+    .data(nodes)
+    .enter()
+    .append("g")
+    .attr("class", "node")
+    .on("click", nodeinfo)
+    .on("dblclick", nodeDoubleClick)
+    .on("mouseover", nodeOver)
+    .on("mouseout", reset)
+    .call(force.drag());
 
   d3.select("#search_button")
-  .on("click", SearchNode);
+    .on("click", SearchNode);
 
   d3.select("#but1")
     .on("click", y2017);
@@ -67,19 +74,18 @@ function createForceNetwork(nodes, edges) {
 
 
   nodeEnter.append("circle")
-
-  .attr("r", function (d) {
-    if (max_degree.includes(d)){
-      return 15
-    }else{
-      return 10
-    }
-          })
-  .style('fill', function(d) {
-    return colors[d.year];
-  })
-  .style("stroke", "black")
-  .style("opacity", "1");
+    .attr("r", function (d) {
+      if (max_degree.includes(d)){
+        return 15
+      }else{
+        return 10
+      }
+            })
+    .style('fill', function(d) {
+      return colors[d.year];
+    })
+    .style("stroke", "black")
+    .style("opacity", "1");
 
 
 
@@ -91,16 +97,17 @@ function createForceNetwork(nodes, edges) {
     .text("\uf005");
 
   nodeEnter.append("text")
-   .style("text-anchor", "middle")
-   .attr("y", 20)
-   .style("font-size", "10px")
-   .text(function (d) {return d.label})
-   .style("pointer-events", "none")
+     .style("text-anchor", "middle")
+     .attr("y", 20)
+     .style("font-size", "10px")
+     .text(function (d) {return d.label})
+     .style("pointer-events", "none")
 
 
   force.start();
 
 
+  // Search for a node (browser)
 
   function SearchNode() {
       var name = document.getElementById("search_bar").value
@@ -119,56 +126,60 @@ function createForceNetwork(nodes, edges) {
 
     var YearSet = new Set();
 
-        function y2017(){
-          YearFilter(2017,YearSet)
-        }
-        function y2018(){
-          YearFilter(2018,YearSet)
-        }
-        function y2019(){
-          YearFilter(2019,YearSet)
-        }
-        function y2020(){
-          YearFilter(2020,YearSet)
-        }
-        function y2021(){
-          YearFilter(2021,YearSet)
-        }
+    // Select year from button
+    function y2017(){
+      YearFilter(2017,YearSet)
+    }
+    function y2018(){
+      YearFilter(2018,YearSet)
+    }
+    function y2019(){
+      YearFilter(2019,YearSet)
+    }
+    function y2020(){
+      YearFilter(2020,YearSet)
+    }
+    function y2021(){
+      YearFilter(2021,YearSet)
+    }
 
-        function YearFilter(year,YearSet){
-            reset()
-            //Actualizar el conjunto de años
-            if(YearSet.has(year)){
-                YearSet.delete(year)
-            }
-            else{
-                YearSet.add(year)
-            }
-            console.log(YearSet,YearSet.size)
-
-            if(YearSet.size == 0){
-                filteredEdges = edges
-            }
-            else{
-                var egoIDs = [];
-                var filteredEdges = edges.filter(function (p) {return YearSet.has(p.year)});
-                filteredEdges.forEach(function (p) {
-                   egoIDs.push(p.target.id);
-                   egoIDs.push(p.source.id);
-                });
-
-                d3.selectAll("line").filter(function (p) {return filteredEdges.indexOf(p) == -1})
-                .style("opacity", "0.3")
-                .style("stroke-width", "1")
-
-                d3.selectAll("text").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
-                .style("opacity", "0")
-
-                d3.selectAll("circle").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
-                .style("fill", "#66CCCC")
-                .style("opacity", "0.3");
-            }
+    // Highlight nodes and edges from a year
+    function YearFilter(year,YearSet){
+        reset()
+        //Actualizar el conjunto de años
+        if(YearSet.has(year)){
+            YearSet.delete(year)
         }
+        else{
+            YearSet.add(year)
+        }
+        console.log(YearSet,YearSet.size)
+
+        if(YearSet.size == 0){
+            filteredEdges = edges
+        }
+        else{
+            var egoIDs = [];
+            var filteredEdges = edges.filter(function (p) {return YearSet.has(p.year)});
+            filteredEdges.forEach(function (p) {
+               egoIDs.push(p.target.id);
+               egoIDs.push(p.source.id);
+            });
+
+            d3.selectAll("line").filter(function (p) {return filteredEdges.indexOf(p) == -1})
+            .style("opacity", "0.3")
+            .style("stroke-width", "1")
+
+            d3.selectAll("text").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
+            .style("opacity", "0")
+
+            d3.selectAll("circle").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
+            .style("fill", "#66CCCC")
+            .style("opacity", "0.3");
+        }
+    }
+
+  // Print the graph as original
 
   function reset() {
     force.start();
@@ -205,14 +216,18 @@ function createForceNetwork(nodes, edges) {
       .text("\uf005");
   }
 
+  // Action in doubleclick
   function nodeDoubleClick(d) {
     d.fixed = false;
   }
+
+  // Auxiliary function to nodeF
   function nodeOver(d) {
     force.stop();
     nodeF(d);
   }
 
+  // Highlight edges from node
   function nodeF(d) {
     var egoIDs = [];
     var filteredEdges = edges.filter(function (p) {return p.source == d || p.target == d});
@@ -226,7 +241,6 @@ function createForceNetwork(nodes, edges) {
         egoIDs.push(p.source.id)
       }
     });
-
     d3.selectAll("line").filter(function (p) {return filteredEdges.indexOf(p) == -1})
     .style("opacity", "0.3")
     .style("stroke-width", "1")
@@ -239,6 +253,8 @@ function createForceNetwork(nodes, edges) {
     .style("opacity", "0.3");
 
   }
+
+  // Action on click edge
   function edgeClick(e) {
        force.stop();
        e.fixed = true;
@@ -246,6 +262,7 @@ function createForceNetwork(nodes, edges) {
        edgeF(e);
   };
 
+  //Highlight edge
   function edgeF(e) {
        var egoIDs = [];
        var filteredEdges = edges.filter(function (p) {return p == e});
@@ -268,6 +285,8 @@ function createForceNetwork(nodes, edges) {
        .style("opacity", "0.3");
 
      }
+
+  // Move nodes
   function updateNetwork() {
     d3.select("svg").selectAll("line")
     .attr("x1", function (d) {return d.source.x})
