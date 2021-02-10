@@ -47,7 +47,7 @@ function addPoints(newNodes, points){
   newNodes.forEach(function(n){
     if ('points' in nodes[n.id]){
       nodes[n.id].points += points;
-      nodes[n.id].average = nodes[n.id].points / nodes[n.id].degree;
+      nodes[n.id].average = Math.floor((nodes[n.id].points / nodes[n.id].degree)*100)/100;
     } else {
       nodes[n.id]['points']  = points;
       nodes[n.id]['average'] = nodes[n.id].points;
@@ -102,6 +102,8 @@ function nodeinfo(e){
         node_info += "<b>Any: </b>" + e.year + "<br/>";
         node_info += "<b>CFIS: </b>" + e.cfis + "<br/>";
         node_info += "<b>Arestes: </b>" + e.degree + "<br/>";
+        node_info += "<b>Points: </b>" + e.points + "<br/>";
+        node_info += "<b>Average: </b>" + e.average + "<br/>";
       d3.select("#div2").html(node_info)
       d3.select("#div1").style("opacity", 0);
 }

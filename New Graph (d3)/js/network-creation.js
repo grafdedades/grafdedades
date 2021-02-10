@@ -1,11 +1,3 @@
-
-
-var  names = [];
-nodes.forEach(function (node) {
-  names.push(node.label)
-});
-
-
 // Creation lists nodes and edges
 
 function createNetwork(json) {
@@ -26,6 +18,11 @@ function createNetwork(json) {
 //create a network from an edgelist and nodelist and print it in a svg
 
 function createForceNetwork(nodes, edges) {
+  
+  var  names = [];
+  nodes.forEach(function (node) {
+    names.push(node.label)
+  });
 
   var force = d3.layout.force().nodes(nodes).links(edges)
     .size([1000,1000])
@@ -298,5 +295,6 @@ function createForceNetwork(nodes, edges) {
       .attr("transform", function (d) {return "translate(" + d.x + "," + d.y + ")"});
 
   }
+  console.log(names)
   autocomplete(document.getElementById("search_bar"), names);
 }
