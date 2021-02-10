@@ -3,6 +3,49 @@ var colors = {"2017" : "#E57373", "2018" : "#66BB6A", "2019" : "#42A5F5",
               "2023" : "#993300", "2024" : "#999966", "OTHER": "#660000"};
 
 
+function createRankings(){
+  var nodes_copy = [];
+  nodes.forEach((n) => {
+    nodes_copy.push({id : n.id, degree : n.degree, points : n.points})
+  });
+  pointsRanking(nodes_copy);
+  degreeRanking(nodes_copy);
+}
+
+function comparePoints( a, b ) {
+  if ( a.points < b.points ){
+    return -1;
+  }
+  if ( a.points > b.points ){
+    return 1;
+  }
+  return 0;
+}
+
+function pointsRanking(nodes_copy){
+  nodes_copy.sort( comparePoints );
+  nodes_copy.forEach((n) => {
+    pnt_rank_id.push({id : n.id, points : n.points})
+  });
+};
+
+function compareDegree( a, b ) {
+  if ( a.degree < b.degree ){
+    return -1;
+  }
+  if ( a.degree > b.degree ){
+    return 1;
+  }
+  return 0;
+}
+
+function degreeRanking(nodes_copy){
+  nodes_copy.sort( compareDegree );
+  nodes_copy.forEach((n) => {
+    deg_rank_id.push({id : n.id, degree : n.degree})
+  });
+};
+
 // Display edge info
 function recuadro(e) {
   d3.select("#div1").transition()
@@ -30,6 +73,9 @@ var nodeHash = {};
 // Lists of nodes and edges (only important info for the network construction)
 var nodes = [];
 var edges = [];
+
+var pnt_rank_id = [];
+var deg_rank_id = [];
 
 var max_degree = [];
 

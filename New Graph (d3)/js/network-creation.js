@@ -11,6 +11,7 @@ function createNetwork(json) {
     edges.push({source: nodeHash[edge.source], target: nodeHash[edge.target], weight: edge.weight, place: edge.place, month: edge.month, year: edge.year, repeated: edge.repeated, relationship: edge.relationship, comments: edge.comments});
     newEdge(edge);
   });
+  createRankings();
   createForceNetwork(nodes, edges);
 
 }
@@ -18,7 +19,7 @@ function createNetwork(json) {
 //create a network from an edgelist and nodelist and print it in a svg
 
 function createForceNetwork(nodes, edges) {
-  
+
   var  names = [];
   nodes.forEach(function (node) {
     names.push(node.label)
@@ -295,6 +296,5 @@ function createForceNetwork(nodes, edges) {
       .attr("transform", function (d) {return "translate(" + d.x + "," + d.y + ")"});
 
   }
-  console.log(names)
   autocomplete(document.getElementById("search_bar"), names);
 }
