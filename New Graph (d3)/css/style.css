@@ -1,4 +1,8 @@
-BODY{ font-family: 'Roboto Mono', monospace;  }
+BODY{
+    font-family: 'Roboto Mono', monospace;
+    background: #C9F6F2;
+}
+
   svg {
     height: 1000px;
     width: 1000px;
@@ -6,6 +10,7 @@ BODY{ font-family: 'Roboto Mono', monospace;  }
     margin-right: auto;
     display:block;
   }
+
   div.tooltip {
     position: fixed;
     bottom: 20;
@@ -195,3 +200,30 @@ input.input1 {
   height: 150px;
   width: 200px;
   }
+
+footer {
+    background: #28968B;
+    margin: 0;
+    overflow: auto;
+    width: 100%;
+}
+
+.icon li {
+    display: inline;
+    float: right;
+    padding-left: 15px;
+    border-left: 2px solid #9BDEEC;
+    margin-right: 20px;
+}
+
+.icon i {
+
+    font-size: 250%;
+    text-decoration: none;
+    padding: 2%;
+    color: #D5EFF5;
+}
+
+.icon i:hover {
+    color: #fffaaa;
+}
