@@ -69,7 +69,7 @@ div.year {
 .button_s {
   background-color: white;
   top: 10;
-  right: 400;
+  right: 350;
   color: black;
   border: 2px solid #42A5F5;
   font-family: 'Roboto Mono', monospace;
@@ -85,7 +85,7 @@ input.input1 {
   position: fixed;
   top: 10;
   padding: 10px 100px;
-  right: 530;
+  right: 480;
   background-color: white;
   background-image: url('../data/sex.png');
   background-position: 50px 1px;
@@ -108,10 +108,10 @@ input.input1 {
   border: 1px solid #d4d4d4;
   border-bottom: none;
   border-top: none;
-  padding: 10px 530px;
+  padding: 10px 470px;
   /*position the autocomplete items to be the same width as the container:*/
   top: 60;
-  left: -75;
+  left: -130;
   right: 0;
 }
 .autocomplete-items div {
