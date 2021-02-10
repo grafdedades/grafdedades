@@ -18,7 +18,7 @@ function createNetwork(json) {
 //create a network from an edgelist and nodelist and print it in a svg
 
 function createForceNetwork(nodes, edges) {
-  
+
   var  names = [];
   nodes.forEach(function (node) {
     names.push(node.label)
@@ -68,6 +68,14 @@ function createForceNetwork(nodes, edges) {
     .on("click", y2020);
   d3.select("#but5")
     .on("click", y2021);
+  d3.select("#but2017")
+    .on("click", node2017);
+  d3.select("#but2018")
+    .on("click", node2018);
+  d3.select("#but2019")
+    .on("click", node2019);
+  d3.select("#but2020")
+    .on("click", node2020);
 
 
   nodeEnter.append("circle")
@@ -140,6 +148,21 @@ function createForceNetwork(nodes, edges) {
       YearFilter(2021,YearSet)
     }
 
+
+    function node2017(){
+      Nodes_YearFilter(2017)
+    }
+    function node2018(){
+      Nodes_YearFilter(2018)
+    }
+    function node2019(){
+      Nodes_YearFilter(2019)
+    }
+    function node2020(){
+      Nodes_YearFilter(2020)
+    }
+
+
     // Highlight nodes and edges from a year
     function YearFilter(year,YearSet){
         reset()
@@ -175,6 +198,34 @@ function createForceNetwork(nodes, edges) {
             .style("opacity", "0.3");
         }
     }
+
+    function Nodes_YearFilter(year){
+        reset()
+        var egoIDs = [];
+        var filteredEdges = edges.filter(function (p) { return p.source.year == year || p.target.year == year});
+        filteredEdges.forEach(function (p) {
+          if (p.target.year == year){
+
+            egoIDs.push(p.target.id);
+          }
+          if (p.source.year == year){
+            egoIDs.push(p.source.id);
+          }
+        });
+
+        d3.selectAll("line").filter(function (p) {return filteredEdges.indexOf(p) == -1})
+        .style("opacity", "0.3")
+        .style("stroke-width", "1")
+
+        d3.selectAll("text").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
+        .style("opacity", "0")
+
+        d3.selectAll("circle").filter(function (p) {return egoIDs.indexOf(p.id) == -1})
+        .style("fill", "#66CCCC")
+        .style("opacity", "0.3");
+        }
+
+
 
   // Print the graph as original
 

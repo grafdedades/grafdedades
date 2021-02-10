@@ -161,7 +161,7 @@ input.input1 {
 
 
   }
-.my-legend ul.legend-labels li span {
+.my-legend ul.legend-labels li button {
   display: block;
   float: left;
   height: 16px;
