@@ -40,13 +40,23 @@
   <button class="button button_s" id="search_button">Busca!</button>
   <div class='my-legend'>
   <div class='legend-scale'>
-      <div class='legend-title'>Promoció nodes</div>
-    <ul class='legend-labels'>
+      <div class='legend-title'><select class='legend-title' name="selector" onchange="menu(this.value)">
+
+      	<option value = "legend">Promoció nodes</option>
+      	<option value = "ranking_a">Ranking arestes</option>
+      	<option value = "ranking_p">Ranking punts</option>
+
+    </select></div>
+    <ul class='legend-labels' id ="legend_but">
       <li><button style='background:#E57373;' id="but2017"></button>2017</li>
       <li><button style='background:#66BB6A;' id="but2018"></button>2018</li>
       <li><button style='background:#42A5F5;' id="but2019"></button>2019</li>
       <li><button style='background:#FFFF99;' id="but2020"></button>2020</li>
     </ul>
+    <p class='legend-labels2' id ="legend_but2">
+    </p>
+    <p class='legend-labels2' id ="legend_but3">
+    </p>
   </div>
   </div>
   <svg id = "svg">

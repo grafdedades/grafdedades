@@ -11,6 +11,7 @@ function createNetwork(json) {
     edges.push({source: nodeHash[edge.source], target: nodeHash[edge.target], weight: edge.weight, place: edge.place, month: edge.month, year: edge.year, repeated: edge.repeated, relationship: edge.relationship, comments: edge.comments});
     newEdge(edge);
   });
+  createRankings();
   createForceNetwork(nodes, edges);
 
 }
