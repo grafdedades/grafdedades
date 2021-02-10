@@ -39,7 +39,7 @@ id;source;target;weight;place;month;year ;repeated;relationship;comments
 37;Oriol Ricart;Marina García;5;Casa Marina;;2019;TRUE;FALSE;
 38;Marina Rosell;Alex Carrillo;1;Colònies;Jan;2019;FALSE;FALSE;
 39;Pau Marquez;Danae Canillas;5;;;;TRUE;FALSE;
-40;Roger Creus;Zoe Meini;1;;;;;FALSE;
+40;Roger Creus;Zoe Meini;5;;;;;TRUE;
 41;Pau Tarragó;Raquel Ventós;1;Sutton;Nov;2019;FALSE;FALSE;
 42;Marc Vernet;Marina Rosell;1;;;;;FALSE;
 43;Marc Vernet;Jordi Puig;1;;;;;FALSE;
@@ -51,5 +51,5 @@ id;source;target;weight;place;month;year ;repeated;relationship;comments
 49;Maria Ribalta;Albert Domínguez;5;;;;TRUE;TRUE;
 50;Danae Canillas;Xavier Rubiès;1;;;;;FALSE;
 51;Hugo Jiménez;Liz Segon;1;Casa Liz;Feb;2021;FALSE;FALSE;Jaume en la cama
-52;Marina García;Roger Creus;1;;;;FALSE;
-53;Toni Jubés;Mireia Boneta;1;;;;FALSE;
+52;Marina García;Roger Creus;1;Apolo;Sep;2019;FALSE;
+53;Toni Jubés;Mireia Boneta;1;Apolo;Sep;2019;FALSE;
