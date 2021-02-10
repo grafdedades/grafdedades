@@ -308,7 +308,7 @@ function createForceNetwork(nodes, edges) {
   function edgeClick(e) {
        force.stop();
        e.fixed = true;
-       recuadro(e);
+       edgeinfo(e);
        edgeF(e);
   };
 
