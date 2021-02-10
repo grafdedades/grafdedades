@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 BODY{ font-family: 'Roboto Mono', monospace;  }
 
 /* el grafo */
@@ -7,6 +8,33 @@ svg {
   margin-left: auto;
   margin-right: auto;
   display:block;
+=======
+BODY{
+    font-family: 'Roboto Mono', monospace;
+    background: #C9F6F2;
+}
+
+  svg {
+    height: 1000px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+  }
+
+  div.tooltip {
+    position: fixed;
+    bottom: 20;
+    left: 20;
+    width: 310px;
+    border: 3px solid #42A5F5;
+    text-align: left;
+    height: 130px;
+    padding: 2px;
+    opacity: 0;
+    background: white;
+    pointer-events: none;
+>>>>>>> master
 }
 
 /* informacion aristas */
@@ -206,4 +234,34 @@ input.input1 {
   position:fixed;
   height: 150px;
   width: 200px;
+<<<<<<< HEAD
+=======
+  }
+
+footer {
+    background: #28968B;
+    margin: 0;
+    overflow: auto;
+    width: 100%;
+}
+
+.icon li {
+    display: inline;
+    float: right;
+    padding-left: 15px;
+    border-left: 2px solid #9BDEEC;
+    margin-right: 20px;
+}
+
+.icon i {
+
+    font-size: 250%;
+    text-decoration: none;
+    padding: 2%;
+    color: #D5EFF5;
+}
+
+.icon i:hover {
+    color: #fffaaa;
+>>>>>>> master
 }

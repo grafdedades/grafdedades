@@ -4,7 +4,7 @@ id;source;target;weight;place;month;year ;repeated;relationship;comments
 2;Clara Rovira;Joan Vaquer;5;Mallorca;Jul;2020;TRUE;FALSE;Insomnio del espi
 3;José Pérez;Jordi Puig;1;Marina;Nov;2018;FALSE;FALSE;
 4;Mireia Boneta;Arnau Turch;1;Colònies;Jan;2019;FALSE;FALSE;
-5;Marina Rosell;Arnau Espinalt;3;Colònies;Jan;2019;TRUE;FALSE;La despensa
+5;Marina Rosell;Arnau Espinalt;3;Apolo;Feb;2019;TRUE;FALSE;La despensa
 6;Marina García;Arnau Espinalt;1;Colònies;Jan;2019;FALSE;FALSE;La del replay
 7;Sandra Millet;Arnau Espinalt;3;Pis Espi;Jan;2021;TRUE;FALSE;La del muro
 8;Liz Segon;Marina Rosell;1;Colònies;Jan;2019;FALSE;FALSE;
@@ -23,7 +23,7 @@ id;source;target;weight;place;month;year ;repeated;relationship;comments
 21;Aina Perez;Pol Rosinés;1;Sutton;Nov;2019;FALSE;FALSE;
 22;Sofia Diaz;Jordi Puig;1;Novatajes;Oct;2019;FALSE;FALSE;
 23;Lena;Raul Higueras;1;;;;;FALSE;
-24;Marina Rosell;Pau Lozano;10;;;;TRUE;;La del twitter
+24;Marina Rosell;Pau Lozano;5;;;;TRUE;;La del twitter
 25;Eva Brigitte;Dani Gómez;1;Pis Espi;Jan;2021;TRUE;FALSE;Cortinas + sofa 2.0
 26;Víctor Novelle;Helena Ferran;5;;;;TRUE;TRUE;La espatula
 27;Aina Perez;Pau Tarragó ;1;Colònies;Jan;2020;TRUE;FALSE;Bailecito seductor
