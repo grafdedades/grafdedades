@@ -1,6 +1,14 @@
-// POINTS
+function createRankings(){
+  var nodes_copy = [];
+  nodes.forEach((n) => {
+    nodes_copy.push({id : n.id, degree : n.degree, points : n.points, average : n.average})
+  });
+  pointsRanking(nodes_copy);
+  degreeRanking(nodes_copy);
+  averageRanking(nodes_copy);
+}
 
-var pnt_rank_id = [];
+// POINTS
 
 function comparePoints( a, b ) {
   if ( a.points < b.points ){
@@ -21,8 +29,6 @@ function pointsRanking(nodes_copy){
 
 // DEGREE
 
-var deg_rank_id = [];
-
 function compareDegree( a, b ) {
   if ( a.degree > b.degree ){
     return -1;
@@ -41,8 +47,6 @@ function degreeRanking(nodes_copy){
 };
 
 // AVERAGE
-
-var avg_rank_id = [];
 
 function averageRanking(nodes_copy){
   nodes_copy.sort( comparePoints );

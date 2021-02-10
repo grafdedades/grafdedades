@@ -36,6 +36,7 @@ function createForceNetwork(nodes, edges) {
     .enter()
     .append("line")
     .on("click", edgeClick)
+    .on("mouseout", reset)
     .style("stroke-width", function (d) {return d.weight})
     .style("stroke", function (d) {
       if(d.relationship == "FALSE"){
