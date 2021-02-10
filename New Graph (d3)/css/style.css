@@ -199,12 +199,18 @@ input.input1 {
 
   }
 
-.my-legend p.legend-labels2  {
-  display: block;
-  margin-top: 50px;
-  margin-left: 14px;
-  font-size: 80%;
-}
+  .my-legend p {
+    display: block;
+    font-size: 85%;
+    margin: 0;
+
+    }
+  .my-legend .labels2 {
+    margin-top: 45;
+    margin-left: 10;
+
+    }
+
 
 .my-legend .legend-source {
   font-size: 70%;
