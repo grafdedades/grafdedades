@@ -7,6 +7,11 @@ var nodeHash = {};
 var nodes = [];
 var edges = [];
 
+var darkmode = false;
+
+var color_t = "#000000"
+var color_n = "black"
+
 // ### COLORS ###
 
 var colors = {"2017" : "#E57373", "2018" : "#66BB6A", "2019" : "#42A5F5",

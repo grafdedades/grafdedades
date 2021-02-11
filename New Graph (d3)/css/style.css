@@ -1,8 +1,10 @@
 BODY{
     font-family: 'Roboto Mono', monospace;
-    background: #C9F6F2;
 }
-
+.dark-mode {
+  background-color: black;
+  color: white;
+}
   svg {
     height: 1000px;
     width: 1000px;
@@ -21,7 +23,6 @@ BODY{
     height: 130px;
     padding: 2px;
     opacity: 0;
-    background: white;
     pointer-events: none;
 }
 
@@ -35,7 +36,6 @@ div.tooltip2 {
   height: 155px;
   padding: 2px;
   opacity: 0;
-  background: white;
   pointer-events: none;
 }
 
@@ -81,7 +81,11 @@ div.tooltip2 {
   border-radius: 8px;
   background-color: #42A5F5;
   border: none;
+<<<<<<< HEAD
   color: white;
+=======
+  padding: 10px 32px;
+>>>>>>> hugo
   text-align: center;
   font-size: 19px;
   padding: 10px;
@@ -94,6 +98,7 @@ div.tooltip2 {
   font-family: 'Roboto Mono', monospace;
 }
 
+<<<<<<< HEAD
 .submit:after {
   content: '»';
   position: absolute;
@@ -101,6 +106,18 @@ div.tooltip2 {
   top: 8px;
   right: 25px;
   transition: 0.5s;
+=======
+div.year {
+  position: fixed;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding: 10px 32px;
+  top: 200;
+  right: 80;
+  border: 2px solid #42A5F5;
+>>>>>>> hugo
 }
 
 .submit:hover{
@@ -108,6 +125,7 @@ div.tooltip2 {
   padding-left:8px;
 }
 
+<<<<<<< HEAD
 .submit:hover:after {
   opacity: 1;
   right: 10px;
@@ -116,14 +134,30 @@ div.tooltip2 {
 .submit:active {
   transform: translateX(4px);
   transition: 0s;
+=======
+.button_s {
+  top: 10;
+  right: 350;
+  border: 2px solid #42A5F5;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.button_s:hover {
+  background-color: #42A5F5;
+  font-family: 'Roboto Mono', monospace;
+>>>>>>> hugo
 }
 
 input.input1 {
   position: fixed;
   top: 10;
   padding: 10px 100px;
+<<<<<<< HEAD
   right: 475;
   background-color: white;
+=======
+  right: 480;
+>>>>>>> hugo
   background-image: url('../data/sex.png');
   background-position: 50px 1px;
   background-size: contain;
@@ -223,12 +257,10 @@ input.input1 {
 
 .my-legend .legend-source {
   font-size: 70%;
-  color: #999;
   clear: both;
 
   }
 .my-legend  {
-  color: #000000;
   border: 2px solid #42A5F5;
   top: 10;
   right: 80;
@@ -261,4 +293,56 @@ footer {
 
 .icon i:hover {
     color: #fffaaa;
+}
+
+
+:root {
+    --color-green: #00a878;
+    --color-red: #fe5e41;
+    --color-button: #fdffff;
+    --color-black: #000;
+}
+.switch-button {
+    display: inline-block;
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    top: 23;
+    left: 30;
+
+
+}
+.switch-button .switch-button__checkbox {
+    display: none;
+}
+.switch-button .switch-button__label {
+    background-color: var(--color-black);
+    width: 4rem;
+    height: 2rem;
+    border-radius: 2rem;
+    display: inline-block;
+    position: relative;
+}
+.switch-button .switch-button__label:before {
+    transition: .2s;
+    display: block;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-image: url('../data/sun.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--color-button);
+    content: '';
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+    background-color: var(--color-button);
+
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+    transform: translateX(2rem);
+    background-image: url('../data/moon.png');
 }
