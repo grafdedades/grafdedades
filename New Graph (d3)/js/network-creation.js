@@ -50,6 +50,7 @@ function createForceNetwork(nodes, edges) {
     .linkDistance(80)
     .on("tick", updateNetwork)
 
+
   d3.select("svg").selectAll("line")
     .data(edges)
     .enter()
