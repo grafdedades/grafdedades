@@ -32,6 +32,9 @@ function createNetwork(json) {
 
 }
 
+
+
+
 //create a network from an edgelist and nodelist and print it in a svg
 
 function createForceNetwork(nodes, edges) {
@@ -58,7 +61,7 @@ function createForceNetwork(nodes, edges) {
     })
     .style("stroke", function(d) {
       if (d.relationship == "FALSE") {
-        return "#000000"
+        return color_t
       } else {
         return "#E74C3C"
       }
@@ -117,7 +120,8 @@ function createForceNetwork(nodes, edges) {
     .on("click", rank4_p);
   d3.select("#rank_5_p")
     .on("click", rank5_p);
-
+  d3.select("#switch-2")
+    .on("click", Darkmode);
 
 
 
@@ -132,7 +136,7 @@ function createForceNetwork(nodes, edges) {
     .style('fill', function(d) {
       return colors[d.year];
     })
-    .style("stroke", "black")
+    .style("stroke", color_n)
     .style("opacity", "1");
 
 
@@ -150,6 +154,7 @@ function createForceNetwork(nodes, edges) {
     .style("text-anchor", "middle")
     .attr("y", 20)
     .style("font-size", "10px")
+    .style("fill", color_t)
     .text(function(d) {
       return d.label
     })
@@ -175,6 +180,24 @@ function createForceNetwork(nodes, edges) {
       nodeF(node);
     }
   }
+
+  function Darkmode() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+     darkmode = !darkmode
+     console.log(darkmode)
+     if (darkmode){
+       color_t = "#ffffff"
+       color_n = "white"
+     }else{
+       color_t = "#000000"
+       color_n = "black"
+     }
+     console.log(color_t);
+     reset();
+
+  }
+
 
   var YearSet = new Set();
 
@@ -334,7 +357,8 @@ function createForceNetwork(nodes, edges) {
       .style('fill', function(d) {
         return colors[d.year];
       })
-      .style("opacity", "1");
+      .style("opacity", "1")
+      .style("stroke", color_n);
 
     d3.selectAll("line")
       .style("stroke-width", function(d) {
@@ -343,7 +367,7 @@ function createForceNetwork(nodes, edges) {
       .style("opacity", "1")
       .style("stroke", function(d) {
         if (d.relationship == "FALSE") {
-          return "#000000"
+          return color_t
         } else {
           return "#E74C3C"
         }
@@ -354,6 +378,7 @@ function createForceNetwork(nodes, edges) {
       .style("text-anchor", "middle")
       .style("opacity", "1")
       .style("font-size", "10px")
+      .style("fill", color_t)
       .attr("y", 20)
       .text(function(d) {
         return d.label

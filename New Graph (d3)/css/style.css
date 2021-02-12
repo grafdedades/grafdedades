@@ -1,266 +1,314 @@
+
 BODY{
-    font-family: 'Roboto Mono', monospace;
-    background: #C9F6F2;
+  font-family: 'Roboto Mono', monospace;
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+svg {
+  height: 1000px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
 }
 
-  svg {
-    height: 1000px;
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    display:block;
-  }
-
-  div.edge-info {
-    position: fixed;
-    top: 300;
-    left: 20;
-    max-width: 310px;
-    border: 3px solid #42A5F5;
-    border-radius: 8px;
-    text-align: center;
-    max-height: 130px;
-    padding: 10px;
-    opacity: 0;
-    background: white;
-    pointer-events: none;
-}
-
-div.node-info {
+div.tooltip {
   position: fixed;
-  top: 300;
-  left: 100;
-  max-width: 150px;
+  bottom: 20;
+  left: 20;
+  width: 310px;
   border: 3px solid #42A5F5;
-  border-radius: 8px;
-  text-align: center;
-  max-height: 155px;
-  padding: 10px;
+  text-align: left;
+  height: 130px;
+  padding: 2px;
   opacity: 0;
-  background: white;
   pointer-events: none;
+}
+
+div.tooltip2 {
+position: fixed;
+bottom: 20;
+left: 2 0;
+width: 150px;
+border: 3px solid #42A5F5;
+text-align: left;
+height: 155px;
+padding: 2px;
+opacity: 0;
+pointer-events: none;
 }
 
 /* YEAR BUTTONS */
 .year_butt .year {
-    display: block;
+  display: block;
 }
 
 .year {
-   position: fixed;
-   font-size: 16px;
-   padding: 1%;
-   background-color: #5CE4DF;
-   top: 200;
-   right: 80;
-   color: black;
+ position: fixed;
+ font-size: 16px;
+ padding: 1%;
+ background-color: #5CE4DF;
+ top: 200;
+ right: 80;
+
 }
 
 /* .year input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
 } */
 
 .year:hover {
-    background-color: #31ABA0;
+  background-color: #31ABA0;
 }
 
 .year:hover input ~ .checkmark {
-  background-color: #ccc;
+background-color: #ccc;
 }
 
 .year input:checked {
-  background-color: #31ABA0;
+background-color: #31ABA0;
 }
 
 /* search */
 .submit {
-  outline: none;
-  position: fixed;
-  border-radius: 8px;
-  background-color: #42A5F5;
-  border: none;
-  color: white;
-  text-align: center;
-  font-size: 19px;
-  padding: 10px;
-  width: 110px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 4px 2px;
-  top: 10;
-  right: 465;
-  font-family: 'Roboto Mono', monospace;
+outline: none;
+position: fixed;
+border-radius: 8px;
+background-color: #42A5F5;
+border: none;
+text-align: center;
+font-size: 19px;
+padding: 10px;
+width: 110px;
+transition: all 0.5s;
+cursor: pointer;
+margin: 4px 2px;
+top: 10;
+right: 465;
+font-family: 'Roboto Mono', monospace;
 }
 
 .submit:after {
-  content: '»';
-  position: absolute;
-  opacity: 0;
-  top: 8px;
-  right: 25px;
-  transition: 0.5s;
+content: '»';
+position: absolute;
+opacity: 0;
+top: 8px;
+right: 25px;
+transition: 0.5s;
 }
 
 .submit:hover{
-  padding-right: 24px;
-  padding-left:8px;
+padding-right: 24px;
+padding-left:8px;
 }
 
 .submit:hover:after {
-  opacity: 1;
-  right: 10px;
+opacity: 1;
+right: 10px;
 }
 
 .submit:active {
-  transform: translateX(4px);
-  transition: 0s;
+transform: translateX(4px);
+transition: 0s;
 }
 
 input.input1 {
-  position: fixed;
-  top: 10;
-  padding: 10px 100px;
-  right: 475;
-  background-color: white;
-  background-image: url('../data/sex.png');
-  background-position: 50px 1px;
-  background-size: contain;
-  font-size: 16px;
-  background-repeat: no-repeat;
-  border: 2px solid #42A5F5;
-  margin: 4px 2px;
-  font-family: 'Roboto Mono', monospace;
+position: fixed;
+top: 10;
+padding: 10px 100px;
+right: 475;
+background-color: white;
+background-image: url('../data/sex.png');
+background-position: 50px 1px;
+background-size: contain;
+font-size: 16px;
+background-repeat: no-repeat;
+border: 2px solid #42A5F5;
+margin: 4px 2px;
+font-family: 'Roboto Mono', monospace;
 
 }
 
 .autocomplete {
-  /*the container must be positioned relative:*/
-  position: relative;
-  display: inline-block;
+/*the container must be positioned relative:*/
+position: relative;
+display: inline-block;
 }
 .autocomplete-items {
-  position: fixed;
-  border: 1px solid #d4d4d4;
-  border-bottom: none;
-  border-top: none;
-  padding: 10px 470px;
-  /*position the autocomplete items to be the same width as the container:*/
-  top: 60;
-  left: -130;
-  right: 0;
+position: fixed;
+border: 1px solid #d4d4d4;
+border-bottom: none;
+border-top: none;
+padding: 10px 470px;
+/*position the autocomplete items to be the same width as the container:*/
+top: 60;
+left: -130;
+right: 0;
 }
 .autocomplete-items div {
-  padding: 10px;
-  cursor: pointer;
-  background-color: #fff;
-  border-bottom: 1px solid #d4d4d4;
+padding: 10px;
+cursor: pointer;
+background-color: #fff;
+border-bottom: 1px solid #d4d4d4;
 }
 .autocomplete-items div:hover {
-  /*when hovering an item:*/
-  background-color: #e9e9e9;
+/*when hovering an item:*/
+background-color: #e9e9e9;
 }
 .autocomplete-active {
-  /*when navigating through the items using the arrow keys:*/
-  background-color: DodgerBlue !important;
-  color: #ffffff;
-  width: 350px;
+/*when navigating through the items using the arrow keys:*/
+background-color: DodgerBlue !important;
+color: #ffffff;
+width: 350px;
 }
 
 .my-legend .legend-title {
-  text-align: left;
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-size: 100%;
-  top: 30;
-  right: 110;
-  position: fixed;
-  }
+text-align: left;
+margin-bottom: 5px;
+font-weight: bold;
+font-size: 100%;
+top: 30;
+right: 110;
+position: fixed;
+}
 .my-legend .legend-scale ul {
-  margin: 0;
-  margin-bottom: 5px;
-  padding: 0;
-  float: left;
-  list-style: none;
-  top: 60;
-  right: 150;
-  position: fixed;
+margin: 0;
+margin-bottom: 5px;
+padding: 0;
+float: left;
+list-style: none;
+top: 60;
+right: 150;
+position: fixed;
 
 
-  }
+}
 .my-legend .legend-scale ul li {
-  font-size: 80%;
-  list-style: none;
-  margin-left: 0;
-  line-height: 18px;
-  margin-bottom: 2px;
- }
+font-size: 80%;
+list-style: none;
+margin-left: 0;
+line-height: 18px;
+margin-bottom: 2px;
+}
 
- .my-legend ul.legend-labels li button {
-    outline: none;
-    border-radius: 100%;
-    display: block;
-    float: left;
-    height: 16px;
-    width: 16px;
-    margin-right: 5px;
-    margin-left: 0;
-    border: 1px solid #000000;
+.my-legend ul.legend-labels li button {
+  outline: none;
+  border-radius: 100%;
+  display: block;
+  float: left;
+  height: 16px;
+  width: 16px;
+  margin-right: 5px;
+  margin-left: 0;
+  border: 1px solid #000000;
 }
 
 .my-legend p {
-  display: block;
-  font-size: 85%;
-  margin: 0;
+display: block;
+font-size: 85%;
+margin: 0;
 
-  }
+}
 .my-legend .labels2 {
-  margin-top: 45;
-  margin-left: 10;
+margin-top: 45;
+margin-left: 10;
 
-  }
+}
 
 .my-legend .legend-source {
-  font-size: 70%;
-  color: #999;
-  clear: both;
+font-size: 70%;
+clear: both;
 
-  }
+}
 .my-legend  {
-  color: #000000;
-  border: 2px solid #42A5F5;
-  top: 10;
-  right: 80;
-  position:fixed;
-  height: 150px;
-  width: 200px;
-  }
+border: 2px solid #42A5F5;
+top: 10;
+right: 80;
+position:fixed;
+height: 150px;
+width: 200px;
+}
 
 footer {
-    background: #28968B;
-    margin: 0;
-    overflow: auto;
-    width: 100%;
+  background: #28968B;
+  margin: 0;
+  overflow: auto;
+  width: 100%;
 }
 
 .icon li {
-    display: inline;
-    float: right;
-    padding-left: 15px;
-    border-left: 2px solid #9BDEEC;
-    margin-right: 20px;
+  display: inline;
+  float: right;
+  padding-left: 15px;
+  border-left: 2px solid #9BDEEC;
+  margin-right: 20px;
 }
 
 .icon i {
-    font-size: 250%;
-    text-decoration: none;
-    padding: 2%;
-    color: #D5EFF5;
+  font-size: 250%;
+  text-decoration: none;
+  padding: 2%;
+  color: #D5EFF5;
 }
 
 .icon i:hover {
-    color: #fffaaa;
+  color: #fffaaa;
+}
+
+
+:root {
+    --color-green: #00a878;
+    --color-red: #fe5e41;
+    --color-button: #fdffff;
+    --color-black: #000;
+}
+.switch-button {
+    display: inline-block;
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    top: 23;
+    left: 30;
+
+
+}
+.switch-button .switch-button__checkbox {
+    display: none;
+}
+.switch-button .switch-button__label {
+    background-color: var(--color-black);
+    width: 4rem;
+    height: 2rem;
+    border-radius: 2rem;
+    display: inline-block;
+    position: relative;
+}
+.switch-button .switch-button__label:before {
+    transition: .2s;
+    display: block;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-image: url('../data/sun.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--color-button);
+    content: '';
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+    background-color: var(--color-button);
+
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+    transform: translateX(2rem);
+    background-image: url('../data/moon.png');
 }
