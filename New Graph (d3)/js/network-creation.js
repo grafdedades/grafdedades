@@ -120,7 +120,7 @@ function createForceNetwork(nodes, edges) {
     .on("click", rank4_p);
   d3.select("#rank_5_p")
     .on("click", rank5_p);
-  d3.select("#switch-2")
+  d3.select("#switch-label")
     .on("click", Darkmode);
 
 
