@@ -202,34 +202,44 @@ function createForceNetwork(nodes, edges) {
   var YearSet = new Set();
 
   function rank1_a(){
+    reset()
     nodeF(nodes[deg_rank_id[0]])
   }
   function rank2_a(){
+    reset()
     nodeF(nodes[deg_rank_id[1]])
   }
   function rank3_a(){
+    reset()
     nodeF(nodes[deg_rank_id[2]])
   }
   function rank4_a(){
+    reset()
     nodeF(nodes[deg_rank_id[3]])
   }
   function rank5_a(){
+    reset()
     nodeF(nodes[deg_rank_id[4]])
   }
 
   function rank1_p(){
+    reset()
     nodeF(nodes[pnt_rank_id[0]])
   }
   function rank2_p(){
+    reset()
     nodeF(nodes[pnt_rank_id[1]])
   }
   function rank3_p(){
+    reset()
     nodeF(nodes[pnt_rank_id[2]])
   }
   function rank4_p(){
+    reset()
     nodeF(nodes[pnt_rank_id[3]])
   }
   function rank5_p(){
+    reset()
     nodeF(nodes[pnt_rank_id[4]])
   }
   // Select year from button
