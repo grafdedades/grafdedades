@@ -7,11 +7,12 @@ BODY{
   color: white;
 }
 svg {
-  height: 1000px;
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  display:block;
+  height:900px;
+  width: 900px;
+  position: fixed;
+  bottom:10;
+  right:300;
+
 }
 
 div.tooltip {
@@ -298,10 +299,10 @@ border: solid 2px #42A5F5;
 .fa {
   position: fixed;
   text-decoration: none;
-  color: black;
+  color:#42A5F5;
   background-color:none;
-  top: 23;
-  left: 120;
+  top: 18;
+  left: 430;
 }
 
 /* Add a hover effect if you want */
