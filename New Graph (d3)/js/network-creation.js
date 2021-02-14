@@ -204,44 +204,94 @@ function createForceNetwork(nodes, edges) {
 
   function rank1_a(){
     reset()
+    d3.select("#rank_1_a")
+    .style("opacity", 0.5)
     nodeF(nodes[deg_rank_id[0]])
   }
   function rank2_a(){
     reset()
+    d3.select("#rank_2_a")
+    .style("opacity", 0.5)
     nodeF(nodes[deg_rank_id[1]])
   }
   function rank3_a(){
     reset()
+    d3.select("#rank_3_a")
+    .style("opacity", 0.5)
     nodeF(nodes[deg_rank_id[2]])
   }
   function rank4_a(){
     reset()
+    d3.select("#rank_4_a")
+    .style("opacity", 0.5)
     nodeF(nodes[deg_rank_id[3]])
   }
   function rank5_a(){
     reset()
+    d3.select("#rank_5_a")
+    .style("opacity", 0.5)
     nodeF(nodes[deg_rank_id[4]])
   }
 
   function rank1_p(){
     reset()
+    d3.select("#rank_1_p")
+    .style("opacity", 0.5)
     nodeF(nodes[pnt_rank_id[0]])
   }
   function rank2_p(){
     reset()
+    d3.select("#rank_2_p")
+    .style("opacity", 0.5)
     nodeF(nodes[pnt_rank_id[1]])
   }
   function rank3_p(){
     reset()
+    d3.select("#rank_3_p")
+    .style("opacity", 0.5)
     nodeF(nodes[pnt_rank_id[2]])
   }
   function rank4_p(){
     reset()
+    d3.select("#rank_4_p")
+    .style("opacity", 0.5)
     nodeF(nodes[pnt_rank_id[3]])
   }
   function rank5_p(){
     reset()
+    d3.select("#rank_5_p")
+    .style("opacity", 0.5)
     nodeF(nodes[pnt_rank_id[4]])
+  }
+  function rank1_m(){
+    reset()
+    d3.select("#rank_1_m")
+    .style("opacity", 0.5)
+    nodeF(nodes[deg_rank_id[0]])
+  }
+  function rank2_m(){
+    reset()
+    d3.select("#rank_2_m")
+    .style("opacity", 0.5)
+    nodeF(nodes[deg_rank_id[1]])
+  }
+  function rank3_m(){
+    reset()
+    d3.select("#rank_3_m")
+    .style("opacity", 0.5)
+    nodeF(nodes[deg_rank_id[2]])
+  }
+  function rank4_m(){
+    reset()
+    d3.select("#rank_4_m")
+    .style("opacity", 0.5)
+    nodeF(nodes[deg_rank_id[3]])
+  }
+  function rank5_m(){
+    reset()
+    d3.select("#rank_5_m")
+    .style("opacity", 0.5)
+    nodeF(nodes[deg_rank_id[4]])
   }
   // Select year from button
   function y2017() {
@@ -364,6 +414,42 @@ function createForceNetwork(nodes, edges) {
 
   function reset() {
     force.start();
+
+    d3.select("#rank_1_p")
+    .style("opacity", 1)
+    d3.select("#rank_2_p")
+    .style("opacity", 1)
+    d3.select("#rank_3_p")
+    .style("opacity", 1)
+    d3.select("#rank_4_p")
+    .style("opacity", 1)
+    d3.select("#rank_5_p")
+    .style("opacity", 1)
+
+    d3.select("#rank_1_a")
+    .style("opacity", 1)
+    d3.select("#rank_2_a")
+    .style("opacity", 1)
+    d3.select("#rank_3_a")
+    .style("opacity", 1)
+    d3.select("#rank_4_a")
+    .style("opacity", 1)
+    d3.select("#rank_5_a")
+    .style("opacity", 1)
+
+    d3.select("#rank_1_m")
+    .style("opacity", 1)
+    d3.select("#rank_2_m")
+    .style("opacity", 1)
+    d3.select("#rank_3_m")
+    .style("opacity", 1)
+    d3.select("#rank_4_m")
+    .style("opacity", 1)
+    d3.select("#rank_5_m")
+    .style("opacity", 1)
+
+
+
     d3.selectAll("circle")
       .style('fill', function(d) {
         return colors[d.year];

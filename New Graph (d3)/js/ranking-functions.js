@@ -49,7 +49,7 @@ function degreeRanking(nodes_copy){
 // AVERAGE
 
 function averageRanking(nodes_copy){
-  nodes_copy.sort( comparePoints );
+  nodes_copy.sort( compareAverage );
   nodes_copy.forEach((n) => {
     avg_rank_id.push(n.id)
   });

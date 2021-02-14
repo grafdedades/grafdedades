@@ -41,13 +41,14 @@ function menu(val){
     document.getElementById("legend_but").style.display="block";
     document.getElementById("rank_p").style.display="none";
     document.getElementById("rank_a").style.display="none";
+    document.getElementById("rank_m").style.display="none";
 
   }
   if(val == "ranking_p"){
     document.getElementById("legend_but").style.display="none";
     document.getElementById("rank_p").style.display="block";
     document.getElementById("rank_a").style.display="none";
-
+    document.getElementById("rank_m").style.display="none";
 
         var rank1_p = "<b>1r: </b>" + nodes[pnt_rank_id[0]].label + " (" +  nodes[pnt_rank_id[0]].points + ") <br/>";
         var rank2_p = "<b>2n: </b>" + nodes[pnt_rank_id[1]].label + " (" +  nodes[pnt_rank_id[1]].points + ") <br/>";
@@ -65,6 +66,8 @@ function menu(val){
     document.getElementById("legend_but").style.display="none";
     document.getElementById("rank_p").style.display="none";
     document.getElementById("rank_a").style.display="block";
+    document.getElementById("rank_m").style.display="none";
+
     var rank1_a = "<b>1r: </b>" + nodes[deg_rank_id[0]].label + " (" +  nodes[deg_rank_id[0]].degree + ")";
     var rank2_a = "<b>2n: </b>" + nodes[deg_rank_id[1]].label + " (" +  nodes[deg_rank_id[1]].degree + ") ";
     var rank3_a = "<b>3r: </b>" + nodes[deg_rank_id[2]].label + " (" +  nodes[deg_rank_id[2]].degree + ") ";
@@ -76,5 +79,23 @@ function menu(val){
   d3.select("#rank_3_a").html(rank3_a)
   d3.select("#rank_4_a").html(rank4_a)
   d3.select("#rank_5_a").html(rank5_a)
+  }
+  if(val == "ranking_m"){
+    document.getElementById("legend_but").style.display="none";
+    document.getElementById("rank_p").style.display="none";
+    document.getElementById("rank_m").style.display="block";
+    document.getElementById("rank_a").style.display="none";
+
+    var rank1_m = "<b>1r: </b>" + nodes[avg_rank_id[0]].label + " (" +  nodes[avg_rank_id[0]].average + ")";
+    var rank2_m = "<b>2n: </b>" + nodes[avg_rank_id[1]].label + " (" +  nodes[avg_rank_id[1]].average + ") ";
+    var rank3_m = "<b>3r: </b>" + nodes[avg_rank_id[2]].label + " (" +  nodes[avg_rank_id[2]].average + ") ";
+    var rank4_m = "<b>4t: </b>" + nodes[avg_rank_id[3]].label + " (" +  nodes[avg_rank_id[3]].average + ") ";
+    var rank5_m = "<b>5è: </b>" + nodes[avg_rank_id[4]].label + " (" +  nodes[avg_rank_id[4]].average + ") ";
+
+  d3.select("#rank_1_m").html(rank1_m)
+  d3.select("#rank_2_m").html(rank2_m)
+  d3.select("#rank_3_m").html(rank3_m)
+  d3.select("#rank_4_m").html(rank4_m)
+  d3.select("#rank_5_m").html(rank5_m)
   }
 }
