@@ -182,6 +182,7 @@ function createForceNetwork(nodes, edges) {
   function SearchNode() {
     reset();
     var name = document.getElementById("search_bar").value
+
     var node = null
     nodes.forEach(function(n) {
       if (n.label == name) {
@@ -617,7 +618,25 @@ function createForceNetwork(nodes, edges) {
   autocomplete(document.getElementById("search_bar"), names);
 
 
+<<<<<<< HEAD
   // autocomplete function
+=======
+
+
+
+
+  // --------------------------------------------------
+  // --------------------------------------------------
+  // --------------------------------------------------
+  //              autocomplete
+  // --------------------------------------------------
+  // --------------------------------------------------
+  // --------------------------------------------------
+
+
+
+
+>>>>>>> master
 
   function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
@@ -682,7 +701,10 @@ function createForceNetwork(nodes, edges) {
             /*and simulate a click on the "active" item:*/
             if (x) x[currentFocus].click();
           }
+<<<<<<< HEAD
           reset();
+=======
+>>>>>>> master
           SearchNode();
         }
     });
@@ -717,5 +739,8 @@ function createForceNetwork(nodes, edges) {
       closeAllLists(e.target);
   });
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 }
