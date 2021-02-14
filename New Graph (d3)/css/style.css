@@ -6,6 +6,8 @@ BODY{
   background-color: black;
   color: white;
 }
+
+
 svg {
   height: 1000px;
   width: 1000px;
@@ -15,30 +17,14 @@ svg {
 }
 
 div.tooltip {
-  position: fixed;
-  bottom: 20;
-  left: 20;
-  width: 270px;
-  border-radius: 8px;
-  border: solid 2px #42A5F5;
   text-align: left;
-  height: 115px;
-  padding: 10px 10px;
   opacity: 0;
+  font-size: 15px;
   pointer-events: none;
 }
 
 div.tooltip2 {
-position: fixed;
-bottom: 20;
-left: 20;
-width: 150px;
-border-radius: 8px;
-border: solid 2px #42A5F5;
-margin-left: 2px;
 text-align: left;
-height: 135px;
-padding: 10px 10px;
 opacity: 0;
 pointer-events: none;
 }
@@ -48,53 +34,21 @@ pointer-events: none;
   display: block;
 }
 
-.year {
- position: fixed;
- font-size: 20px;
- padding: 1%;
- width: 80px;
- background-color: #42A5F5;
- top: 200;
- right: 80;
-
-}
-
-/* .year input {
-position: absolute;
-opacity: 0;
-cursor: pointer;
-height: 0;
-width: 0;
-} */
-
-.year:hover {
-  background-color: #31ABA0;
-}
-
-.year:hover input ~ .checkmark {
-background-color: #ccc;
-}
-
-.year input:checked {
-background-color: #31ABA0;
-}
 
 /* search */
 .submit {
 outline: none;
-position: fixed;
-border-radius: 8px;
-background-color: #42A5F5;
+position:relative;
+background-color: #DEB887;
 border: none;
 text-align: center;
-font-size: 19px;
-padding: 10px;
-width: 110px;
+font-size: 10px;
+width: 70px;
+height: 34px;
 transition: all 0.5s;
 cursor: pointer;
-margin: 4px 2px;
-top: 10;
-right: 465;
+top: 34px;
+left : 170;
 font-family: 'Montserrat', sans-serif;
 }
 
@@ -147,15 +101,13 @@ display: inline-block;
 color:black;
 }
 .autocomplete-items {
-position: fixed;
+position: relative;
 border: 1px solid #d4d4d4;
 border-bottom: none;
 border-top: none;
-padding: 10px 600px;
+
 /*position the autocomplete items to be the same width as the container:*/
-top: 60;
-left: -30;
-right: 0;
+
 }
 .autocomplete-items div {
 padding: 10px;
@@ -177,7 +129,7 @@ color: #ffffff;
 text-align: left;
 margin-bottom: 5px;
 font-weight: bold;
-font-size: 20px;
+font-size: 30px;
 top: 30;
 right: 120;
 position: fixed;

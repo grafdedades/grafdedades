@@ -8,7 +8,6 @@
   <script type="text/javascript" src="/js/ranking-functions.js"></script>
   <script type="text/javascript" src="/js/graph-info-completer.js"></script>
   <script type="text/javascript" src="/js/displayers.js"></script>
-  <script type="text/javascript" src="/js/autocomplete.js"></script>
   <script type="text/javascript" src="/js/network-creation.js"></script>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
@@ -19,7 +18,7 @@
 
 <body>
 
-  <header class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <header class="navbar navbar-expand-lg navbar-dark bg-primary" style="height:60px">
     <nav class="navbar">
       <a class="navbar-brand" href="#">GRAF DE DADES</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,32 +63,35 @@
           <div class="card-header"><h4>Rankings</h4></div>
           <div class="card-body" style="padding: 10px 10px 0px">
             <ul class="nav nav-tabs card-title">
-              <li class="nav-item">
-                <h6 class="nav-link active" data-toggle="tab" href="#degree">Arestes</h6>
-              </li>
-              <li class="nav-item">
-                <h6 class="nav-link" data-toggle="tab" href="#points">Punts</h6>
-              </li>
-              <li class="nav-item">
-                <h6 class="nav-link" data-toggle="tab" href="#average">Mitjana de punts</h6>
-              </li>
+              <select class='legend-title' style="font-size: 20px;" name="selector" onchange="menu(this.value)">
+                <option value="" selected disabled hidden>Choose here</option>
+               <option value = "ranking_a" >Ranking arestes</option>
+               <option value = "ranking_p">Ranking punts</option>
+               <option value = "ranking_m">Ranking average</option>
+              </select>
             </ul>
           </div>
           <div id="myTabContent" class="tab-content card-text" style="padding-left: 20px; padding-right: 10px;">
-            <div class="tab-pane fade show active" id="degree">
-              <ol>
-                <li>Coffee</li>
-                <li>Tea</li>
-                <li>Milk</li>
-                <li>Tea verde</li>
-                <li>Milk de cabra</li>
-              </ol>
+            <div class="labels2" style="font-size: 17px;" id="rank_p">
+              <p id="rank_1_p" style="margin-bottom:0px;"></p>
+              <p id="rank_2_p" style="margin-bottom:0px;"></p>
+              <p id="rank_3_p" style="margin-bottom:0px;"></p>
+              <p id="rank_4_p" style="margin-bottom:0px;"></p>
+              <p id="rank_5_p" style="margin-bottom:10px;"></p>
             </div>
-            <div class="tab-pane fade" id="points">
-              <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+            <div class="labels2" style="font-size: 17px;" id="rank_a">
+              <p id="rank_1_a" style="margin-bottom:0px;"></p>
+              <p id="rank_2_a" style="margin-bottom:0px;"></p>
+              <p id="rank_3_a" style="margin-bottom:0px;"></p>
+              <p id="rank_4_a" style="margin-bottom:0px;"></p>
+              <p id="rank_5_a" style="margin-bottom:10px;"></p>
             </div>
-            <div class="tab-pane fade" id="average">
-              <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+            <div class="labels2" style="font-size: 17px;" id="rank_m">
+              <p id="rank_1_m" style="margin-bottom:0px;"></p>
+              <p id="rank_2_m" style="margin-bottom:0px;"></p>
+              <p id="rank_3_m" style="margin-bottom:0px;"></p>
+              <p id="rank_4_m" style="margin-bottom:0px;"></p>
+              <p id="rank_5_m" style="margin-bottom:10px;"></p>
             </div>
           </div>
         </div>
@@ -97,20 +99,24 @@
         <!--
         Search bar
         -->
-        <div class="form-group" style="margin: 10px 30px;">
-          <input class="form-control form-control-sm" type="text" placeholder="Busca el teu pecador" id="inputSmall">
+        <div class="autocomplete" style="width:300px;">
+        <div class="form-group" style="margin: 10px 35px;">
+          <button class="submit" style="outline:none;" id="search_button">Busca!</button>
+          <input class="form-control form-control-sm" type="text" placeholder="Busca el teu pecador" id="search_bar">
+
+        </div>
         </div>
 
 
 
-        <div class="card-header text-white" style="padding-left: 30px;">Aresta o node</div>
+        <div class="card-header text-white" style="padding-left: 30px;"><h5 class="text-white">Informació selecció</h5></div>
 
         <!--
         Info
         -->
         <div class="card-body text-white" style="padding-left: 30px;">
-          <h4 class="card-title">Pepito & pepita</h4>
-          <p class="card-text">points, comments y toda la pesca...</p>
+          <div class="tooltip"  id="div1"></div>
+          <div class="tooltip2" id="div2"></div>
         </div>
 
       </div>
@@ -126,20 +132,20 @@
               })
             </script>
           </div>
-          <div style="outline: 2px; outline-color: black; margin-top: auto; margin-bottom: auto;">
-            <div class="column btn-group-vertical" style="max-width: 80px; right: 50px;">
-              <button type="button" disabled class="btn btn-secondary" style="padding: 0px;">Edge year selector</button>
-              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="e2018" onclick="select_button(id)">2018</button>
-              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="e2019" onclick="select_button(id)">2019</button>
-              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="e2020" onclick="select_button(id)">2020</button>
+          <div style="margin-top: auto; margin-bottom: auto;">
+            <div class="column btn-group-vertical" style="max-width: 80px; right: 0px;">
+              <button type="button" disabled class="btn" style="color:black;padding: 0px;background-color:#DEB887; opacity:1">Edge year selector</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;border-bottom:0;" id="e2018" onclick="select_button(id)">2018</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;border-bottom:0;" id="e2019" onclick="select_button(id)">2019</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;border-bottom:0;" id="e2020" onclick="select_button(id)">2020</button>
               <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="e2021" onclick="select_button(id)">2021</button>
             </div>
-            <div class="column btn-group-vertical" style="max-width: 80px; right: 50px;">
-              <button type="button" disabled class="btn btn-secondary" style="padding: 0px;">Node year selector</button>
-              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="n2017" onchange="node2017">2017</button>
-              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="n2018" onchange="node2018">2018</button>
-              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="n2019" onchange="node2019">2019</button>
-              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="n2020" onchange="node2020">2028</button>
+            <div class="column btn-group-vertical" style="max-width: 80px; right: 0px;">
+              <button type="button" disabled class="btn" style="padding: 0px;background-color:#DEB887;color:black;opacity:1;">Node year selector</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;border-bottom:0;" id="n2017" onclick="select_button2(id)">2017</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;border-bottom:0;" id="n2018" onclick="select_button2(id)">2018</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;border-bottom:0;" id="n2019" onclick="select_button2(id)">2019</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="n2020" onclick="select_button2(id)">2020</button>
             </div>
           </div>
         </div>

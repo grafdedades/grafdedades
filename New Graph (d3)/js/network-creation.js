@@ -82,23 +82,22 @@ function createForceNetwork(nodes, edges) {
   d3.select("#search_button")
     .on("click", SearchNode);
 
-  d3.select("#but1")
-    .on("click", y2017);
-  d3.select("#but2")
+
+  d3.select("#e2018")
     .on("click", y2018);
-  d3.select("#but3")
+  d3.select("#e2019")
     .on("click", y2019);
-  d3.select("#but4")
+  d3.select("#e2020")
     .on("click", y2020);
-  d3.select("#but5")
+  d3.select("#e2021")
     .on("click", y2021);
-  d3.select("#but2017")
+  d3.select("#n2017")
     .on("click", node2017);
-  d3.select("#but2018")
+  d3.select("#n2018")
     .on("click", node2018);
-  d3.select("#but2019")
+  d3.select("#n2019")
     .on("click", node2019);
-  d3.select("#but2020")
+  d3.select("#n2020")
     .on("click", node2020);
   d3.select("#rank_1_a")
     .on("click", rank1_a);
@@ -123,6 +122,19 @@ function createForceNetwork(nodes, edges) {
     .on("click", rank5_p);
   d3.select("#switch-label")
     .on("click", Darkmode);
+
+    d3.select("#rank_1_m")
+      .on("click", rank1_m);
+    d3.select("#rank_2_m")
+      .on("click", rank2_m);
+    d3.select("#rank_3_m")
+      .on("click", rank3_m);
+    d3.select("#rank_4_m")
+      .on("click", rank4_m);
+    d3.select("#rank_5_m")
+      .on("click", rank5_m);
+    d3.select("#switch-label")
+      .on("click", Darkmode);
 
 
 
@@ -168,6 +180,7 @@ function createForceNetwork(nodes, edges) {
   // Search for a node (browser)
 
   function SearchNode() {
+    reset();
     var name = document.getElementById("search_bar").value
     var node = null
     nodes.forEach(function(n) {
@@ -267,31 +280,31 @@ function createForceNetwork(nodes, edges) {
     reset()
     d3.select("#rank_1_m")
     .style("opacity", 0.5)
-    nodeF(nodes[deg_rank_id[0]])
+    nodeF(nodes[avg_rank_id[0]])
   }
   function rank2_m(){
     reset()
     d3.select("#rank_2_m")
     .style("opacity", 0.5)
-    nodeF(nodes[deg_rank_id[1]])
+    nodeF(nodes[avg_rank_id[1]])
   }
   function rank3_m(){
     reset()
     d3.select("#rank_3_m")
     .style("opacity", 0.5)
-    nodeF(nodes[deg_rank_id[2]])
+    nodeF(nodes[avg_rank_id[2]])
   }
   function rank4_m(){
     reset()
     d3.select("#rank_4_m")
     .style("opacity", 0.5)
-    nodeF(nodes[deg_rank_id[3]])
+    nodeF(nodes[avg_rank_id[3]])
   }
   function rank5_m(){
     reset()
     d3.select("#rank_5_m")
     .style("opacity", 0.5)
-    nodeF(nodes[deg_rank_id[4]])
+    nodeF(nodes[avg_rank_id[4]])
   }
   // Select year from button
   function y2017() {
@@ -376,6 +389,9 @@ function createForceNetwork(nodes, edges) {
 
   function Nodes_YearFilter(year) {
     reset()
+    if (!unmark){
+      return;
+    }
     var egoIDs = [];
     var filteredEdges = edges.filter(function(p) {
       return p.source.year == year || p.target.year == year
@@ -599,4 +615,107 @@ function createForceNetwork(nodes, edges) {
 
   }
   autocomplete(document.getElementById("search_bar"), names);
+
+
+  // autocomplete function
+
+  function autocomplete(inp, arr) {
+    /*the autocomplete function takes two arguments,
+    the text field element and an array of possible autocompleted values:*/
+    var currentFocus;
+    /*execute a function when someone writes in the text field:*/
+    inp.addEventListener("input", function(e) {
+        var a, b, i, val = this.value;
+        /*close any already open lists of autocompleted values*/
+        closeAllLists();
+        if (!val) { return false;}
+        currentFocus = -1;
+        /*create a DIV element that will contain the items (values):*/
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        /*append the DIV element as a child of the autocomplete container:*/
+        this.parentNode.appendChild(a);
+        /*for each item in the array...*/
+        for (i = 0; i < arr.length; i++) {
+          /*check if the item starts with the same letters as the text field value:*/
+          if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+            /*create a DIV element for each matching element:*/
+            b = document.createElement("DIV");
+            /*make the matching letters bold:*/
+            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+            b.innerHTML += arr[i].substr(val.length);
+            /*insert a input field that will hold the current array item's value:*/
+            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+            /*execute a function when someone clicks on the item value (DIV element):*/
+                b.addEventListener("click", function(e) {
+                /*insert the value for the autocomplete text field:*/
+                inp.value = this.getElementsByTagName("input")[0].value;
+                /*close the list of autocompleted values,
+                (or any other open lists of autocompleted values:*/
+                closeAllLists();
+            });
+            a.appendChild(b);
+          }
+        }
+    });
+    /*execute a function presses a key on the keyboard:*/
+    inp.addEventListener("keydown", function(e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+          /*If the arrow DOWN key is pressed,
+          increase the currentFocus variable:*/
+          currentFocus++;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 38) { //up
+          /*If the arrow UP key is pressed,
+          decrease the currentFocus variable:*/
+          currentFocus--;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 13) {
+          /*If the ENTER key is pressed, prevent the form from being submitted,*/
+          e.preventDefault();
+          if (currentFocus > -1) {
+            /*and simulate a click on the "active" item:*/
+            if (x) x[currentFocus].click();
+          }
+          reset();
+          SearchNode();
+        }
+    });
+    function addActive(x) {
+      /*a function to classify an item as "active":*/
+      if (!x) return false;
+      /*start by removing the "active" class on all items:*/
+      removeActive(x);
+      if (currentFocus >= x.length) currentFocus = 0;
+      if (currentFocus < 0) currentFocus = (x.length - 1);
+      /*add class "autocomplete-active":*/
+      x[currentFocus].classList.add("autocomplete-active");
+    }
+    function removeActive(x) {
+      /*a function to remove the "active" class from all autocomplete items:*/
+      for (var i = 0; i < x.length; i++) {
+        x[i].classList.remove("autocomplete-active");
+      }
+    }
+    function closeAllLists(elmnt) {
+      /*close all autocomplete lists in the document,
+      except the one passed as an argument:*/
+      var x = document.getElementsByClassName("autocomplete-items");
+      for (var i = 0; i < x.length; i++) {
+        if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+  }
+
 }

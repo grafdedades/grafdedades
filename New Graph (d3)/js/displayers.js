@@ -1,9 +1,10 @@
-// Display edge info
+// Display edge infos
 function edgeinfo(e) {
   d3.select("#div1").transition()
     .duration(200)
     .style("opacity", .9);
-  var edge_info = "<b><u>" + e.source.label + " i " + e.target.label + "</u></b><br/>";
+  var edge_info = "<h5 class=\"text-white card-title\" style=\"margin-bottom:0;\">" + e.source.label + " i " + e.target.label + "</h5>";
+  edge_info += "<p class=\"text-white card-text\">"
   if (e.place !== "") {
     edge_info += "<b>Lloc: </b>" + e.place + "<br/>";
   }
@@ -13,7 +14,7 @@ function edgeinfo(e) {
   if (e.comments !== "") edge_info += "<b>Comentaris: </b>" + e.comments + "<br/>";
   edge_info += "<b>Pes: </b>" + e.weight + "<br/>";
   edge_info += "<b>Han repetit?: </b>" + e.repeated + "<br/>";
-
+  edge_info += "<p/>"
 
   d3.select("#div1").html(edge_info)
   d3.select("#div2").style("opacity", 0);
@@ -24,7 +25,7 @@ function nodeinfo(e){
     d3.select("#div2").transition()
         .duration(200)
         .style("opacity", .9);
-      var node_info = "<b><u>" + e.label +"</u></b><br/>";
+      var node_info = "<h5 class=\"text-white card-title\" style=\"margin-bottom:0;\">" + e.label +"</h5>";
         node_info += "<b>Sexe: </b>" + e.gender + "<br/>";
         node_info += "<b>Any: </b>" + e.year + "<br/>";
         node_info += "<b>CFIS: </b>" + e.cfis + "<br/>";
@@ -37,15 +38,7 @@ function nodeinfo(e){
 
 // Display menu
 function menu(val){
-  if(val == "legend"){
-    document.getElementById("legend_but").style.display="block";
-    document.getElementById("rank_p").style.display="none";
-    document.getElementById("rank_a").style.display="none";
-    document.getElementById("rank_m").style.display="none";
-
-  }
   if(val == "ranking_p"){
-    document.getElementById("legend_but").style.display="none";
     document.getElementById("rank_p").style.display="block";
     document.getElementById("rank_a").style.display="none";
     document.getElementById("rank_m").style.display="none";
@@ -63,7 +56,6 @@ function menu(val){
       d3.select("#rank_5_p").html(rank5_p)
   }
   if(val == "ranking_a"){
-    document.getElementById("legend_but").style.display="none";
     document.getElementById("rank_p").style.display="none";
     document.getElementById("rank_a").style.display="block";
     document.getElementById("rank_m").style.display="none";
@@ -81,7 +73,6 @@ function menu(val){
   d3.select("#rank_5_a").html(rank5_a)
   }
   if(val == "ranking_m"){
-    document.getElementById("legend_but").style.display="none";
     document.getElementById("rank_p").style.display="none";
     document.getElementById("rank_m").style.display="block";
     document.getElementById("rank_a").style.display="none";
