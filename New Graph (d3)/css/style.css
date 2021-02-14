@@ -251,10 +251,10 @@ border: solid 2px #42A5F5;
 .fa {
   position: fixed;
   text-decoration: none;
-  color:#42A5F5;
+  color:#DEB887;
   background-color:none;
-  top: 18;
-  left: 430;
+  top: 10;
+  right: 40;
 }
 
 /* Add a hover effect if you want */

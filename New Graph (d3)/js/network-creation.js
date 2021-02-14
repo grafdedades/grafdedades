@@ -51,12 +51,12 @@ function createForceNetwork(nodes, edges) {
     .on("tick", updateNetwork)
 
 
+
   d3.select("svg").selectAll("line")
     .data(edges)
     .enter()
     .append("line")
     .on("click", edgeClick)
-    .on("mouseout", reset)
     .style("stroke-width", function(d) {
       return d.weight
     })
@@ -73,15 +73,12 @@ function createForceNetwork(nodes, edges) {
     .enter()
     .append("g")
     .attr("class", "node")
-    .on("click", nodeinfo)
+    .on("click", nodeclick)
     .on("dblclick", nodeDoubleClick)
-    .on("mouseover", nodeOver)
-    .on("mouseout", reset)
     .call(force.drag());
 
   d3.select("#search_button")
     .on("click", SearchNode);
-
 
   d3.select("#e2018")
     .on("click", y2018);
@@ -196,6 +193,13 @@ function createForceNetwork(nodes, edges) {
     }
   }
 
+  function nodeclick(d){
+    reset();
+    nodeinfo(d);
+    nodeF(d);
+
+  }
+
   function Darkmode() {
      var element = document.body;
      element.classList.toggle("dark-mode");
@@ -221,30 +225,35 @@ function createForceNetwork(nodes, edges) {
     d3.select("#rank_1_a")
     .style("opacity", 0.5)
     nodeF(nodes[deg_rank_id[0]])
+    nodeinfo(nodes[deg_rank_id[0]])
   }
   function rank2_a(){
     reset()
     d3.select("#rank_2_a")
     .style("opacity", 0.5)
     nodeF(nodes[deg_rank_id[1]])
+    nodeinfo(nodes[deg_rank_id[1]])
   }
   function rank3_a(){
     reset()
     d3.select("#rank_3_a")
     .style("opacity", 0.5)
     nodeF(nodes[deg_rank_id[2]])
+    nodeinfo(nodes[deg_rank_id[2]])
   }
   function rank4_a(){
     reset()
     d3.select("#rank_4_a")
     .style("opacity", 0.5)
     nodeF(nodes[deg_rank_id[3]])
+    nodeinfo(nodes[deg_rank_id[3]])
   }
   function rank5_a(){
     reset()
     d3.select("#rank_5_a")
     .style("opacity", 0.5)
     nodeF(nodes[deg_rank_id[4]])
+    nodeinfo(nodes[deg_rank_id[4]])
   }
 
   function rank1_p(){
@@ -252,60 +261,71 @@ function createForceNetwork(nodes, edges) {
     d3.select("#rank_1_p")
     .style("opacity", 0.5)
     nodeF(nodes[pnt_rank_id[0]])
+    nodeinfo(nodes[pnt_rank_id[0]])
   }
   function rank2_p(){
     reset()
     d3.select("#rank_2_p")
     .style("opacity", 0.5)
     nodeF(nodes[pnt_rank_id[1]])
+    nodeinfo(nodes[pnt_rank_id[1]])
   }
   function rank3_p(){
     reset()
     d3.select("#rank_3_p")
     .style("opacity", 0.5)
     nodeF(nodes[pnt_rank_id[2]])
+    nodeinfo(nodes[pnt_rank_id[2]])
   }
   function rank4_p(){
     reset()
     d3.select("#rank_4_p")
     .style("opacity", 0.5)
     nodeF(nodes[pnt_rank_id[3]])
+    nodeinfo(nodes[pnt_rank_id[3]])
   }
   function rank5_p(){
     reset()
     d3.select("#rank_5_p")
     .style("opacity", 0.5)
     nodeF(nodes[pnt_rank_id[4]])
+    nodeinfo(nodes[pnt_rank_id[4]])
   }
   function rank1_m(){
     reset()
     d3.select("#rank_1_m")
     .style("opacity", 0.5)
     nodeF(nodes[avg_rank_id[0]])
+    nodeinfo(nodes[avg_rank_id[0]])
+
   }
   function rank2_m(){
     reset()
     d3.select("#rank_2_m")
     .style("opacity", 0.5)
     nodeF(nodes[avg_rank_id[1]])
+    nodeinfo(nodes[avg_rank_id[1]])
   }
   function rank3_m(){
     reset()
     d3.select("#rank_3_m")
     .style("opacity", 0.5)
     nodeF(nodes[avg_rank_id[2]])
+    nodeinfo(nodes[avg_rank_id[2]])
   }
   function rank4_m(){
     reset()
     d3.select("#rank_4_m")
     .style("opacity", 0.5)
     nodeF(nodes[avg_rank_id[3]])
+    nodeinfo(nodes[avg_rank_id[3]])
   }
   function rank5_m(){
     reset()
     d3.select("#rank_5_m")
     .style("opacity", 0.5)
     nodeF(nodes[avg_rank_id[4]])
+    nodeinfo(nodes[avg_rank_id[4]])
   }
   // Select year from button
   function y2017() {
@@ -557,6 +577,7 @@ function createForceNetwork(nodes, edges) {
   function edgeClick(e) {
     force.stop();
     e.fixed = true;
+    reset();
     edgeinfo(e);
     edgeF(e);
   };
@@ -617,6 +638,12 @@ function createForceNetwork(nodes, edges) {
   }
   autocomplete(document.getElementById("search_bar"), names);
 
+  const svg = document.querySelector('svg')
+  window.addEventListener('click',e=>{
+    if(e.target == svg){
+      reset();
+    }
+  })
 
 
 
