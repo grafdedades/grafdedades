@@ -9,8 +9,8 @@ BODY{
 svg {
   height: 1000px;
   width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: -100px -50px -100px -75px;
+
   display:block;
 }
 

@@ -27,3 +27,15 @@ var deg_rank_id = [];
 // ### MAX DEGREE ###
 
 var max_degree = [];
+
+function select_button(id){
+  if (document.getElementById(id).classList.contains('btn-primary')){
+    document.getElementById(id).classList.add('btn-outline-primary');
+    document.getElementById(id).classList.remove('btn-primary');
+    document.getElementById(id).style.padding = "14px 0px";
+  } else {
+    document.getElementById(id).classList.remove('btn-outline-primary');
+    document.getElementById(id).classList.add('btn-primary');
+    document.getElementById(id).style.padding = "16px 0px";
+  }
+}
