@@ -1,0 +1,162 @@
+<html>
+
+<head>
+  <title>Data Graph</title>
+  <meta charset="utf-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script type="text/javascript" src="/js/global-variables.js"></script>
+  <script type="text/javascript" src="/js/ranking-functions.js"></script>
+  <script type="text/javascript" src="/js/graph-info-completer.js"></script>
+  <script type="text/javascript" src="/js/displayers.js"></script>
+  <script type="text/javascript" src="/js/autocomplete.js"></script>
+  <script type="text/javascript" src="/js/network-creation.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar">
+      <a class="navbar-brand" href="#">GRAF DE DADES</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#graf">El graf</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ranks">Stats</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Reporta arestes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Prediccions</a>
+          </li>
+      </div>
+    </nav>
+  </header>
+
+  <main role="main">
+
+    <!-- Graf -->
+    <section class="row table-active" id="graf">
+
+      <!-- Left Menu (ranking, search_bar and info) -->
+      <div class="column card bg-dark" style="max-width: 350px;">
+
+        <!--
+        Rankings
+        -->
+        <div class="card border-primary mb-3" style="max-width: 300px; margin: 15px 25px 20px 35px;">
+          <div class="card-header"><h4>Rankings</h4></div>
+          <div class="card-body" style="padding: 10px 10px 0px">
+            <ul class="nav nav-tabs card-title">
+              <li class="nav-item">
+                <h6 class="nav-link active" data-toggle="tab" href="#degree">Arestes</h6>
+              </li>
+              <li class="nav-item">
+                <h6 class="nav-link" data-toggle="tab" href="#points">Punts</h6>
+              </li>
+              <li class="nav-item">
+                <h6 class="nav-link" data-toggle="tab" href="#average">Mitjana de punts</h6>
+              </li>
+            </ul>
+          </div>
+          <div id="myTabContent" class="tab-content card-text" style="padding-left: 20px; padding-right: 10px;">
+            <div class="tab-pane fade show active" id="degree">
+              <ol>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+                <li>Tea verde</li>
+                <li>Milk de cabra</li>
+              </ol>
+            </div>
+            <div class="tab-pane fade" id="points">
+              <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+            </div>
+            <div class="tab-pane fade" id="average">
+              <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+            </div>
+          </div>
+        </div>
+
+        <!--
+        Search bar
+        -->
+        <div class="form-group" style="margin: 10px 30px;">
+          <input class="form-control form-control-sm" type="text" placeholder="Busca el teu pecador" id="inputSmall">
+        </div>
+
+
+
+        <div class="card-header text-white" style="padding-left: 30px;">Aresta o node</div>
+
+        <!--
+        Info
+        -->
+        <div class="card-body text-white" style="padding-left: 30px;">
+          <h4 class="card-title">Pepito & pepita</h4>
+          <p class="card-text">points, comments y toda la pesca...</p>
+        </div>
+
+      </div>
+
+      <!-- Graph and buttons -->
+      <div class="column" style="max-height: 1400px; max-width: none;">
+        <div class="row">
+          <div class="column">
+            <svg id="svg"></svg>
+            <script type="text/javascript">
+              d3.json("data/data.json", function(error, data) {
+                createNetwork(data)
+              })
+            </script>
+          </div>
+          <div style="outline: 2px; outline-color: black; margin-top: auto; margin-bottom: auto;">
+            <div class="column btn-group-vertical" style="max-width: 80px; right: 50px;">
+              <button type="button" disabled class="btn btn-secondary" style="padding: 0px;">Edge year selector</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="e2018" onclick="select_button(id)">2018</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="e2019" onclick="select_button(id)">2019</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="e2020" onclick="select_button(id)">2020</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="e2021" onclick="select_button(id)">2021</button>
+            </div>
+            <div class="column btn-group-vertical" style="max-width: 80px; right: 50px;">
+              <button type="button" disabled class="btn btn-secondary" style="padding: 0px;">Node year selector</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="n2017" onchange="node2017">2017</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="n2018" onchange="node2018">2018</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="n2019" onchange="node2019">2019</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="n2020" onchange="node2020">2028</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+    <!-- Maikel mamawebasso -->
+    <section class="row section table-primary">
+      <h1>maikel mamawebasso</h1>
+      <p>el pepe</p>
+    </section>
+  </main>
+
+  <footer>
+
+  </footer>
+
+</body>
