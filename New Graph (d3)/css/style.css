@@ -249,15 +249,16 @@ border: solid 2px #42A5F5;
 }
 
 .fa {
-  position: fixed;
+  position:absolute;
   text-decoration: none;
   color:#DEB887;
   background-color:none;
-  top: 10;
-  right: 40;
+  right:40;
+
 }
 
 /* Add a hover effect if you want */
 .fa:hover {
-  opacity: 0.7;
+  text-decoration: none;
+  color:white;
 }
