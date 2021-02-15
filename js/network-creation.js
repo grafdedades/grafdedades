@@ -521,7 +521,7 @@ function createForceNetwork(nodes, edges) {
     nodeEnter.filter(function(p) {
         return max_degree.includes(p)
       }).select('text')
-      .attr("class", "fa") // Give it the font-awesome class
+      .attr('font-family', 'FontAwesome') // Give it the font-awesome class
       .style("text-anchor", "middle")
       .attr("y", 6)
       .style("font-size", "18px")
