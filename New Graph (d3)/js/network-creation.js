@@ -445,8 +445,6 @@ function createForceNetwork(nodes, edges) {
       .style("opacity", "0.3");
   }
 
-
-
   // Print the graph as original
 
   function reset() {
