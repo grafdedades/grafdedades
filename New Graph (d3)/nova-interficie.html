@@ -62,12 +62,12 @@
         <!--
         Rankings
         -->
-        <div class="card border-primary mb-3" style="max-width: 300px; margin: 15px 25px 20px 35px;">
+        <div class="card border-primary mb-3" style="height: 250px;max-width: 300px; margin: 15px 25px 20px 35px;">
           <div class="card-header" style="background-color:#DEB887;text-align:center;"><h4>Rankings</h4></div>
-          <div class="card-body" style="padding: 10px 10px 0px">
+          <div class="card-body" style="padding: 10px 10px 0px;">
             <ul class="nav nav-tabs card-title">
               <select class='legend-title' style="font-size: 20px;" name="selector" onchange="menu(this.value)">
-                <option value="" selected disabled hidden>Choose here</option>
+                <option value="not-choosen" selected disabled hidden>Choose here</option>
                <option value = "ranking_a" >Ranking arestes</option>
                <option value = "ranking_p">Ranking punts</option>
                <option value = "ranking_m">Ranking average</option>
@@ -75,6 +75,9 @@
             </ul>
           </div>
           <div id="myTabContent" class="tab-content card-text" style="padding-left: 20px; padding-right: 10px;">
+            <div class="labels2" style="font-size: 17px;" id="no_choose">
+              <p style="height: 80px; text-align: center; opacity:0.5;"> CHOOSE A RANKING </p>
+            </div>
             <div class="labels2" style="font-size: 17px;" id="rank_p">
               <p id="rank_1_p" style="margin-bottom:0px;"></p>
               <p id="rank_2_p" style="margin-bottom:0px;"></p>

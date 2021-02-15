@@ -38,7 +38,14 @@ function nodeinfo(e){
 
 // Display menu
 function menu(val){
+  if(val == "not_choosen"){
+    document.getElementById("no_choose").style.display="block";
+    document.getElementById("rank_p").style.display="none";
+    document.getElementById("rank_a").style.display="none";
+    document.getElementById("rank_m").style.display="none";
+  }
   if(val == "ranking_p"){
+    document.getElementById("no_choose").style.display="none";
     document.getElementById("rank_p").style.display="block";
     document.getElementById("rank_a").style.display="none";
     document.getElementById("rank_m").style.display="none";
@@ -56,6 +63,7 @@ function menu(val){
       d3.select("#rank_5_p").html(rank5_p)
   }
   if(val == "ranking_a"){
+    document.getElementById("no_choose").style.display="none";
     document.getElementById("rank_p").style.display="none";
     document.getElementById("rank_a").style.display="block";
     document.getElementById("rank_m").style.display="none";
@@ -73,6 +81,7 @@ function menu(val){
   d3.select("#rank_5_a").html(rank5_a)
   }
   if(val == "ranking_m"){
+    document.getElementById("no_choose").style.display="none";
     document.getElementById("rank_p").style.display="none";
     document.getElementById("rank_m").style.display="block";
     document.getElementById("rank_a").style.display="none";

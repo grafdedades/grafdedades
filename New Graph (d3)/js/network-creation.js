@@ -452,6 +452,8 @@ function createForceNetwork(nodes, edges) {
   function reset() {
     force.start();
 
+    // unselectAllButtons();
+
     d3.select("#rank_1_p")
     .style("opacity", 1)
     d3.select("#rank_2_p")
