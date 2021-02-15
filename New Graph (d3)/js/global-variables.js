@@ -28,6 +28,8 @@ var deg_rank_id = [];
 
 var max_degree = [];
 
+// ### RIGHT BUTTONS ###
+
 var node_ids = ["n2017", "n2018", "n2019", "n2020"]
 var edge_ids = ["e2018", "e2019", "e2020", "e2021"]
 
