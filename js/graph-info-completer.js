@@ -24,7 +24,6 @@ function addPoints(newNodes, points){
 function increaseDegree(source, target){
 
   var newNodes = [source, target];
-
   newNodes.forEach(function(n){
     if ('degree' in nodes[n.id]){
       ++nodes[n.id].degree;
