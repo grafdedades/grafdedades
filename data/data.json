@@ -230,7 +230,7 @@
       "place": "Mas Campmol",
       "month": "Aug",
       "year": 2020,
-      "repeated": "TRUE",
+      "repeated": "FALSE",
       "relationship": "FALSE",
       "comments": ""
     },
@@ -344,15 +344,15 @@
     },
     {
       "id": 24,
-      "source": "Marina Rosell",
-      "target": "Pau Lozano",
-      "weight": 5,
+      "source": "Pau Redón",
+      "target": "Sígrid Vila",
+      "weight": 1,
       "place": "",
       "month": "",
       "year": "",
       "repeated": "TRUE",
-      "relationship": "",
-      "comments": "La del twitter"
+      "relationship": "FALSE",
+      "comments": "Ramón a la vista"
     },
     {
       "id": 25,
@@ -655,6 +655,18 @@
       "repeated": "FALSE",
       "relationship": "FALSE",
       "comments": ""
+    },
+    {
+      "id": 54,
+      "source": "Arnau Padrés",
+      "target": "Núria Cantero",
+      "weight": 1,
+      "place": "",
+      "month": "",
+      "year": "",
+      "repeated": "FALSE",
+      "relationship": "FALSE",
+      "comments": "Goals"
     }
   ],
   "nodes_unwanted":[
@@ -817,10 +829,10 @@
   },
   {
     "id": 14,
-    "label": "Pau Lozano",
-    "year": 2018,
+    "label": "Pau Redón",
+    "year": 2019,
     "gender": "M",
-    "cfis": "FALSE"
+    "cfis": "TRUE"
   },
   {
     "id": 15,
@@ -1079,6 +1091,27 @@
     "label": "Xavier Rubiès",
     "year": 2017,
     "gender": "M",
+    "cfis": "FALSE"
+  },
+  {
+    "id": 52,
+    "label": "Sígrid Vila",
+    "year": 2019,
+    "gender": "F",
+    "cfis": "FALSE"
+  },
+  {
+    "id": 53,
+    "label": "Arnau Padrés",
+    "year": 2019,
+    "gender": "M",
+    "cfis": "TRUE"
+  },
+  {
+    "id": 54,
+    "label": "Núria Cantero",
+    "year": 2019,
+    "gender": "F",
     "cfis": "FALSE"
   }
 
