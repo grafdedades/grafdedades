@@ -136,18 +136,7 @@
       "relationship": "FALSE",
       "comments": ""
     },
-    {
-      "id": 5,
-      "source": "Marina Rosell",
-      "target": "Arnau Espinalt",
-      "weight": 3,
-      "place": "Colònies",
-      "month": "Jan",
-      "year": 2019,
-      "repeated": "TRUE",
-      "relationship": "FALSE",
-      "comments": "La despensa"
-    },
+
     {
       "id": 6,
       "source": "Marina García",
@@ -173,18 +162,7 @@
       "comments": "La del muro"
     },
 
-    {
-      "id": 9,
-      "source": "Marina Rosell",
-      "target": "Jordi Puig",
-      "weight": 1,
-      "place": "",
-      "month": "",
-      "year": "",
-      "repeated": "",
-      "relationship": "FALSE",
-      "comments": ""
-    },
+
 
     {
       "id": 11,
@@ -510,18 +488,7 @@
       "relationship": "FALSE",
       "comments": ""
     },
-    {
-      "id": 38,
-      "source": "Marina Rosell",
-      "target": "Alex Carrillo",
-      "weight": 1,
-      "place": "Colònies",
-      "month": "Jan",
-      "year": 2019,
-      "repeated": "FALSE",
-      "relationship": "FALSE",
-      "comments": ""
-    },
+
     {
       "id": 39,
       "source": "Pau Marquez",
@@ -558,18 +525,7 @@
       "relationship": "FALSE",
       "comments": ""
     },
-    {
-      "id": 42,
-      "source": "Marc Vernet",
-      "target": "Marina Rosell",
-      "weight": 1,
-      "place": "",
-      "month": "",
-      "year": "",
-      "repeated": "",
-      "relationship": "FALSE",
-      "comments": ""
-    },
+
     {
       "id": 43,
       "source": "Marc Vernet",
@@ -759,8 +715,8 @@
   },
   {
     "id": 4,
-    "label": "Marina Rosell",
-    "year": 2018,
+    "label": "Núria Cantero",
+    "year": 2019,
     "gender": "F",
     "cfis": "FALSE"
   },
@@ -1106,14 +1062,8 @@
     "year": 2019,
     "gender": "M",
     "cfis": "TRUE"
-  },
-  {
-    "id": 54,
-    "label": "Núria Cantero",
-    "year": 2019,
-    "gender": "F",
-    "cfis": "FALSE"
   }
+
 
 ]
 }

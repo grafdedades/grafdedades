@@ -150,7 +150,7 @@ function createForceNetwork(nodes, edges) {
     .style("opacity", "1");
 
 
-
+  console.log(max_degree)
   nodeEnter.filter(function(p) {
       return max_degree.includes(p)
     }).append('text')
