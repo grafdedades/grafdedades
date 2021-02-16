@@ -1,0 +1,243 @@
+{
+"nodes_unwanted":[
+    {
+      "id": 29,
+      "label": "Clara Rovira",
+      "year": 2018,
+      "gender": "F",
+      "cfis": "FALSE"
+    },
+    {
+      "id": 2,
+      "label": "Joan Vaquer",
+      "year": 2018,
+      "gender": "M",
+      "cfis": "FALSE"
+    },
+    {
+      "id": 27,
+      "label": "Nil Crespo",
+      "year": 2017,
+      "gender": "M",
+      "cfis": "FALSE"
+    },
+    {
+      "id": 28,
+      "label": "Omar Ferrer",
+      "year": 2018,
+      "gender": "M",
+      "cfis": "FALSE"
+    },
+    {
+      "id": 33,
+      "label": "Liz Segon",
+      "year": 2018,
+      "gender": "F",
+      "cfis": "FALSE"
+    },
+
+    {
+      "id": 52,
+      "label": "Maria Perera",
+      "year": 2018,
+      "gender": "F",
+      "cfis": "FALSE"
+    },
+    {
+      "id": 53,
+      "label": "Pol Puigdemont",
+      "year": 2020,
+      "gender": "M",
+      "cfis": "FALSE"
+    },
+    {
+      "id": 54,
+      "label": "Anna Ramón",
+      "year": 2020,
+      "gender": "F",
+      "cfis": "FALSE"
+    },
+    {
+      "id": 59,
+      "label": "Hugo Jiménez",
+      "year": 2018,
+      "gender": "M",
+      "cfis": "FALSE"
+      },
+      {
+        "id": 15,
+        "label": "Pau Lozano",
+        "year": 2018,
+        "gender": "M",
+        "cfis": "FALSE"
+    },
+    {
+      "id": 5,
+      "label": "Marina Rosell",
+      "year": 2018,
+      "gender": "F",
+      "cfis": "FALSE"
+    },
+  ],
+
+
+
+  "edges_unwanted": [
+    {
+      "id": 0,
+      "source": "Clara Rovira",
+      "target": "Dani Gómez",
+      "weight": 1,
+      "place": "Colònies",
+      "month": "Jan",
+      "year": 2020,
+      "repeated": "FALSE",
+      "relationship": "FALSE",
+      "comments": "Mitico sofa"
+    },
+    {
+      "id": 2,
+      "source": "Clara Rovira",
+      "target": "Joan Vaquer",
+      "weight": 5,
+      "place": "Mallorca",
+      "month": "Jul",
+      "year": 2020,
+      "repeated": "TRUE",
+      "relationship": "FALSE",
+      "comments": "Insomnio del espi"
+    },
+    {
+      "id": 8,
+      "source": "Liz Segon",
+      "target": "Marina Rosell",
+      "weight": 1,
+      "place": "Colònies",
+      "month": "Jan",
+      "year": 2019,
+      "repeated": "FALSE",
+      "relationship": "FALSE",
+      "comments": ""
+    },
+    {
+      "id": 10,
+      "source": "Clara Rovira",
+      "target": "Tomás Gadea",
+      "weight": 1,
+      "place": "Mirador",
+      "month": "Jul",
+      "year": 2020,
+      "repeated": "TRUE",
+      "relationship": "FALSE",
+      "comments": ""
+    },
+    {
+      "id": 46,
+      "source": "Clara Rovira",
+      "target": "Omar Ferrer",
+      "weight": 5,
+      "place": "Casa Omar",
+      "month": "Jul",
+      "year": 2020,
+      "repeated": "TRUE",
+      "relationship": "FALSE",
+      "comments": ""
+    },
+    {
+      "id": 47,
+      "source": "Maria Perera",
+      "target": "Arnau Espinalt",
+      "weight": 1,
+      "place": "Casa Liz",
+      "month": "Feb",
+      "year": 2021,
+      "repeated": "FALSE",
+      "relationship": "FALSE",
+      "comments": "La del juego"
+    },
+    {
+      "id": 48,
+      "source": "Anna Ramón",
+      "target": "Pol Puigdemont",
+      "weight": 5,
+      "place": "Pis Puigdemont",
+      "month": "Dec",
+      "year": 2020,
+      "repeated": "",
+      "relationship": "FALSE",
+      "comments": ""
+    },
+    {
+      "id": 51,
+      "source": "Hugo Jiménez",
+      "target": "Liz Segon",
+      "weight": 1,
+      "place": "Casa Liz",
+      "month": "Feb",
+      "year": 2021,
+      "repeated": "FALSE",
+      "relationship": "FALSE",
+      "comments": "Jaume en la cama"
+    }
+    {
+      "id": 24,
+      "source": "Marina Rosell",
+      "target": "Pau Lozano",
+      "weight": 5,
+      "place": "",
+      "month": "",
+      "year": "",
+      "repeated": "TRUE",
+      "relationship": "",
+      "comments": "La del twitter"
+    },
+    {
+      "id": 5,
+      "source": "Marina Rosell",
+      "target": "Arnau Espinalt",
+      "weight": 3,
+      "place": "Colònies",
+      "month": "Jan",
+      "year": 2019,
+      "repeated": "TRUE",
+      "relationship": "FALSE",
+      "comments": "La despensa"
+    },
+    {
+      "id": 9,
+      "source": "Marina Rosell",
+      "target": "Jordi Puig",
+      "weight": 1,
+      "place": "",
+      "month": "",
+      "year": "",
+      "repeated": "",
+      "relationship": "FALSE",
+      "comments": ""
+    },
+    {
+       "id": 38,
+       "source": "Marina Rosell",
+       "target": "Alex Carrillo",
+       "weight": 1,
+       "place": "Colònies",
+       "month": "Jan",
+       "year": 2019,
+       "repeated": "FALSE",
+       "relationship": "FALSE",
+       "comments": ""
+     },
+     {
+      "id": 42,
+      "source": "Marc Vernet",
+      "target": "Marina Rosell",
+      "weight": 1,
+      "place": "",
+      "month": "",
+      "year": "",
+      "repeated": "",
+      "relationship": "FALSE",
+      "comments": ""
+    },
+  ],
+}
