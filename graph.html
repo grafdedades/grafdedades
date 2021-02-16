@@ -1,0 +1,185 @@
+<html>
+
+<head>
+  <title>Data Graph</title>
+  <meta charset="utf-8" http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script type="text/javascript" src="/js/global-variables.js"></script>
+  <script type="text/javascript" src="/js/right-buttons.js"></script>
+  <script type="text/javascript" src="/js/ranking-functions.js"></script>
+  <script type="text/javascript" src="/js/graph-info-completer.js"></script>
+  <script type="text/javascript" src="/js/displayers.js"></script>
+  <script type="text/javascript" src="/js/network-creation.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="navbar navbar-expand-lg navbar-dark bg-primary" style="height:60px;">
+    <nav class="navbar">
+      <a class="navbar-brand" href="#">GRAF DE DADES</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#graf">El graf</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#graf">Coming soon...🚀</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Reporta arestes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Prediccions</a>
+          </li>  -->
+
+      </div>
+    </nav>
+    <a href="https://instagram.com/data.graf" class="fa fa-instagram" aria-hidden="true" style="font-size: 35px;"></a>
+
+  </header>
+
+  <main role="main">
+
+    <!-- Graf -->
+    <section class="row table-active" id="graf">
+
+      <!-- Left Menu (ranking, search_bar and info) -->
+      <div class="column card bg-dark" style="max-width: 350px;">
+
+        <!--
+        Rankings
+        -->
+        <div class="card border-primary mb-3" style="height: 250px;max-width: 300px; margin: 15px 25px 20px 35px;">
+          <div class="card-header" style="background-color:#DEB887;text-align:center;"><h4>Rankings</h4></div>
+          <div class="card-body" style="padding: 10px 10px 0px;">
+            <ul class="nav nav-tabs card-title">
+              <select class='legend-title' style="font-size: 20px;" name="selector" onchange="menu(this.value)">
+                <option value="not-choosen" selected disabled hidden>Choose here</option>
+               <option value = "ranking_a" >Ranking arestes</option>
+               <option value = "ranking_p">Ranking punts</option>
+               <option value = "ranking_m">Ranking average</option>
+              </select>
+            </ul>
+          </div>
+          <div id="myTabContent" class="tab-content card-text" style="padding-left: 20px; padding-right: 10px;">
+            <div class="labels2" style="font-size: 17px;" id="no_choose">
+              <p style="height: 80px; text-align: center; opacity:0.5;"> CHOOSE A RANKING </p>
+            </div>
+            <div class="labels2" style="font-size: 17px;" id="rank_p">
+              <p id="rank_1_p" style="margin-bottom:0px;"></p>
+              <p id="rank_2_p" style="margin-bottom:0px;"></p>
+              <p id="rank_3_p" style="margin-bottom:0px;"></p>
+              <p id="rank_4_p" style="margin-bottom:0px;"></p>
+              <p id="rank_5_p" style="margin-bottom:10px;"></p>
+            </div>
+            <div class="labels2" style="font-size: 17px;" id="rank_a">
+              <p id="rank_1_a" style="margin-bottom:0px;"></p>
+              <p id="rank_2_a" style="margin-bottom:0px;"></p>
+              <p id="rank_3_a" style="margin-bottom:0px;"></p>
+              <p id="rank_4_a" style="margin-bottom:0px;"></p>
+              <p id="rank_5_a" style="margin-bottom:10px;"></p>
+            </div>
+            <div class="labels2" style="font-size: 17px;" id="rank_m">
+              <p id="rank_1_m" style="margin-bottom:0px;"></p>
+              <p id="rank_2_m" style="margin-bottom:0px;"></p>
+              <p id="rank_3_m" style="margin-bottom:0px;"></p>
+              <p id="rank_4_m" style="margin-bottom:0px;"></p>
+              <p id="rank_5_m" style="margin-bottom:10px;"></p>
+            </div>
+          </div>
+        </div>
+
+        <!--
+        Search bar
+        -->
+        <div class="autocomplete" style="width:300px;">
+        <div class="form-group" style="margin: 10px 35px;">
+          <button class="submit" style="outline:none;" id="search_button">Busca!</button>
+          <input class="form-control form-control-sm" type="text" placeholder="Busca el teu pecador" id="search_bar">
+
+        </div>
+        </div>
+
+
+
+        <div class="card-header text-white" style="padding-left: 30px;"><h5 class="text-white">Informació selecció</h5></div>
+
+        <!--
+        Info
+        -->
+        <div class="card-body text-white" style="padding-left: 30px;">
+          <div class="tooltip"  id="div1"></div>
+          <div class="tooltip2" id="div2"></div>
+        </div>
+
+      </div>
+
+      <!-- Graph and buttons -->
+      <div class="column" style="max-height: 1400px; max-width: none;">
+        <div class="row">
+          <div class="column">
+            <svg id="svg"></svg>
+            <script type="text/javascript">
+              d3.json("data/data.json", function(error, data) {
+                createNetwork(data)
+              })
+            </script>
+          </div>
+          <div style="margin-top: auto; margin-bottom: auto;">
+            <div class="column btn-group-vertical" style="max-width: 80px; right: 0px;">
+              <button type="button" disabled class="btn" style="color:black;padding: 0px;background-color:#DEB887; opacity:1">Edge year selector</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;border-bottom:0;" id="e2018" onclick="select_button(id)">2018</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;border-bottom:0;" id="e2019" onclick="select_button(id)">2019</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;border-bottom:0;" id="e2020" onclick="select_button(id)">2020</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="e2021" onclick="select_button(id)">2021</button>
+            </div>
+            <div class="column btn-group-vertical" style="max-width: 80px; right: 0px;">
+              <button type="button" disabled class="btn" style="padding: 0px;background-color:#DEB887;color:black;opacity:1;">Node year selector</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;border-bottom:0;" id="n2017" onclick="select_button2(id)">2017</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;border-bottom:0;" id="n2018" onclick="select_button2(id)">2018</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;border-bottom:0;" id="n2019" onclick="select_button2(id)">2019</button>
+              <button type="button" class="btn btn-outline-primary" style="padding: 14px 0px;" id="n2020" onclick="select_button2(id)">2020</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+    <!-- Stats -->
+    <!-- <section class="row section table-primary" style="height: 600px; padding: 50px;">
+      <div class="row section-title" style="margin: 0px auto;padding: 0px auto;">
+        <h1>Stats</h1>
+      </div>
+      <p class="row centertxt" style="padding-right: auto;">
+        el pepe
+      </p>
+    </section> -->
+
+    <!-- Maikel mamawebasso -->
+    <!-- <section class="row section table-success">
+      <h1>maikel mamawebasso</h1>
+      <p>el pepe</p>
+    </section> -->
+  </main>
+
+  <footer>
+
+  </footer>
+
+</body>

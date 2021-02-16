@@ -1,0 +1,11 @@
+#root {
+    background-image: url("photos/graph.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+main {
+    background-color: rgb(222, 184, 135, 0.6);
+    margin-left: 20%;
+    margin-right: 20%;
+}
