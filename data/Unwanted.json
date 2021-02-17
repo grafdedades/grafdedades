@@ -77,7 +77,7 @@
       "year": 2018,
       "gender": "F",
       "cfis": "FALSE"
-    },
+    }
   ],
 
 
@@ -178,7 +178,7 @@
       "repeated": "FALSE",
       "relationship": "FALSE",
       "comments": "Jaume en la cama"
-    }
+    },
     {
       "id": 24,
       "source": "Marina Rosell",
